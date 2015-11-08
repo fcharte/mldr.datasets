@@ -3,4 +3,4 @@
 First release of *mldr.datasets*. This version includes:
 
 * The following list of mldr objects:
-    * birds
+    * 20ng

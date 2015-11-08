@@ -5,7 +5,8 @@ Date: 2015-11-10
 Authors@R: c( person("David", "Charte", email = "fdavidcl@outlook.com", role =
     "cre"), person("Francisco", "Charte", email = "francisco@fcharte.com", role
     = "aut"))
-Description: Large collection of multilabel datasets along with the functions needed to export them to several formats and to obtain bibliographic information
+Description: Large collection of multilabel datasets along with the functions
+    needed to export them to several formats and to obtain bibliographic information
 URL: https://github.com/fcharte/mldr.datasets
 Depends:
     R (>= 3.0.0)
@@ -13,3 +14,4 @@ Imports:
     stats
 License: LGPL (>= 3) | file LICENSE
 LazyData: true
+RoxygenNote: 5.0.0
