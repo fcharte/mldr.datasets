@@ -1,4 +1,4 @@
-[mldr](https://fcharte.github.io/mldr.datasets)
+[mldr.datasets](https://fcharte.github.io/mldr.datasets)
 ====
 
 The universal multilabel dataset repository for R
