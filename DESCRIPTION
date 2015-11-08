@@ -1,8 +1,15 @@
 Package: mldr.datasets
-Title: What the Package Does (one line, title case)
+Title: The universal multilabel dataset repository for R
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.2.2)
-License: What license is it under?
+Date: 2015-11-10
+Authors@R: c( person("David", "Charte", email = "fdavidcl@outlook.com", role =
+    "cre"), person("Francisco", "Charte", email = "francisco@fcharte.com", role
+    = "aut"))
+Description: Large collection of multilabel datasets along with the functions needed to export them to several formats and to obtain bibliographic information
+URL: https://github.com/fcharte/mldr.datasets
+Depends:
+    R (>= 3.0.0)
+Imports:
+    stats
+License: LGPL (>= 3) | file LICENSE
 LazyData: true
