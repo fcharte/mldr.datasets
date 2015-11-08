@@ -1,4 +1,4 @@
-#' Newsgroups messages classification
+#' Newsgroups messages classification dataset
 #'
 #' @description Multilabel dataset from the text domain. The original name of the dataset is \code{20ng}
 #' @format An mldr object with 19300 instances, 1006 attributes and 20 labels
