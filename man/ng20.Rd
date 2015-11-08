@@ -3,7 +3,7 @@
 \docType{data}
 \name{ng20}
 \alias{ng20}
-\title{Newsgroups messages classification dataset}
+\title{Dataset with news messages and the news groups they belong to}
 \format{An mldr object with 19300 instances, 1006 attributes and 20 labels}
 \source{
 Ken Lang, "Newsweeder: Learning to filter netnews", in Proc. 12th International Conference on Machine Learning, pp. 331-339, 1995
