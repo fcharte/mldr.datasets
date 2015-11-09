@@ -1,0 +1,7 @@
+Name,Description,Instances,Attributes,Labels
+bibtex,Dataset with BibTeX entries,7395,1836,159
+bookmarks,Dataset with data from web bookmarks and their categories,87856,2100,208
+corel5k,Dataset with data from the Corel image collection,5000,499,374
+reutersk500,Dataset from the Reuters Corpus with the 500 most relevant features selected,6000,500,103
+stackex_chemistry,Dataset from the Stack Exchange's chemistry forum,6961,540,175
+stackex_philosophy,Dataset from the Stack Exchange's philosophy forum,3971,842,233
