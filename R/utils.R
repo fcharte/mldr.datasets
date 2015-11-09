@@ -33,5 +33,6 @@ check_n_load.mldr <- function(mldr.name) {
 #' mldrs()
 #' @export
 mldrs <- function() {
-  View(read.csv('https://github.com/fcharte/mldr.datasets/raw/master/mldrs.csv'))
+  View(read.csv('https://github.com/fcharte/mldr.datasets/raw/master/additional-data/mldrs.csv'),
+       'List of additional datasets available at the mldr.datasets repository')
 }
