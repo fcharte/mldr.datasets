@@ -3,6 +3,7 @@ bibtex,Dataset with BibTeX entries,7395,1836,159
 bookmarks,Dataset with data from web bookmarks and their categories,87856,2100,208
 corel16k001,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13766,500,153
 corel16k002,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13761,500,164
+corel16k003,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13760,500,154
 corel5k,Dataset with data from the Corel image collection,5000,499,374
 stackex_chemistry,Dataset from the Stack Exchange's chemistry forum,6961,540,175
 stackex_philosophy,Dataset from the Stack Exchange's philosophy forum,3971,842,233
