@@ -7,4 +7,5 @@
 #' bibtex()  # Check and load the dataset
 #' toBibtex(bibtex)
 #' bibtex$measures
-bibtex <- function() {}
+#' @export
+bibtex <- function() check_n_load.mldr("bibtex")
