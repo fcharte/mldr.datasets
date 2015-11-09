@@ -19,6 +19,7 @@ eurlexdc_tra,List  with 10 folds of the train data from the EUR-Lex directory co
 eurlexev_test,List  with 10 folds of the test data from the EUR-Lex EUROVOC descriptors dataset,1935,5000,3993
 eurlexev_tra,List  with 10 folds of the train data from the EUR-Lex EUROVOC descriptors dataset,17413,5000,3993
 eurlexsm_test,List  with 10 folds of the test data from the EUR-Lex subject matters dataset,1935,5000,201
+eurlexsm_tra,List  with 10 folds of the test data from the EUR-Lex subject matters dataset,17413,5000,201
 reutersk500,Dataset from the Reuters Corpus with the 500 most relevant features selected,6000,500,103
 stackex_chemistry,Dataset from the Stack Exchange's chemistry forum,6961,540,175
 stackex_philosophy,Dataset from the Stack Exchange's philosophy forum,3971,842,233
