@@ -14,7 +14,7 @@ eurlexdc_test()
 Multilabel dataset from the text domain.
 }
 \examples{
-toBibtex(eurlexdc-test)
-eurlexdc-test$measures
+toBibtex(eurlexdc_test)
+eurlexdc_test$measures
 }
 
