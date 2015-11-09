@@ -6,4 +6,5 @@
 #' @examples
 #' toBibtex(bookmarks)
 #' bookmarks$measures
-bookmarks <- function() {}
+#' @export
+bookmarks <- function() check_n_load.mldr("bookmarks")
