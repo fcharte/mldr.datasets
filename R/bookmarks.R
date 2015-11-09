@@ -6,4 +6,4 @@
 #' @examples
 #' toBibtex(bookmarks)
 #' bookmarks$measures
-"bookmarks"
+bookmarks <- function() {}
