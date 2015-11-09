@@ -9,6 +9,7 @@ corel16k005,Datasets with data from the Corel image collection. There are 10 sub
 corel16k006,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13859,500,162
 corel16k007,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13915,500,174
 corel16k008,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13864,500,168
+corel16k009,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13884,500,173
 corel5k,Dataset with data from the Corel image collection,5000,499,374
 reutersk500,Dataset from the Reuters Corpus with the 500 most relevant features selected,6000,500,103
 stackex_chemistry,Dataset from the Stack Exchange's chemistry forum,6961,540,175
