@@ -23,3 +23,15 @@ check_n_load.mldr <- function(mldr.name) {
   else
     stop('The ', mldr.name, ' dataset is not available.')
 }
+
+#' @title Obtains and shows the list of additional datasets, those available to download
+#' @description The function downloads from GitHub the most up to date list of additional datasets. Those are the datasets not
+#' included into the package, but that can be downloaded and save locally.
+#' @examples
+#'
+#' library(mldr.datasets)
+#' mldrs()
+#' @export
+mldrs <- function() {
+  View(read.csv('https://github.com/fcharte/mldr.datasets/raw/master/mldrs.csv'))
+}
