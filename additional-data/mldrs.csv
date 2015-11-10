@@ -44,3 +44,4 @@ yahoo_education,Dataset generated from the Yahoo! web site index (education cate
 yahoo_entertainment,Dataset generated from the Yahoo! web site index (education entertainment),12730,32001,21
 yahoo_health,Dataset generated from the Yahoo! web site index (health category),9205,30605,32
 yahoo_recreation,Dataset generated from the Yahoo! web site index (recreation category),12828,30324,22
+yahoo_reference,Dataset generated from the Yahoo! web site index (reference category),8027,39679,33
