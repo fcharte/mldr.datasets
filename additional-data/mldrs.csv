@@ -41,3 +41,5 @@ yahoo_arts,Dataset generated from the Yahoo! web site index (arts category),7484
 yahoo_business,Dataset generated from the Yahoo! web site index (business category),11214,21924,30
 yahoo_computers,Dataset generated from the Yahoo! web site index (computers category),12444,34096,33
 yahoo_education,Dataset generated from the Yahoo! web site index (education category),12030,27534,33
+yahoo_entertainment,Dataset generated from the Yahoo! web site index (education entertainment),12730,32001,21
+
