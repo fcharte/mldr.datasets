@@ -22,6 +22,17 @@ eurlexsm_test,List  with 10 folds of the test data from the EUR-Lex subject matt
 eurlexsm_tra,List  with 10 folds of the test data from the EUR-Lex subject matters dataset,17413,5000,201
 imdb,Dataset generated from the IMDB film database,120919,1001,28
 mediamill,Dataset with features extracted from video sequences and semantic concepts assigned as labels,43907,120,101
+nuswide_BoW,Dataset obtained from the NUS-WIDE database with BoW representation,269648,501,81
+nuswide_VLAD,Dataset obtained from the NUS-WIDE database with cVLAD+ representation,269648,129,81
+ohsumed,Dataset generated from a subset of the Medline database,13929,1002,23
+rcv1sub1,Dataset from the Reuters corpus (subset 1),6000,47236,101
+rcv1sub2,Dataset from the Reuters corpus (subset 2),6000,47236,101
+rcv1sub3,Dataset from the Reuters corpus (subset 3),6000,47236,101
+rcv1sub4,Dataset from the Reuters corpus (subset 4),6000,47229,101
+rcv1sub5,Dataset from the Reuters corpus (subset 5),6000,47235,101
 reutersk500,Dataset from the Reuters Corpus with the 500 most relevant features selected,6000,500,103
 stackex_chemistry,Dataset from the Stack Exchange's chemistry forum,6961,540,175
+stackex_cooking,Dataset from the Stack Exchange's cooking forum,10491,577,400
+stackex_cs,Dataset from the Stack Exchange's computer science forum,9270,635,274
 stackex_philosophy,Dataset from the Stack Exchange's philosophy forum,3971,842,233
+tmc2007,Dataset from airplanes failures reports,28596,49060,22
