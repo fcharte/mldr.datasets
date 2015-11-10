@@ -4,6 +4,7 @@
 #' @format An mldr object with 11214 instances, 21924 attributes and 30 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
+#' yahoo_business()  # Check and load the dataset
 #' toBibtex(yahoo_business)
 #' yahoo_business$measures
 #' @export

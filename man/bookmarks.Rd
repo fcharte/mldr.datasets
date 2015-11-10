@@ -14,6 +14,7 @@ bookmarks()
 Multilabel dataset from the text domain.
 }
 \examples{
+bookmarks()  # Check and load the dataset
 toBibtex(bookmarks)
 bookmarks$measures
 }

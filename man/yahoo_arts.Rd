@@ -14,6 +14,7 @@ yahoo_arts()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_arts()  # Check and load the dataset
 toBibtex(yahoo_arts)
 yahoo_arts$measures
 }

@@ -14,6 +14,7 @@ yahoo_business()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_business()  # Check and load the dataset
 toBibtex(yahoo_business)
 yahoo_business$measures
 }

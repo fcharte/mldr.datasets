@@ -14,6 +14,7 @@ delicious()
 Multilabel dataset from the text domain.
 }
 \examples{
+delicious()  # Check and load the dataset
 toBibtex(delicious)
 delicious$measures
 }

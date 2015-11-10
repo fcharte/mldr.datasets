@@ -14,6 +14,7 @@ yahoo_science()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_science()  # Check and load the dataset
 toBibtex(yahoo_science)
 yahoo_science$measures
 }

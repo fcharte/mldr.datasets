@@ -14,6 +14,7 @@ yahoo_education()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_education()  # Check and load the dataset
 toBibtex(yahoo_education)
 yahoo_education$measures
 }

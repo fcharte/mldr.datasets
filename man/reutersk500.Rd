@@ -14,6 +14,7 @@ reutersk500()
 Multilabel dataset from the text domain.
 }
 \examples{
+reutersk500()  # Check and load the dataset
 toBibtex(reutersk500)
 reutersk500$measures
 }

@@ -4,6 +4,7 @@
 #' @format An mldr object with 2417 instances, 103 attributes and 14 labels
 #' @source Elisseeff, A. and Weston, J., "A Kernel Method for Multi-Labelled Classification", Advances in Neural Information Processing Systems, Vol. 14, pp. 681--687, 2001
 #' @examples
+#' yeast()  # Check and load the dataset
 #' toBibtex(yeast)
 #' yeast$measures
 #' @export

@@ -14,6 +14,7 @@ yahoo_reference()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_reference()  # Check and load the dataset
 toBibtex(yahoo_reference)
 yahoo_reference$measures
 }

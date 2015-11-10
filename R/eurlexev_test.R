@@ -4,6 +4,7 @@
 #' @format An mldr object with 1935 instances, 5000 attributes and 3993 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
+#' eurlexev_test()  # Check and load the dataset
 #' toBibtex(eurlexev_test[[1]])
 #' eurlexev_test[[1]]$measures
 #' @export

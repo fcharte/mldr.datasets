@@ -14,6 +14,7 @@ yahoo_social()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_social()  # Check and load the dataset
 toBibtex(yahoo_social)
 yahoo_social$measures
 }

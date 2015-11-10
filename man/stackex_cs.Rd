@@ -14,6 +14,7 @@ stackex_cs()
 Multilabel dataset from the text domain.
 }
 \examples{
+stackex_cs()  # Check and load the dataset
 toBibtex(stackex_cs)
 stackex_cs$measures
 }

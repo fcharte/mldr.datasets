@@ -14,6 +14,7 @@ yahoo_entertainment()
 Multilabel dataset from the text domain.
 }
 \examples{
+yahoo_entertainment()  # Check and load the dataset
 toBibtex(yahoo_entertainment)
 yahoo_entertainment$measures
 }
