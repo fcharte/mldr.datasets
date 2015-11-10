@@ -2,6 +2,7 @@
 ====
 
 The universal multilabel dataset repository for R
+
 ## Installation
 
 Use `install.packages` to install *mldr.datasets* and its dependencies:
@@ -16,6 +17,8 @@ Alternatively, you can install it via `install_github` from the
 ```R
 devtools::install_github("fcharte/mldr.datasets")
 ```
+
+You can also clone the repository by using entering `git clone https://github.com/fcharte/mldr.datasets.git` at your command line (assuming git is installed in your system) or with your favourite git GUI. This way all the datasets will be inmediately available in your system. However, take into account that > 600MB will be needed to store the full repository.
 
 ## Usage and examples
 
