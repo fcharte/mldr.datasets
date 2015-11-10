@@ -36,3 +36,4 @@ stackex_cooking,Dataset from the Stack Exchange's cooking forum,10491,577,400
 stackex_cs,Dataset from the Stack Exchange's computer science forum,9270,635,274
 stackex_philosophy,Dataset from the Stack Exchange's philosophy forum,3971,842,233
 tmc2007,Dataset from airplanes failures reports,28596,49060,22
+tmc2007_500,Dataset from airplanes failures reports (500 most relevant features extracted),28596,500,22
