@@ -14,6 +14,7 @@ nuswide_VLAD()
 Multilabel dataset from the image domain.
 }
 \examples{
+nuswide_VLAD()  # Check and load the dataset
 toBibtex(nuswide_VLAD)
 nuswide_VLAD$measures
 }

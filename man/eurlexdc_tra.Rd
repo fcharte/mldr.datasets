@@ -14,6 +14,7 @@ eurlexdc_tra()
 Multilabel dataset from the text domain.
 }
 \examples{
+eurlexdc_tra()  # Check and load the dataset
 toBibtex(eurlexdc_test[[1]])
 eurlexdc_test[[1]]$measures
 }

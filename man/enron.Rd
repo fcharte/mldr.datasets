@@ -14,6 +14,7 @@ enron()
 Multilabel dataset from the text domain.
 }
 \examples{
+enron()  # Check and load the dataset
 toBibtex(enron)
 enron$measures
 }

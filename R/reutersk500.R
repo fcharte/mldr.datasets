@@ -4,6 +4,7 @@
 #' @format An mldr object with 6000 instances, 500 attributes and 103 labels
 #' @source Read, Jesse, "Scalable multi-label classification", University of Waikato, 2010
 #' @examples
+#' reutersk500()  # Check and load the dataset
 #' toBibtex(reutersk500)
 #' reutersk500$measures
 #' @export

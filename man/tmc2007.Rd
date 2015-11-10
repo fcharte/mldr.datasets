@@ -14,6 +14,7 @@ tmc2007()
 Multilabel dataset from the text domain.
 }
 \examples{
+tmc2007()  # Check and load the dataset
 toBibtex(tmc2007)
 tmc2007$measures
 }

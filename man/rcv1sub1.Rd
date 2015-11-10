@@ -14,6 +14,7 @@ rcv1sub1()
 Multilabel dataset from the text domain.
 }
 \examples{
+rcv1sub1()  # Check and load the dataset
 toBibtex(rcv1sub1)
 rcv1sub1$measures
 }

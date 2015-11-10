@@ -14,6 +14,7 @@ eurlexev_test()
 Multilabel dataset from the text domain.
 }
 \examples{
+eurlexev_test()  # Check and load the dataset
 toBibtex(eurlexev_test[[1]])
 eurlexev_test[[1]]$measures
 }

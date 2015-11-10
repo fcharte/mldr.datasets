@@ -14,6 +14,7 @@ yeast()
 Multilabel dataset from the biology domain.
 }
 \examples{
+yeast()  # Check and load the dataset
 toBibtex(yeast)
 yeast$measures
 }

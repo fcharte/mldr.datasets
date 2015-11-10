@@ -14,6 +14,7 @@ stackex_cooking()
 Multilabel dataset from the text domain.
 }
 \examples{
+stackex_cooking()  # Check and load the dataset
 toBibtex(stackex_cooking)
 stackex_cooking$measures
 }

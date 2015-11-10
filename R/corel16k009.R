@@ -4,6 +4,7 @@
 #' @format An mldr object with 13884 instances, 500 attributes and 173 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
+#' corel16k009()  # Check and load the dataset
 #' toBibtex(corel16k009)
 #' corel16k009$measures
 #' @export
