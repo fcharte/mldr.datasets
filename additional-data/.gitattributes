@@ -1,0 +1,2 @@
+nuswide_BoW.rda filter=lfs diff=lfs merge=lfs -text
+nuswide_VLAD.rda filter=lfs diff=lfs merge=lfs -text
