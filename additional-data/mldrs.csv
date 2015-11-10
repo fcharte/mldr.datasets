@@ -48,3 +48,4 @@ yahoo_reference,Dataset generated from the Yahoo! web site index (reference cate
 yahoo_science,Dataset generated from the Yahoo! web site index (science category),6428,37187,40
 yahoo_social,Dataset generated from the Yahoo! web site index (social category),12111,52350,39
 yahoo_society,Dataset generated from the Yahoo! web site index (society category),14512,31802,27
+yeast,Dataset with protein profiles and their categories,2417,103,14
