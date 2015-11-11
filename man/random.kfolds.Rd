@@ -20,6 +20,7 @@ of two mldr objects, called \code{train} and \code{test}
  @examples
 \dontrun{
 library(mldr.datasets)
+library(mldr)
 folds.emotions <- random.kfolds(emotions)
 summary(folds.emotions[[1]]$train)
 summary(folds.emotions[[1]]$test)
