@@ -9,6 +9,7 @@
 #'  @examples
 #'\dontrun{
 #' library(mldr.datasets)
+#' library(mldr)
 #' folds.emotions <- random.kfolds(emotions)
 #' summary(folds.emotions[[1]]$train)
 #' summary(folds.emotions[[1]]$test)
@@ -26,7 +27,7 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
   nrows <- mld$measures$num.instances
   labels <- mld$labels$index
   dataset <- mld$dataset[sample(nrows), -excmeasures]
-  folds <- lapply(1:k, function(fold) round(nrows/k*(fold-1)+1):round(nrows/k*fold))
+  folds <- lapply(1:k, function(fold) (round(nrows/k*(fold-1))+1):round(nrows/k*fold))
 
   folds <- lapply(folds, function(fold) list(
     train = mldr_from_dataframe(dataset[-fold,], labels, mld$name),
