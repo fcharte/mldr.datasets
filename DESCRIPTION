@@ -8,10 +8,11 @@ Authors@R: c( person("David", "Charte", email = "fdavidcl@outlook.com", role =
 Description: Large collection of multilabel datasets along with the functions
     needed to export them to several formats, to make partitions, and to obtain bibliographic information
 URL: https://github.com/fcharte/mldr.datasets
-Depends:
+Depends: 
     R (>= 3.0.0)
-Imports:
+Imports: 
     stats
 License: LGPL (>= 3) | file LICENSE
 LazyData: true
 RoxygenNote: 5.0.0
+Suggests: mldr

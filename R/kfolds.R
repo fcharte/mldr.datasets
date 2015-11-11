@@ -18,15 +18,15 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
   if (class(mld) != 'mldr')
     stop(paste(substitute(mld), "isn't an mldr object"))
 
-  if (!requireNamespace("mldr", quietly = TRUE))
-    stop('The mldr package is needed to run this function')
+  if (!isNamespaceLoaded("mldr"))
+    stop('The mldr package must be loaded to run this function')
 
   set.seed(seed)
-  excmeasures <- c(mld$measures$num.attributes+1,mld$measures$num.attributes+2)
+  excmeasures <- (mld$measures$num.attributes+1):length(mld$dataset)
   nrows <- mld$measures$num.instances
   labels <- mld$labels$index
   dataset <- mld$dataset[sample(nrows), -excmeasures]
-  folds <- sapply(1:k, function(fold) round(nrows/k*(fold-1)+1):round(nrows/k*fold))
+  folds <- lapply(1:k, function(fold) round(nrows/k*(fold-1)+1):round(nrows/k*fold))
 
   folds <- lapply(folds, function(fold) list(
     train = mldr_from_dataframe(dataset[-fold,], labels, mld$name),
@@ -35,3 +35,4 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
   class(folds) <- "mldr.folds"
   folds
 }
+
