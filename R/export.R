@@ -10,6 +10,10 @@
 # files, one with the data (i.e. mld.data.csv) and another one with the labels (i.e. mld.labels.csv). The latter will provide
 # the names and indexes of the labels
 
+# TODO
+# write an mldr.folds object
+# libSVM format
+# export correct attribute type
 
 # 'write' method for mldr that will open the file, check parameters, etc., then call the proper write.FORMAT function
 #' @export
@@ -21,40 +25,48 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA", "KEEL", "CSV"), sparse =
 
   # Parameter checks
   if (!all(format %in% available.formats)) {
-    stop("Invalid format found. Allowed formats: ", do.call(paste, as.list(available.formats)))
+    stop("Invalid format found. Allowed formats: ", paste(available.formats, collapse = ", "))
   }
   if (!"mldr" %in% class(mld)) {
-    stop("Object must be of class mldr")
+    if ("mldr.folds" %in% class(mld))
+      lapply(1:length(mld), function(i) write(m[[i]], format, sparse, basename = paste0(basename, "_folds_", i) ))
+    else
+      stop("Object must be of class mldr or mldr.folds")
   }
 
   if ("MULAN" %in% format) {
     # Open and write ARFF file
     if (!"MEKA" %in% format) {
       arffConnection <- file(paste0(basename, ".arff"))
-      writeChar(export.mulan(mld, sparse), arffConnection)
+      writeLines(export.mulan(mld, sparse), arffConnection)
+      close(arffConnection)
     }
 
     # Open and write XML file
     xmlConnection <- file(paste0(basename, ".xml"))
-    writeChar(export.xml(mld), xmlConnection)
+    writeLines(export.xml(mld), xmlConnection)
+    close(xmlConnection)
   }
 
   if ("MEKA" %in% format) {
     # Open and write ARFF file
     arffConnection <- file(paste0(basename, ".arff"))
-    writeChar(export.meka(mld, sparse), arffConnection)
+    writeLines(export.meka(mld, sparse), arffConnection)
+    close(arffConnection)
   }
 
   if ("KEEL" %in% format) {
     # Open and write DAT file
     datConnection <- file(paste0(basename, ".dat"))
-    writeChar(export.keel(mld, sparse), datConnection)
+    writeLines(export.keel(mld, sparse), datConnection)
+    close(datConnection)
   }
 
   if ("CSV" %in% format) {
     # Open and write CSV file
     csvConnection <- file(paste0(basename, ".csv"))
-    writeChar(export.csv(mld, sparse), csvConnection)
+    writeLines(export.csv(mld, sparse), csvConnection)
+    close(csvConnection)
   }
 }
 
@@ -76,7 +88,7 @@ export.meka <- function(mld, sparse) {
   )
 }
 
-export.keel <- function(mld) {
+export.keel <- function(mld, sparse) {
   paste(
     export.keel.header(mld),
     export.arff.attributes(mld),
@@ -103,7 +115,7 @@ export.meka.header <- function(mld) {
 export.keel.header <- export.mulan.header
 
 export.arff.attributes <- function(mld) {
-  paste0("@attribute ", names(mld$attributes), " ", mld$attributes)
+  paste0("@attribute ", names(mld$attributes), " ", mld$attributes, collapse = "\n")
 }
 
 export.arff.inputs <- function(mld) {
@@ -131,13 +143,31 @@ export.arff.outputs <- function(mld) {
 }
 
 export.arff.data <- function(mld, sparse) {
-  if (sparse) {
+  data <- mld$dataset[, 1:mld$measures$num.attributes]
+  data[is.na(data)] <- '?'
+  paste0(
+    "@data\n",
+    ifelse(sparse, export.sparse.arff.data(data), export.dense.arff.data(data))
+  )
+}
 
-  } else {
-    data <- obj$dataset[, 1:obj$measures$num.attributes]
-    data[is.na(data)] <- '0' # NAs aren't missing values ('?') but 0
-    data <- apply(data, 1, function(c) paste(c, collapse = ','))
-  }
+
+export.dense.arff.data <- function(data) {
+  paste(
+    apply(data, 1, function(c)
+      paste(c, collapse = ',')
+    ),
+    collapse = "\n"
+  )
+}
+
+export.sparse.arff.data <- function(data) {
+  paste(
+    apply(data, 1, function(instance)
+      paste0("{", paste(which(instance != 0), instance[instance != 0], sep = " ", collapse = ","), "}")
+    ),
+    collapse = "\n"
+  )
 }
 
 export.csv <- export.arff.data
@@ -145,7 +175,7 @@ export.csv <- export.arff.data
 export.xml <- function(mld) {
   xmlheader <- '<?xml version="1.0" encoding="utf-8"?>'
   labelstag <- '<labels xmlns="http://mulan.sourceforge.net/labels">'
-  labeltags <- paste(c('<label name="'), rownames(obj$labels), c('"></label>'), sep = "\n")
+  labeltags <- paste(c('<label name="'), rownames(mld$labels), c('"></label>'), sep = "\n")
   labelsend <- '</labels>'
 
   paste(xmlheader, labelstag, labeltags, labelsend, sep = "\n")
