@@ -191,7 +191,12 @@ export.dense.arff.data <- function(data) {
 export.sparse.arff.data <- function(data) {
   paste(
     apply(data, 1, function(instance)
-      paste0("{", paste(which(instance != 0), instance[instance != 0], sep = " ", collapse = ","), "}")
+      paste0("{",
+             paste(which(instance != 0) - 1, # features start counting at 0
+                   instance[instance != 0],
+                   sep = " ", collapse = ","
+                   ),
+             "}")
     ),
     collapse = "\n"
   )
