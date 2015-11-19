@@ -1,7 +1,7 @@
 [mldr.datasets](https://fcharte.github.io/mldr.datasets)
 ====
 
-The universal multilabel dataset repository for R
+THe Universal Multilabel DatasEt Repository for R (THUMDER)
 
 ## Installation
 
