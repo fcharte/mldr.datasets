@@ -17,11 +17,11 @@
 
 # 'write' method for mldr that will open the file, check parameters, etc., then call the proper write.FORMAT function
 #' @export
-write.mldr <- function(mld, format = c("MULAN", "MEKA", "KEEL", "CSV"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
+write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
                                                                                                           mld$name,
                                                                                                           "unnamed_mldr"), ...) {
   format <- toupper(format)
-  available.formats <- c("MULAN", "MEKA", "KEEL", "CSV")
+  available.formats <- c("MULAN", "MEKA", "KEEL", "CSV", "LIBSVM")
 
   # Parameter checks
   if (!all(format %in% available.formats)) {
@@ -84,6 +84,15 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA", "KEEL", "CSV"), sparse =
     labelConnection <- file(name)
     writeLines(export.csv.labels(mld), labelConnection)
     close(labelConnection)
+    inform(name)
+  }
+
+  if ("LIBSVM" %in% format) {
+    # Open and write SVM file
+    name <- paste0(basename, ".svm")
+    svmConnection <- file(name)
+    writeLines(export.libsvm(mld), svmConnection)
+    close(svmConnection)
     inform(name)
   }
 }
@@ -201,4 +210,20 @@ export.xml <- function(mld) {
   labelsend <- '</labels>'
 
   paste(xmlheader, labelstag, labeltags, labelsend, sep = "\n")
+}
+
+export.libsvm <- function(mld) {
+  paste(
+    apply(mld$dataset, 1, function(instance) {
+        inputs <- instance[mld$attributesIndexes]
+        outputs <- instance[mld$labels$index]
+        paste(
+          paste(which(outputs == 1) - 1, collapse = ","), # libSVM counts labels starting from zero
+          paste(which(instance != 0), instance[instance != 0], sep = ":", collapse = " "),
+          sep = " "
+        )
+      }
+    ),
+    collapse = "\n"
+  )
 }
