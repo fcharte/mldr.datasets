@@ -34,39 +34,57 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA", "KEEL", "CSV"), sparse =
       stop("Object must be of class mldr or mldr.folds")
   }
 
+  inform <- function(name) cat(paste0("Wrote file ", name, "\n"))
+
   if ("MULAN" %in% format) {
     # Open and write ARFF file
     if (!"MEKA" %in% format) {
-      arffConnection <- file(paste0(basename, ".arff"))
+      name <- paste0(basename, ".arff")
+      arffConnection <- file(name)
       writeLines(export.mulan(mld, sparse), arffConnection)
       close(arffConnection)
+      inform(name)
     }
 
     # Open and write XML file
-    xmlConnection <- file(paste0(basename, ".xml"))
+    name <- paste0(basename, ".xml")
+    xmlConnection <- file(name)
     writeLines(export.xml(mld), xmlConnection)
     close(xmlConnection)
+    inform(name)
   }
 
   if ("MEKA" %in% format) {
     # Open and write ARFF file
-    arffConnection <- file(paste0(basename, ".arff"))
+    name <- paste0(basename, ".arff")
+    arffConnection <- file(name)
     writeLines(export.meka(mld, sparse), arffConnection)
     close(arffConnection)
+    inform(name)
   }
 
   if ("KEEL" %in% format) {
     # Open and write DAT file
-    datConnection <- file(paste0(basename, ".dat"))
+    name <- paste0(basename, ".dat")
+    datConnection <- file(name)
     writeLines(export.keel(mld, sparse), datConnection)
     close(datConnection)
+    inform(name)
   }
 
   if ("CSV" %in% format) {
     # Open and write CSV file
-    csvConnection <- file(paste0(basename, ".csv"))
+    name <- paste0(basename, ".csv")
+    csvConnection <- file(name)
     writeLines(export.csv(mld, sparse), csvConnection)
     close(csvConnection)
+    inform(name)
+
+    name <- paste0(basename, "_labels.csv")
+    labelConnection <- file(name)
+    writeLines(export.csv.labels(mld), labelConnection)
+    close(labelConnection)
+    inform(name)
   }
 }
 
@@ -142,11 +160,11 @@ export.arff.outputs <- function(mld) {
   )
 }
 
-export.arff.data <- function(mld, sparse) {
+export.arff.data <- function(mld, sparse, header = "@data\n") {
   data <- mld$dataset[, 1:mld$measures$num.attributes]
   data[is.na(data)] <- '?'
   paste0(
-    "@data\n",
+    header,
     ifelse(sparse, export.sparse.arff.data(data), export.dense.arff.data(data))
   )
 }
@@ -170,7 +188,11 @@ export.sparse.arff.data <- function(data) {
   )
 }
 
-export.csv <- export.arff.data
+export.csv <- function(mld, sparse) export.arff.data(mld, sparse, header = "")
+
+export.csv.labels <- function(mld) {
+  paste(rownames(mld$labels), mld$labels$index, sep = ", ", collapse = "\n")
+}
 
 export.xml <- function(mld) {
   xmlheader <- '<?xml version="1.0" encoding="utf-8"?>'
