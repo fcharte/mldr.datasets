@@ -38,5 +38,5 @@ mldrs <- function() {
   availableMlds <- read.csv("https://fcharte.github.io/mldr.datasets/availableMlds.csv", stringsAsFactors = F)
   save(availableMlds, file = paste0(find.package('mldr.datasets'), "/R/sysdata.rda"), compress = "gzip")
 
-  View(availableMlds, 'List of additional datasets available at the mldr.datasets repository')
+  View(availableMlds[-(length(availableMlds))], 'List of additional datasets available at the mldr.datasets repository')
 }
