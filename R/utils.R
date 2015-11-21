@@ -13,14 +13,13 @@ check_n_load.mldr <- function(mldr.name) {
     stop('The ', mldr.name, ' dataset is already loaded.')
 
   fpath <- paste(find.package('mldr.datasets'), '/extdata/', mldr.name, '.rda', sep = '')
-  if(!file.exists(fpath)) {
 
+  if (!file.exists(fpath)) {
     url <- availableMlds[availableMlds$Name == mldr.name, "URL"]
-    # url <- paste('https://github.com/fcharte/mldr.datasets/raw/master/additional-data/', mldr.name, '.rda', sep = '')
     download.file(url, fpath)
   }
 
-  if(file.exists(fpath))
+  if (file.exists(fpath))
     load(fpath, .GlobalEnv)
   else
     stop('The ', mldr.name, ' dataset is not available.')
@@ -35,8 +34,9 @@ check_n_load.mldr <- function(mldr.name) {
 #' mldrs()
 #' @export
 mldrs <- function() {
-  availableMlds <- read.csv('https://github.com/fcharte/mldr.datasets/raw/master/additional-data/mldrs.csv')
-  save(availableMlds, file = "R/sysdata.rda", compress = "gzip")
+  # availableMlds <- read.csv('https://github.com/fcharte/mldr.datasets/raw/master/additional-data/mldrs.csv')
+  availableMlds <- read.csv("https://fcharte.github.io/mldr.datasets/availableMlds.csv", stringsAsFactors = F)
+  save(availableMlds, file = paste0(find.package('mldr.datasets'), "/R/sysdata.rda"), compress = "gzip")
 
   View(availableMlds, 'List of additional datasets available at the mldr.datasets repository')
 }
