@@ -15,8 +15,10 @@ cal500
 Multilabel dataset from the music domain.
 }
 \examples{
+\dontrun{
 toBibtex(cal500)
 cal500$measures
+}
 }
 \keyword{datasets}
 
