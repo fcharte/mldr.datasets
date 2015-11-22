@@ -14,8 +14,10 @@ corel5k()
 Multilabel dataset from the image domain.
 }
 \examples{
+\dontrun{
 corel5k()  # Check and load the dataset
 toBibtex(corel5k)
 corel5k$measures
+}
 }
 
