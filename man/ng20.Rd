@@ -15,8 +15,10 @@ ng20
 Multilabel dataset from the text domain. The original name of the dataset is \code{20ng}
 }
 \examples{
+\dontrun{
 toBibtex(ng20)
 ng20$measures
+}
 }
 \keyword{datasets}
 
