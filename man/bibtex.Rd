@@ -14,8 +14,10 @@ bibtex()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 bibtex()  # Check and load the dataset
 toBibtex(bibtex)
 bibtex$measures
+}
 }
 
