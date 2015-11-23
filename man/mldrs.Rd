@@ -11,8 +11,9 @@ The function downloads from GitHub the most up to date list of additional datase
 included into the package, but that can be downloaded and save locally.
 }
 \examples{
-
+\dontrun{
 library(mldr.datasets)
 mldrs()
+}
 }
 
