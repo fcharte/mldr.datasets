@@ -115,4 +115,50 @@ First release of *mldr.datasets*. This version includes:
     }    
     </pre>
     
+    * **slashdot**
+    <pre>
+    @article{,
+          title = "Classifier chains for multi-label classification",
+          author = "Read, J. and Pfahringer, B. and Holmes, G. and Frank, E.",
+          journal = "Machine Learning",
+          year = "2011",
+          volume = "85",
+          issue = "3",
+          pages = "333--359"
+    }    
+    </pre>
+    
+    * **stackex** - Set of six datasets (`stackex_chemistry`, `stackex_chess`, `stackex_coffee`, `stackex_cooking`, `stackex_cs` and `stackex_philosophy`) generated from Stack Exchange forums
+    <pre>
+    @inproceedings{,
+          title="QUINTA: A question tagging assistant to improve the answering ratio in electronic forums",
+          author="Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco",
+          booktitle="EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE",
+          year="2015",
+          pages="1-6",
+          month="Sept"
+    }    
+    </pre>
 
+    * **tmc2007** - Full dataset (`tmc2007`) and version with only 500 features selected (`tmc2007_500`)
+    <pre>
+    @inproceedings{,
+          title="Discovering recurring anomalies in text reports regarding complex space systems",
+          author="Srivastava, A. N. and Zane-Ulman, B.",
+          booktitle="Aerospace Conference",
+          pages="3853--3862",
+          year="2005",
+    }    
+    </pre>
+    
+    
+    * **yahoo** - 11 datasets generated from Yahoo! directory (`yahoo_arts`, `yahoo_business`, `yahoo_computers`, `yahoo_education`, `yahoo_entertainment`, `yahoo_health`, `yahoo_recreation`, `yahoo_reference`, `yahoo_science`, `yahoo_social`, `yahoo_society`)
+    <pre>
+    @inproceedings{,
+          title="Parametric mixture models for multi-labeled text",
+          author="Ueda, N. and Saito, K.",
+          booktitle="Advances in neural information processing systems",
+          pages="721--728",
+          year="2002"
+    }    
+    </pre>
