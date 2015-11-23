@@ -14,8 +14,10 @@ reutersk500()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 reutersk500()  # Check and load the dataset
 toBibtex(reutersk500)
 reutersk500$measures
+}
 }
 
