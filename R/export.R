@@ -1,26 +1,12 @@
 
-# Function to export a mldr object to several formats
+# Functions to export a mldr object to several formats
 
-# write.mulan, write.meka, write.keel, write.csv
-
-# @relation and @data are common to MULAN, MEKA and KEEL, only the header changes and, in the KEEL case, it is necessary to
-# establish which attributes are @inputs and @outputs. Divide these tasks in separate functions
-
-# To write a CSV an indicator will be needed, setting if a header has to be included or not. The function will generate two
-# files, one with the data (i.e. mld.data.csv) and another one with the labels (i.e. mld.labels.csv). The latter will provide
-# the names and indexes of the labels
-
-# TODO
-# write an mldr.folds object
-# libSVM format
-# export correct attribute type
-
-#' Exports an mldr object or set of mldr objects to different file formats
+#' Export an mldr object or set of mldr objects to different file formats
 #' @description Writes one or more files in the specified formats with the content of the \code{mldr} or \code{mldr.folds} given as parameter
 #' @param mld The \code{mldr/mldr.folds} object to be exported
 #' @param format A vector of strings stating the desired file formats. It can contain the values \code{'MULAN'}, \code{'MEKA'},
 #' \code{'KEEL'}, \code{'CSV'} and \code{'LIBSVM'}
-#' @param sparse Boolean value indicating for ARFF-based file formats if sparse representation has to be used
+#' @param sparse Boolean value indicating if sparse representation has to be used for ARFF-based file formats
 #' @param basename Base name for the files. \code{'unnamed_mldr'} is used by default
 #' @examples
 #'\dontrun{
@@ -29,8 +15,8 @@
 #' }
 #' @export
 write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
-                                                                                                          mld$name,
-                                                                                                          "unnamed_mldr")) {
+                                                                                           mld$name,
+                                                                                           "unnamed_mldr")) {
   format <- toupper(format)
   available.formats <- c("MULAN", "MEKA", "KEEL", "CSV", "LIBSVM")
 
