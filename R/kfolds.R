@@ -68,8 +68,8 @@ internal.kfolds <- function(mld, k, seed, type = "random") {
     }
 
     folds <- lapply(folds, function(fold) list(
-      train = mldr::mldr_from_dataframe(dataset[-fold,], labels, mld$name),
-      test = mldr::mldr_from_dataframe(dataset[fold,], labels, mld$name)))
+      train = mldr::mldr_from_dataframe(dataset[-fold,], labelIndices = labels, attributes = mld$attributes, name = mld$name),
+      test = mldr::mldr_from_dataframe(dataset[fold,], labelIndices = labels, attributes = mld$attributes, name = mld$name)))
 
     class(folds) <- "mldr.folds"
     folds
