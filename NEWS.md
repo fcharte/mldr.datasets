@@ -25,7 +25,18 @@ First release of *mldr.datasets*. This version includes:
     }
     </pre>
     
-    * birds
+    * **birds**
+    <pre>
+    @article{,
+          title="Acoustic classification of multiple simultaneous bird species: A multi-instance multi-label approach",
+          author="Briggs, F. and Lakshminarayanan, B. and Neal, L. and Fern, X. Z. and Raich, R. and Hadley, S. J. K. and Hadley, A. S. and Betts, M. G.",
+          journal="The Journal of the Acoustical Society of America",
+          volume="131",
+          number="6",
+          pages="4640--4650",
+          year="2012"
+    }
+  </pre>
 
     * **bookmarks**
     <pre>
@@ -38,6 +49,44 @@ First release of *mldr.datasets*. This version includes:
     }
     </pre>
 
+    * **cal500**
+    <pre>
+    @article{,
+          title="Semantic annotation and retrieval of music and sound effects",
+          author="Turnbull, Douglas and Barrington, Luke and Torres, David and Lanckriet, Gert",
+          journal="Audio, Speech, and Language Processing, IEEE Transactions on",
+          volume="16",
+          number="2",
+          pages="467--476",
+          year="2008"
+    }    
+    </pre>
+    
+    * **corel16k** - 10 subsets of corel16k dataset (`corel16k001` to `corel16k010`)
+    <pre>
+    @article{,
+          title = "Matching words and pictures",
+          author = "Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I.",
+          journal = "Journal of Machine Learning Research",
+          year = "2003",
+          volume = "3",
+          pages = "1107--1135",
+    }    
+    </pre>
+    
+    * **corel5k**
+    <pre>
+    @incollection{,
+          title="Object Recognition as Machine Translation: Learning a Lexicon for a Fixed Image Vocabulary",
+          author="Duygulu, P. and Barnard, K. and de Freitas, J.F.G. and Forsyth, D.A.",
+          year="2002",
+          booktitle="Computer Vision, ECCV 2002",
+          volume="2353",
+          series="LNCS",
+          pages="97-112"
+    }
+    </pre>
+
     * **delicious**
     <pre>
     @inproceedings{,
@@ -47,6 +96,19 @@ First release of *mldr.datasets*. This version includes:
           pages = "30--44",
           year = "2008"
     }
+    </pre>
+
+    * **emotions**
+    <pre>
+    @incollection{,
+          title = "Multi-Label Classification of Emotions in Music",
+          author = "Wieczorkowska, A. and Synak, P. and Ra\'{s}, Z.",
+          booktitle = "Intelligent Information Processing and Web Mining",
+          year = "2006",
+          volume = "35",
+          chapter = "30",
+          pages = "307--315"
+    }    
     </pre>
 
     * **enron**
@@ -70,6 +132,41 @@ First release of *mldr.datasets*. This version includes:
           year="2008"
     }    
     </pre>
+    
+    * **flags**
+    <pre>
+    @inproceedings{,
+          title="A genetic algorithm for optimizing the label ordering in multi-label classifier chains",
+          author="Goncalves, E. C. and Plastino, A. and Freitas, A. A.",
+          booktitle="Tools with Artificial Intelligence (ICTAI), 2013 IEEE 25th International Conference on",
+          pages="469--476",
+          year="2013",
+    }    
+    </pre>
+    
+    * **genbase**
+    <pre>
+    @inproceedings{,
+          title = "Protein Classification with Multiple Algorithms",
+          author = "Diplaris, S. and Tsoumakas, G. and Mitkas, P. and Vlahavas, I.",
+          booktitle = "Proc. 10th Panhellenic Conference on Informatics, Volos, Greece, PCI05",
+          year = "2005",
+          pages = "448--456"
+    }    
+    </pre>
+    
+    * **imdb**
+    <pre>
+    @article{,
+          title = "Classifier chains for multi-label classification",
+          author = "Read, J. and Pfahringer, B. and Holmes, G. and Frank, E.",
+          journal = "Machine Learning",
+          year = "2011",
+          volume="85",
+          issue="3",
+          pages = "333--359"
+    }    
+    </pre>
 
     * **langlog**
     <pre>
@@ -81,6 +178,17 @@ First release of *mldr.datasets*. This version includes:
     }
     </pre>
     
+    * **mediamill**
+    <pre>
+    @inproceedings{,
+          title = "The challenge problem for automated detection of 101 semantic concepts in multimedia",
+          author = "Snoek, C. G. M. and Worring, M. and van Gemert, J. C. and Geusebroek, J. M. and Smeulders, A. W. M.",
+          booktitle = "Proc. 14th ACM International Conference on Multimedia, MULTIMEDIA06,
+          year = "2006",
+          pages = "421--430"
+    }    
+    </pre>    
+    
     * **medical**
     <pre>
     @inproceedings{,
@@ -90,6 +198,17 @@ First release of *mldr.datasets*. This version includes:
           year = "2007",
           pages = "129--136"
     }
+    </pre>
+    
+    * **nuswide** - Dataset with original representation (`nuswide_BoW`) and cVLAD+ representation (`nuswide_VLAD`)
+    <pre>
+    @inproceedings{,
+          title="NUS-WIDE: a real-world web image database from National University of Singapore",
+          author="Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao",
+          booktitle="Proceedings of the ACM international conference on image and video retrieval",
+          pages="48",
+          year="2009",
+    }    
     </pre>
     
     * **ohsumed**
@@ -112,6 +231,19 @@ First release of *mldr.datasets*. This version includes:
           volume="5",
           pages="361--397",
           year="2004"
+    }    
+    </pre>
+    
+    * **scene**
+    <pre>
+    @article{,
+          title = "Learning multi-label scene classification",
+          author = "Boutell, M. and Luo, J. and Shen, X. and Brown, C.",
+          journal = "Pattern Recognition",
+          year = "2004",
+          volume = "37",
+          number = "9",
+          pages = "1757--1771",
     }    
     </pre>
     
@@ -151,7 +283,6 @@ First release of *mldr.datasets*. This version includes:
     }    
     </pre>
     
-    
     * **yahoo** - 11 datasets generated from Yahoo! directory (`yahoo_arts`, `yahoo_business`, `yahoo_computers`, `yahoo_education`, `yahoo_entertainment`, `yahoo_health`, `yahoo_recreation`, `yahoo_reference`, `yahoo_science`, `yahoo_social`, `yahoo_society`)
     <pre>
     @inproceedings{,
@@ -160,5 +291,17 @@ First release of *mldr.datasets*. This version includes:
           booktitle="Advances in neural information processing systems",
           pages="721--728",
           year="2002"
+    }    
+    </pre>
+    
+    * **yeast**
+    <pre>
+    @inproceedings{,
+          title = "A Kernel Method for Multi-Labelled Classification",
+          author = "Elisseeff, A. and Weston, J.",
+          booktitle = "Advances in Neural Information Processing Systems",
+          year = "2001",
+          volume = "14",
+          pages = "681--687",
     }    
     </pre>
