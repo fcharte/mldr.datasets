@@ -14,8 +14,10 @@ yahoo_society()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 yahoo_society()  # Check and load the dataset
 toBibtex(yahoo_society)
 yahoo_society$measures
+}
 }
 
