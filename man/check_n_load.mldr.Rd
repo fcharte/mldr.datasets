@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{check_n_load.mldr}
 \alias{check_n_load.mldr}
-\title{Checks if an mldr object is locally available and downloads it if necessary}
+\title{Check if an mldr object is locally available and download it if needed}
 \usage{
 check_n_load.mldr(mldr.name)
 }

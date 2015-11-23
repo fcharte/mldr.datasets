@@ -1,5 +1,5 @@
-#' Partitions an mldr object into k folds
-#' @description This method randomly partitions the given dataset into k folds, provinding training and test partitions for each fold.
+#' Partition an mldr object into k folds
+#' @description This method randomly partitions the given dataset into k folds, providing training and test partitions for each fold.
 #' @param mld The \code{mldr} object to be partitioned
 #' @param k The number of folds to be generated. By default is 5
 #' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
@@ -19,8 +19,8 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
   internal.kfolds(mld, k, seed, "random")
 }
 
-#' Partitions an mldr object into k folds
-#' @description This method partitions the given dataset into k folds using a stratified strategy, provinding training and test partitions for each fold.
+#' Partition an mldr object into k folds
+#' @description This method partitions the given dataset into k folds using a stratified strategy, providing training and test partitions for each fold.
 #' @param mld The \code{mldr} object to be partitioned
 #' @param k The number of folds to be generated. By default is 5
 #' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing

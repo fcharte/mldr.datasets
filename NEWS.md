@@ -1,16 +1,16 @@
-## mldr.datasets 0.0.0.9000
+## mldr.datasets 0.3
 
 First release of *mldr.datasets*. This version includes:
 
 * 59 prebuilt `mldr` objects/functions corresponding to the multilabel datasets detailed below.
-* Generic `check_n_load.mldr` function to download new objects hosted in the repository
+* Function `check_n_load.mldr` able to download new objects hosted in the repository
 * Specific implementation of the generic `toBibtex` function for `mldr` objects
 * `random.kfolds` and `stratified.kfolds` for dataset partitioning
-* `write.mldr` function to export `mldr`object to MULAN, MEKA, KEEL, LibSVM and CSV file formats
+* `write.mldr` function to export `mldr` objects to MULAN, MEKA, KEEL, LibSVM and CSV file formats
 
 * The list of mldr objects ready to be used generated from the following multilabel datasets:
     * **20ng** 
-    <pre>
+    ~~~
     @inproceedings{,
           author = "Ken Lang",
           title = "Newsweeder: Learning to filter netnews",
@@ -18,10 +18,10 @@ First release of *mldr.datasets*. This version includes:
           pages = "331--339",
           year = "1995"
     }
-    </pre>
+    ~~~
 
     * **bibtex**
-    <pre>
+    ~~~
     @inproceedings{,
           author = "Katakis, I. and Tsoumakas, G. and Vlahavas, I.",
           title = "Multilabel Text Classification for Automated Tag Suggestion",
@@ -29,10 +29,10 @@ First release of *mldr.datasets*. This version includes:
           pages = "75-83",
           year = "2008"
     }
-    </pre>
+    ~~~
     
     * **birds**
-    <pre>
+    ~~~
     @article{,
           title="Acoustic classification of multiple simultaneous bird species: A multi-instance multi-label approach",
           author="Briggs, F. and Lakshminarayanan, B. and Neal, L. and Fern, X. Z. and Raich, R. and Hadley, S. J. K. and Hadley, A. S. and Betts, M. G.",
@@ -42,10 +42,10 @@ First release of *mldr.datasets*. This version includes:
           pages="4640--4650",
           year="2012"
     }
-    </pre>
+    ~~~
 
     * **bookmarks**
-    <pre>
+    ~~~
     @inproceedings{,
           author = "Katakis, I. and Tsoumakas, G. and Vlahavas, I.",
           title = "Multilabel Text Classification for Automated Tag Suggestion",
@@ -53,10 +53,10 @@ First release of *mldr.datasets*. This version includes:
           pages = "75-83",
           year = "2008"
     }
-    </pre>
+    ~~~
 
     * **cal500**
-    <pre>
+    ~~~
     @article{,
           title="Semantic annotation and retrieval of music and sound effects",
           author="Turnbull, Douglas and Barrington, Luke and Torres, David and Lanckriet, Gert",
@@ -66,10 +66,10 @@ First release of *mldr.datasets*. This version includes:
           pages="467--476",
           year="2008"
     }    
-    </pre>
+    ~~~
     
     * **corel16k** - 10 subsets of corel16k dataset (`corel16k001` to `corel16k010`)
-    <pre>
+    ~~~
     @article{,
           title = "Matching words and pictures",
           author = "Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I.",
@@ -78,10 +78,10 @@ First release of *mldr.datasets*. This version includes:
           volume = "3",
           pages = "1107--1135",
     }    
-    </pre>
+    ~~~
     
     * **corel5k**
-    <pre>
+    ~~~
     @incollection{,
           title="Object Recognition as Machine Translation: Learning a Lexicon for a Fixed Image Vocabulary",
           author="Duygulu, P. and Barnard, K. and de Freitas, J.F.G. and Forsyth, D.A.",
@@ -91,10 +91,10 @@ First release of *mldr.datasets*. This version includes:
           series="LNCS",
           pages="97-112"
     }
-    </pre>
+    ~~~
 
     * **delicious**
-    <pre>
+    ~~~
     @inproceedings{,
           author = "Tsoumakas, G. and Katakis, I. and Vlahavas, I.",
           title = "Effective and Efficient Multilabel Classification in Domains with Large Number of Labels",
@@ -102,10 +102,10 @@ First release of *mldr.datasets*. This version includes:
           pages = "30--44",
           year = "2008"
     }
-    </pre>
+    ~~~
 
     * **emotions**
-    <pre>
+    ~~~
     @incollection{,
           title = "Multi-Label Classification of Emotions in Music",
           author = "Wieczorkowska, A. and Synak, P. and Ra\'{s}, Z.",
@@ -115,10 +115,10 @@ First release of *mldr.datasets*. This version includes:
           chapter = "30",
           pages = "307--315"
     }    
-    </pre>
+    ~~~
 
     * **enron**
-    <pre>
+    ~~~
     @incollection{,
           author = "Klimt, B. and Yang, Y.",
           title = "The Enron Corpus: A New Dataset for Email Classification Research",
@@ -126,10 +126,10 @@ First release of *mldr.datasets*. This version includes:
           pages = "217--226",
           year = "2004"
     }
-    </pre>
+    ~~~
     
     * **eurlex** - Training and test subsets of the DC (`eurlexdc_tra` and `eurlexdc_test`), EV (`eurlexev_tra` and `eurlexev_test`) and SM (`eurlexsm_tra` and `eurlexsm_test`) datasets
-    <pre>
+    ~~~
     @incollection{,
           title="Efficient pairwise multilabel classification for large-scale problems in the legal domain",
           author="Mencia, E. L. and F{\"u}rnkranz, J.",
@@ -137,10 +137,10 @@ First release of *mldr.datasets*. This version includes:
           pages="50--65",
           year="2008"
     }    
-    </pre>
+    ~~~
     
     * **flags**
-    <pre>
+    ~~~
     @inproceedings{,
           title="A genetic algorithm for optimizing the label ordering in multi-label classifier chains",
           author="Goncalves, E. C. and Plastino, A. and Freitas, A. A.",
@@ -148,10 +148,10 @@ First release of *mldr.datasets*. This version includes:
           pages="469--476",
           year="2013",
     }    
-    </pre>
+    ~~~
     
     * **genbase**
-    <pre>
+    ~~~
     @inproceedings{,
           title = "Protein Classification with Multiple Algorithms",
           author = "Diplaris, S. and Tsoumakas, G. and Mitkas, P. and Vlahavas, I.",
@@ -159,10 +159,10 @@ First release of *mldr.datasets*. This version includes:
           year = "2005",
           pages = "448--456"
     }    
-    </pre>
+    ~~~
     
     * **imdb**
-    <pre>
+    ~~~
     @article{,
           title = "Classifier chains for multi-label classification",
           author = "Read, J. and Pfahringer, B. and Holmes, G. and Frank, E.",
@@ -172,20 +172,20 @@ First release of *mldr.datasets*. This version includes:
           issue="3",
           pages = "333--359"
     }    
-    </pre>
+    ~~~
 
     * **langlog**
-    <pre>
+    ~~~
     @phdthesis{,
           title="Scalable multi-label classification",
           author="Read, Jesse",
           year="2010",
           school="University of Waikato"
     }
-    </pre>
+    ~~~
     
     * **mediamill**
-    <pre>
+    ~~~
     @inproceedings{,
           title = "The challenge problem for automated detection of 101 semantic concepts in multimedia",
           author = "Snoek, C. G. M. and Worring, M. and van Gemert, J. C. and Geusebroek, J. M. and Smeulders, A. W. M.",
@@ -193,10 +193,10 @@ First release of *mldr.datasets*. This version includes:
           year = "2006",
           pages = "421--430"
     }    
-    </pre>    
+    ~~~    
     
     * **medical**
-    <pre>
+    ~~~
     @inproceedings{,
           title = "Automatic Code Assignment to Medical Text",
           author = "Crammer, K. and Dredze, M. and Ganchev, K. and Talukdar, P. P. and Carroll, S.",
@@ -204,10 +204,10 @@ First release of *mldr.datasets*. This version includes:
           year = "2007",
           pages = "129--136"
     }
-    </pre>
+    ~~~
     
     * **nuswide** - Dataset with original representation (`nuswide_BoW`) and cVLAD+ representation (`nuswide_VLAD`)
-    <pre>
+    ~~~
     @inproceedings{,
           title="NUS-WIDE: a real-world web image database from National University of Singapore",
           author="Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao",
@@ -215,10 +215,10 @@ First release of *mldr.datasets*. This version includes:
           pages="48",
           year="2009",
     }    
-    </pre>
+    ~~~
     
     * **ohsumed**
-    <pre>
+    ~~~
     @inproceedings{,
           title="Text Categorization with Suport Vector Machines: Learning with Many Relevant Features",
           author="Joachims, Thorsten",
@@ -226,10 +226,10 @@ First release of *mldr.datasets*. This version includes:
           pages="137--142",
           year="1998"
     }    
-    </pre>
+    ~~~
     
     * **rcv1** - Five subsets of the RCV1 dataset with all the features (`rcv1sub1` to `rcv1sub5`) and a subset with only 500 features selected (`reutersk500`)
-    <pre>
+    ~~~
     @article{,
           title="RCV1: A new benchmark collection for text categorization research",
           author="Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F.",
@@ -238,10 +238,10 @@ First release of *mldr.datasets*. This version includes:
           pages="361--397",
           year="2004"
     }    
-    </pre>
+    ~~~
     
     * **scene**
-    <pre>
+    ~~~
     @article{,
           title = "Learning multi-label scene classification",
           author = "Boutell, M. and Luo, J. and Shen, X. and Brown, C.",
@@ -251,10 +251,10 @@ First release of *mldr.datasets*. This version includes:
           number = "9",
           pages = "1757--1771",
     }    
-    </pre>
+    ~~~
     
     * **slashdot**
-    <pre>
+    ~~~
     @article{,
           title = "Classifier chains for multi-label classification",
           author = "Read, J. and Pfahringer, B. and Holmes, G. and Frank, E.",
@@ -264,10 +264,10 @@ First release of *mldr.datasets*. This version includes:
           issue = "3",
           pages = "333--359"
     }    
-    </pre>
+    ~~~
     
     * **stackex** - Set of six datasets (`stackex_chemistry`, `stackex_chess`, `stackex_coffee`, `stackex_cooking`, `stackex_cs` and `stackex_philosophy`) generated from Stack Exchange forums
-    <pre>
+    ~~~
     @inproceedings{,
           title="QUINTA: A question tagging assistant to improve the answering ratio in electronic forums",
           author="Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco",
@@ -276,10 +276,10 @@ First release of *mldr.datasets*. This version includes:
           pages="1-6",
           month="Sept"
     }    
-    </pre>
+    ~~~
 
     * **tmc2007** - Full dataset (`tmc2007`) and version with only 500 features selected (`tmc2007_500`)
-    <pre>
+    ~~~
     @inproceedings{,
           title="Discovering recurring anomalies in text reports regarding complex space systems",
           author="Srivastava, A. N. and Zane-Ulman, B.",
@@ -287,10 +287,10 @@ First release of *mldr.datasets*. This version includes:
           pages="3853--3862",
           year="2005",
     }    
-    </pre>
+    ~~~
     
     * **yahoo** - 11 datasets generated from Yahoo! directory (`yahoo_arts`, `yahoo_business`, `yahoo_computers`, `yahoo_education`, `yahoo_entertainment`, `yahoo_health`, `yahoo_recreation`, `yahoo_reference`, `yahoo_science`, `yahoo_social`, `yahoo_society`)
-    <pre>
+    ~~~
     @inproceedings{,
           title="Parametric mixture models for multi-labeled text",
           author="Ueda, N. and Saito, K.",
@@ -298,10 +298,10 @@ First release of *mldr.datasets*. This version includes:
           pages="721--728",
           year="2002"
     }    
-    </pre>
+    ~~~
     
     * **yeast**
-    <pre>
+    ~~~
     @inproceedings{,
           title = "A Kernel Method for Multi-Labelled Classification",
           author = "Elisseeff, A. and Weston, J.",
@@ -310,4 +310,4 @@ First release of *mldr.datasets*. This version includes:
           volume = "14",
           pages = "681--687",
     }    
-    </pre>
+    ~~~

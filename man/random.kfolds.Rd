@@ -2,7 +2,7 @@
 % Please edit documentation in R/kfolds.R
 \name{random.kfolds}
 \alias{random.kfolds}
-\title{Partitions an mldr object into k folds}
+\title{Partition an mldr object into k folds}
 \usage{
 random.kfolds(mld, k = 5, seed = 10)
 }
@@ -19,7 +19,7 @@ An \code{mldr.folds} object. This is a list containing k elements, one for each 
 of two mldr objects, called \code{train} and \code{test}
 }
 \description{
-This method randomly partitions the given dataset into k folds, provinding training and test partitions for each fold.
+This method randomly partitions the given dataset into k folds, providing training and test partitions for each fold.
 }
 \examples{
 \dontrun{
