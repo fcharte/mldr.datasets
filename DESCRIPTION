@@ -1,6 +1,6 @@
 Package: mldr.datasets
-Title: The universal multilabel dataset repository for R
-Version: 0.0.0.9000
+Title: R Ultimate Multilabel Dataset Repository
+Version: 0.3
 Date: 2015-11-10
 Authors@R: c( person("David", "Charte", email = "fdavidcl@outlook.com", role =
     "cre"), person("Francisco", "Charte", email = "francisco@fcharte.com", role

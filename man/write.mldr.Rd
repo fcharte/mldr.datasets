@@ -2,7 +2,7 @@
 % Please edit documentation in R/export.R
 \name{write.mldr}
 \alias{write.mldr}
-\title{Exports an mldr object or set of mldr objects to different file formats}
+\title{Export an mldr object or set of mldr objects to different file formats}
 \usage{
 write.mldr(mld, format = c("MULAN", "MEKA"), sparse = FALSE,
   basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0, mld$name,
@@ -14,7 +14,7 @@ write.mldr(mld, format = c("MULAN", "MEKA"), sparse = FALSE,
 \item{format}{A vector of strings stating the desired file formats. It can contain the values \code{'MULAN'}, \code{'MEKA'},
 \code{'KEEL'}, \code{'CSV'} and \code{'LIBSVM'}}
 
-\item{sparse}{Boolean value indicating for ARFF-based file formats if sparse representation has to be used}
+\item{sparse}{Boolean value indicating if sparse representation has to be used for ARFF-based file formats}
 
 \item{basename}{Base name for the files. \code{'unnamed_mldr'} is used by default}
 }

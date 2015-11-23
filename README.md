@@ -58,3 +58,22 @@ The `toBibtex` S3 method returns bibliographic information about the dataset, if
 
 
 For more examples and detailed explanation on available functions, please refer to the documentation.
+
+## License
+
+This software is distributed under the following terms:
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+The datasets distributed within this software and inside this repository are propierty of their own authors. You can find authorship and citation information inside the [`additional-data`](https://github.com/fcharte/mldr.datasets/tree/master/additional-data) folder.

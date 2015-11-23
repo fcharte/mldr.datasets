@@ -2,7 +2,7 @@
 % Please edit documentation in R/kfolds.R
 \name{stratified.kfolds}
 \alias{stratified.kfolds}
-\title{Partitions an mldr object into k folds}
+\title{Partition an mldr object into k folds}
 \usage{
 stratified.kfolds(mld, k = 5, seed = 10)
 }
@@ -19,7 +19,7 @@ An \code{mldr.folds} object. This is a list containing k elements, one for each 
 of two mldr objects, called \code{train} and \code{test}
 }
 \description{
-This method partitions the given dataset into k folds using a stratified strategy, provinding training and test partitions for each fold.
+This method partitions the given dataset into k folds using a stratified strategy, providing training and test partitions for each fold.
 }
 \examples{
 \dontrun{

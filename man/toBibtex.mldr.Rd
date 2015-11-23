@@ -2,7 +2,7 @@
 % Please edit documentation in R/toBibTeX.R
 \name{toBibtex.mldr}
 \alias{toBibtex.mldr}
-\title{Returns the BibTeX entry associated to the mldr object given as input}
+\title{BibTeX entry associated to an mldr object}
 \usage{
 \method{toBibtex}{mldr}(object, ...)
 }

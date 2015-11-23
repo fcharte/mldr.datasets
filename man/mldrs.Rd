@@ -2,13 +2,13 @@
 % Please edit documentation in R/utils.R
 \name{mldrs}
 \alias{mldrs}
-\title{Obtains and shows the list of additional datasets, those available to download}
+\title{Obtain and show a list of additional datasets available to download}
 \usage{
 mldrs()
 }
 \description{
-The function downloads from GitHub the most up to date list of additional datasets. Those are the datasets not
-included into the package, but that can be downloaded and save locally.
+The function downloads from GitHub the most up to date list of additional datasets. Those datasets are not
+included into the package, but can be downloaded and saved locally.
 }
 \examples{
 \dontrun{
