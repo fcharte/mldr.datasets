@@ -1,4 +1,4 @@
-#' Returns the BibTeX entry associated to the mldr object given as input
+#' BibTeX entry associated to an mldr object
 #' @description Gets the content of the \code{bibtex} member of the \code{mldr} object and returns it
 #' @param object The mldr object whose BibTeX entry is needed
 #' @param ... Additional parameters from the generic toBibtex function not used by toBibtex.mldr
