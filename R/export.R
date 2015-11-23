@@ -15,11 +15,22 @@
 # libSVM format
 # export correct attribute type
 
-# 'write' method for mldr that will open the file, check parameters, etc., then call the proper write.FORMAT function
+#' Exports an mldr object or set of mldr objects to different file formats
+#' @description Writes one or more files in the specified formats with the content of the \code{mldr} or \code{mldr.folds} given as parameter
+#' @param mld The \code{mldr/mldr.folds} object to be exported
+#' @param format A vector of strings stating the desired file formats. It can contain the values \code{'MULAN'}, \code{'MEKA'},
+#' \code{'KEEL'}, \code{'CSV'} and \code{'LIBSVM'}
+#' @param sparse Boolean value indicating for ARFF-based file formats if sparse representation has to be used
+#' @param basename Base name for the files. \code{'unnamed_mldr'} is used by default
+#' @examples
+#'\dontrun{
+#' library(mldr.datasets)
+#' write.mldr(emotions, format = c('CSV', 'KEEL'))
+#' }
 #' @export
 write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
                                                                                                           mld$name,
-                                                                                                          "unnamed_mldr"), ...) {
+                                                                                                          "unnamed_mldr")) {
   format <- toupper(format)
   available.formats <- c("MULAN", "MEKA", "KEEL", "CSV", "LIBSVM")
 
