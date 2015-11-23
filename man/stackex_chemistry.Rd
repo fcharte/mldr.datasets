@@ -14,8 +14,10 @@ stackex_chemistry()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 stackex_chemistry()  # Check and load the dataset
 toBibtex(stackex_chemistry)
 stackex_chemistry$measures
+}
 }
 
