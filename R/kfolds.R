@@ -6,7 +6,7 @@
 #' different samples, for instance to use a 2x5 fcv strategy
 #' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 #' of two mldr objects, called \code{train} and \code{test}
-#'  @examples
+#' @examples
 #'\dontrun{
 #' library(mldr.datasets)
 #' library(mldr)
@@ -27,7 +27,7 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
 #' different samples, for instance to use a 2x5 fcv strategy
 #' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 #' of two mldr objects, called \code{train} and \code{test}
-#'  @examples
+#' @examples
 #'\dontrun{
 #' library(mldr.datasets)
 #' library(mldr)

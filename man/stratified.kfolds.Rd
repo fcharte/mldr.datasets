@@ -17,7 +17,11 @@ different samples, for instance to use a 2x5 fcv strategy}
 \value{
 An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 of two mldr objects, called \code{train} and \code{test}
- @examples
+}
+\description{
+This method partitions the given dataset into k folds using a stratified strategy, provinding training and test partitions for each fold.
+}
+\examples{
 \dontrun{
 library(mldr.datasets)
 library(mldr)
@@ -25,8 +29,5 @@ folds.emotions <- stratified.kfolds(emotions)
 summary(folds.emotions[[1]]$train)
 summary(folds.emotions[[1]]$test)
 }
-}
-\description{
-This method partitions the given dataset into k folds using a stratified strategy, provinding training and test partitions for each fold.
 }
 
