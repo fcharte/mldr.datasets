@@ -15,8 +15,10 @@ slashdot
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 toBibtex(slashdot)
 slashdot$measures
+}
 }
 \keyword{datasets}
 
