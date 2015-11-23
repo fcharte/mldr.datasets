@@ -1,0 +1,51 @@
+Name,Description,Instances,Attributes,Labels
+bibtex,Dataset with BibTeX entries,7395,1836,159
+bookmarks,Dataset with data from web bookmarks and their categories,87856,2100,208
+corel16k001,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13766,500,153
+corel16k002,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13761,500,164
+corel16k003,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13760,500,154
+corel16k004,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13837,500,162
+corel16k005,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13847,500,160
+corel16k006,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13859,500,162
+corel16k007,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13915,500,174
+corel16k008,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13864,500,168
+corel16k009,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13884,500,173
+corel16k010,Datasets with data from the Corel image collection. There are 10 subsets in corel16k,13618,500,144
+corel5k,Dataset with data from the Corel image collection,5000,499,374
+delicious,Dataset generated from the del.icio.us site bookmarks,16105,500,983
+enron,Dataset with email messages and the folders where the users stored them,1702,1001,53
+eurlexdc_test,List  with 10 folds of the test data from the EUR-Lex directory codes dataset,1935,5000,412
+eurlexdc_tra,List  with 10 folds of the train data from the EUR-Lex directory codes dataset,17413,5000,412
+eurlexev_test,List  with 10 folds of the test data from the EUR-Lex EUROVOC descriptors dataset,1935,5000,3993
+eurlexev_tra,List  with 10 folds of the train data from the EUR-Lex EUROVOC descriptors dataset,17413,5000,3993
+eurlexsm_test,List  with 10 folds of the test data from the EUR-Lex subject matters dataset,1935,5000,201
+eurlexsm_tra,List  with 10 folds of the test data from the EUR-Lex subject matters dataset,17413,5000,201
+imdb,Dataset generated from the IMDB film database,120919,1001,28
+mediamill,Dataset with features extracted from video sequences and semantic concepts assigned as labels,43907,120,101
+nuswide_BoW,Dataset obtained from the NUS-WIDE database with BoW representation,269648,501,81
+nuswide_VLAD,Dataset obtained from the NUS-WIDE database with cVLAD+ representation,269648,129,81
+ohsumed,Dataset generated from a subset of the Medline database,13929,1002,23
+rcv1sub1,Dataset from the Reuters corpus (subset 1),6000,47236,101
+rcv1sub2,Dataset from the Reuters corpus (subset 2),6000,47236,101
+rcv1sub3,Dataset from the Reuters corpus (subset 3),6000,47236,101
+rcv1sub4,Dataset from the Reuters corpus (subset 4),6000,47229,101
+rcv1sub5,Dataset from the Reuters corpus (subset 5),6000,47235,101
+reutersk500,Dataset from the Reuters Corpus with the 500 most relevant features selected,6000,500,103
+stackex_chemistry,Dataset from the Stack Exchange's chemistry forum,6961,540,175
+stackex_cooking,Dataset from the Stack Exchange's cooking forum,10491,577,400
+stackex_cs,Dataset from the Stack Exchange's computer science forum,9270,635,274
+stackex_philosophy,Dataset from the Stack Exchange's philosophy forum,3971,842,233
+tmc2007,Dataset from airplanes failures reports,28596,49060,22
+tmc2007_500,Dataset from airplanes failures reports (500 most relevant features extracted),28596,500,22
+yahoo_arts,Dataset generated from the Yahoo! web site index (arts category),7484,23146,26
+yahoo_business,Dataset generated from the Yahoo! web site index (business category),11214,21924,30
+yahoo_computers,Dataset generated from the Yahoo! web site index (computers category),12444,34096,33
+yahoo_education,Dataset generated from the Yahoo! web site index (education category),12030,27534,33
+yahoo_entertainment,Dataset generated from the Yahoo! web site index (education entertainment),12730,32001,21
+yahoo_health,Dataset generated from the Yahoo! web site index (health category),9205,30605,32
+yahoo_recreation,Dataset generated from the Yahoo! web site index (recreation category),12828,30324,22
+yahoo_reference,Dataset generated from the Yahoo! web site index (reference category),8027,39679,33
+yahoo_science,Dataset generated from the Yahoo! web site index (science category),6428,37187,40
+yahoo_social,Dataset generated from the Yahoo! web site index (social category),12111,52350,39
+yahoo_society,Dataset generated from the Yahoo! web site index (society category),14512,31802,27
+yeast,Dataset with protein profiles and their categories,2417,103,14

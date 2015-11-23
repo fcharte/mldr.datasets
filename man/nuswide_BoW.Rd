@@ -14,8 +14,10 @@ nuswide_BoW()
 Multilabel dataset from the image domain.
 }
 \examples{
+\dontrun{
 nuswide_BoW()  # Check and load the dataset
 toBibtex(nuswide_BoW)
 nuswide_BoW$measures
+}
 }
 

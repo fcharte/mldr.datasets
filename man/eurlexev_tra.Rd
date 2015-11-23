@@ -14,8 +14,10 @@ eurlexev_tra()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 eurlexev_tra()  # Check and load the dataset
 toBibtex(eurlexev_tra[[1]])
 eurlexev_tra[[1]]$measures
+}
 }
 

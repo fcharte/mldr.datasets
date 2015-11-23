@@ -6,7 +6,7 @@
 #' different samples, for instance to use a 2x5 fcv strategy
 #' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 #' of two mldr objects, called \code{train} and \code{test}
-#'  @examples
+#' @examples
 #'\dontrun{
 #' library(mldr.datasets)
 #' library(mldr)
@@ -27,7 +27,7 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
 #' different samples, for instance to use a 2x5 fcv strategy
 #' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 #' of two mldr objects, called \code{train} and \code{test}
-#'  @examples
+#' @examples
 #'\dontrun{
 #' library(mldr.datasets)
 #' library(mldr)
@@ -44,6 +44,9 @@ stratified.kfolds <- function(mld, k = 5, seed = 10) {
 internal.kfolds <- function(mld, k, seed, type = "random") {
   if (class(mld) != 'mldr')
     stop(paste(substitute(mld), "isn't an mldr object"))
+
+  if(!k > 1)
+    stop('k > 1 required')
 
   if (requireNamespace("mldr", quietly = TRUE)) {
     set.seed(seed)
@@ -68,8 +71,8 @@ internal.kfolds <- function(mld, k, seed, type = "random") {
     }
 
     folds <- lapply(folds, function(fold) list(
-      train = mldr_from_dataframe(dataset[-fold,], labels, mld$name),
-      test = mldr_from_dataframe(dataset[fold,], labels, mld$name)))
+      train = mldr::mldr_from_dataframe(dataset[-fold,], labelIndices = labels, attributes = mld$attributes, name = mld$name),
+      test = mldr::mldr_from_dataframe(dataset[fold,], labelIndices = labels, attributes = mld$attributes, name = mld$name)))
 
     class(folds) <- "mldr.folds"
     folds

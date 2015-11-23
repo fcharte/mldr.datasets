@@ -15,8 +15,10 @@ stackex_chess
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 toBibtex(stackex_chess)
 stackex_chess$measures
+}
 }
 \keyword{datasets}
 

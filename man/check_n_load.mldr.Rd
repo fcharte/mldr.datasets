@@ -14,9 +14,10 @@ This function checks if the mldr object whose name is given as input is locally 
 If necessary, the dataset will be downloaded from the GitHub repository and saved locally.
 }
 \examples{
-
+\dontrun{
 library(mldr.datasets)
 check_n_load.mldr("bibtex")
 bibtex$measures
+}
 }
 

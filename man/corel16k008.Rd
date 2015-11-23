@@ -14,8 +14,10 @@ corel16k008()
 Multilabel dataset from the image domain.
 }
 \examples{
+\dontrun{
 corel16k008()  # Check and load the dataset
 toBibtex(corel16k008)
 corel16k008$measures
+}
 }
 

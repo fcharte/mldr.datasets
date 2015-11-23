@@ -15,8 +15,10 @@ scene
 Multilabel dataset from the image domain.
 }
 \examples{
+\dontrun{
 toBibtex(scene)
 scene$measures
+}
 }
 \keyword{datasets}
 

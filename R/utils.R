@@ -3,10 +3,11 @@
 #' If necessary, the dataset will be downloaded from the GitHub repository and saved locally.
 #' @param mldr.name Name of the dataset to load
 #' @examples
-#'
+#'\dontrun{
 #' library(mldr.datasets)
 #' check_n_load.mldr("bibtex")
 #' bibtex$measures
+#' }
 #' @export
 check_n_load.mldr <- function(mldr.name) {
   if(exists(mldr.name, .GlobalEnv, mode = "list"))
@@ -29,14 +30,15 @@ check_n_load.mldr <- function(mldr.name) {
 #' @description The function downloads from GitHub the most up to date list of additional datasets. Those are the datasets not
 #' included into the package, but that can be downloaded and save locally.
 #' @examples
-#'
+#'\dontrun{
 #' library(mldr.datasets)
 #' mldrs()
+#' }
 #' @export
 mldrs <- function() {
   # availableMlds <- read.csv('https://github.com/fcharte/mldr.datasets/raw/master/additional-data/mldrs.csv')
   availableMlds <- read.csv("https://fcharte.github.io/mldr.datasets/availableMlds.csv", stringsAsFactors = F)
   save(availableMlds, file = paste0(find.package('mldr.datasets'), "/R/sysdata.rda"), compress = "gzip")
 
-  View(availableMlds, 'List of additional datasets available at the mldr.datasets repository')
+  View(availableMlds[-(length(availableMlds))], 'List of additional datasets available at the mldr.datasets repository')
 }

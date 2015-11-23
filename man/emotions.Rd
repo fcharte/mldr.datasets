@@ -15,8 +15,10 @@ emotions
 Multilabel dataset from the music domain.
 }
 \examples{
+\dontrun{
 toBibtex(emotions)
 emotions$measures
+}
 }
 \keyword{datasets}
 

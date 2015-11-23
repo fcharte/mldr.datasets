@@ -14,8 +14,10 @@ eurlexdc_test()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 eurlexdc_test()  # Check and load the dataset
 toBibtex(eurlexdc_test[[1]])
 eurlexdc_test[[1]]$measures
+}
 }
 

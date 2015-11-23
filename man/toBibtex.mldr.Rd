@@ -4,10 +4,12 @@
 \alias{toBibtex.mldr}
 \title{Returns the BibTeX entry associated to the mldr object given as input}
 \usage{
-\method{toBibtex}{mldr}(mld, ...)
+\method{toBibtex}{mldr}(object, ...)
 }
 \arguments{
-\item{mld}{The mldr object whose BibTeX entry is needed}
+\item{object}{The mldr object whose BibTeX entry is needed}
+
+\item{...}{Additional parameters from the generic toBibtex function not used by toBibtex.mldr}
 }
 \value{
 A string with the BibTeX entry
@@ -16,7 +18,9 @@ A string with the BibTeX entry
 Gets the content of the \code{bibtex} member of the \code{mldr} object and returns it
 }
 \examples{
+\dontrun{
 library(mldr.datasets)
 cat(toBibtex(emotions))
+}
 }
 
