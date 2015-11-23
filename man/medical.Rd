@@ -15,8 +15,10 @@ medical
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 toBibtex(medical)
 medical$measures
+}
 }
 \keyword{datasets}
 
