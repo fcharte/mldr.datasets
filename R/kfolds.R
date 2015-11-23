@@ -45,36 +45,36 @@ internal.kfolds <- function(mld, k, seed, type = "random") {
   if (class(mld) != 'mldr')
     stop(paste(substitute(mld), "isn't an mldr object"))
 
-  if (!isNamespaceLoaded("mldr"))
+  if (requireNamespace("mldr", quietly = TRUE)) {
+    set.seed(seed)
+    excmeasures <- (mld$measures$num.attributes+1):length(mld$dataset)
+    nrows <- mld$measures$num.instances
+    labels <- mld$labels$index
+
+    if(type == "random") {
+      dataset <- mld$dataset[sample(nrows), -excmeasures]
+      folds <- lapply(1:k,
+                      function(fold) (round(nrows/k*(fold-1))+1):round(nrows/k*fold))
+    } else {
+      dataset <- mld$dataset[ , -excmeasures]
+      dataset$weight <- apply(dataset[,labels], 1, function(row)
+        Reduce(`*`, mld$labels$freq[row == 1]))
+      dataset <- dataset[order(dataset$weight), -length(dataset)]
+      strats <- lapply(1:k, function(strat)
+        sample((round(nrows/k*(strat-1))+1):round(nrows/k*strat)))
+      folds <- lapply(1:k, function(fold)
+        unlist(sapply(strats, function(strat)
+          strat[(round(length(strats[strat])/k*(fold-1))+1):round(length(strats[strat])/k*fold)])))
+    }
+
+    folds <- lapply(folds, function(fold) list(
+      train = mldr::mldr_from_dataframe(dataset[-fold,], labels, mld$name),
+      test = mldr::mldr_from_dataframe(dataset[fold,], labels, mld$name)))
+
+    class(folds) <- "mldr.folds"
+    folds
+  } else
     stop('The mldr package must be loaded to run this function')
-
-  set.seed(seed)
-  excmeasures <- (mld$measures$num.attributes+1):length(mld$dataset)
-  nrows <- mld$measures$num.instances
-  labels <- mld$labels$index
-
-  if(type == "random") {
-    dataset <- mld$dataset[sample(nrows), -excmeasures]
-    folds <- lapply(1:k,
-                    function(fold) (round(nrows/k*(fold-1))+1):round(nrows/k*fold))
-  } else {
-    dataset <- mld$dataset[ , -excmeasures]
-    dataset$weight <- apply(dataset[,labels], 1, function(row)
-      Reduce(`*`, mld$labels$freq[row == 1]))
-    dataset <- dataset[order(dataset$weight), -length(dataset)]
-    strats <- lapply(1:k, function(strat)
-      sample((round(nrows/k*(strat-1))+1):round(nrows/k*strat)))
-    folds <- lapply(1:k, function(fold)
-      unlist(sapply(strats, function(strat)
-        strat[(round(length(strats[strat])/k*(fold-1))+1):round(length(strats[strat])/k*fold)])))
-  }
-
-  folds <- lapply(folds, function(fold) list(
-    train = mldr_from_dataframe(dataset[-fold,], labels, mld$name),
-    test = mldr_from_dataframe(dataset[fold,], labels, mld$name)))
-
-  class(folds) <- "mldr.folds"
-  folds
 }
 
 
