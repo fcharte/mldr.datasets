@@ -14,8 +14,10 @@ tmc2007_500()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 tmc2007_500()  # Check and load the dataset
 toBibtex(tmc2007_500)
 tmc2007_500$measures
+}
 }
 
