@@ -8,6 +8,7 @@
 #' library(mldr.datasets)
 #' cat(toBibtex(emotions))
 #' }
+#' @import utils
 #' @export
 toBibtex.mldr <- function(object, ...) {
   object$bibtex
