@@ -5,7 +5,8 @@
 #' @source Boutell, M. and Luo, J. and Shen, X. and Brown, C., "Learning multi-label scene classification", Pattern Recognition, (9)37, pp. 1757--1771, 2004
 #' @examples
 #'\dontrun{
+#' scene()
 #' toBibtex(scene)
 #' scene$measures
 #' }
-"scene"
+scene <- function() check_n_load.mldr('scene')
