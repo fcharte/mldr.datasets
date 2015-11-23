@@ -40,10 +40,10 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
   }
   if (!"mldr" %in% class(mld)) {
     if ("mldr.folds" %in% class(mld))
-      lapply(1:length(mld), function(i) {
+      invisible(lapply(1:length(mld), function(i) {
         write.mldr(mld[[i]]$train, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-tra') )
         write.mldr(mld[[i]]$test, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-test') )
-      })
+      }))
     else
       stop("Object must be of class mldr or mldr.folds")
   } else {

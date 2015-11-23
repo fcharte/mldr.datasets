@@ -45,6 +45,9 @@ internal.kfolds <- function(mld, k, seed, type = "random") {
   if (class(mld) != 'mldr')
     stop(paste(substitute(mld), "isn't an mldr object"))
 
+  if(!k > 1)
+    stop('k > 1 required')
+
   if (requireNamespace("mldr", quietly = TRUE)) {
     set.seed(seed)
     excmeasures <- (mld$measures$num.attributes+1):length(mld$dataset)
