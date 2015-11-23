@@ -15,8 +15,10 @@ flags
 Multilabel dataset from the image domain.
 }
 \examples{
+\dontrun{
 toBibtex(flags)
 flags$measures
+}
 }
 \keyword{datasets}
 

@@ -14,8 +14,10 @@ stackex_philosophy()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 stackex_philosophy()  # Check and load the dataset
 toBibtex(stackex_philosophy)
 stackex_philosophy$measures
+}
 }
 

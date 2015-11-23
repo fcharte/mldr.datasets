@@ -14,8 +14,10 @@ ohsumed()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 ohsumed()  # Check and load the dataset
 toBibtex(ohsumed)
 ohsumed$measures
+}
 }
 

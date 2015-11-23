@@ -15,8 +15,10 @@ birds
 Multilabel dataset from the sound domain.
 }
 \examples{
+\dontrun{
 toBibtex(birds)
 birds$measures
+}
 }
 \keyword{datasets}
 

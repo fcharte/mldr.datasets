@@ -14,8 +14,10 @@ rcv1sub3()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 rcv1sub3()  # Check and load the dataset
 toBibtex(rcv1sub3)
 rcv1sub3$measures
+}
 }
 

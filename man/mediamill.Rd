@@ -14,8 +14,10 @@ mediamill()
 Multilabel dataset from the video domain.
 }
 \examples{
+\dontrun{
 mediamill()  # Check and load the dataset
 toBibtex(mediamill)
 mediamill$measures
+}
 }
 
