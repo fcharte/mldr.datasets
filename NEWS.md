@@ -2,7 +2,7 @@
 
 First release of *mldr.datasets*. This version includes:
 
-* The following list of mldr objects:
+* The list of mldr objects ready to be used generated from the following multilabel datasets:
     * **20ng** 
     <pre>
     @inproceedings{,
@@ -60,7 +60,7 @@ First release of *mldr.datasets*. This version includes:
     }
     </pre>
     
-    * **eurlex**
+    * **eurlex** - Training and test subsets of the DC (`eurlexdc_tra` and `eurlexdc_test`), EV (`eurlexev_tra` and `eurlexev_test`) and SM (`eurlexsm_tra` and `eurlexsm_test`) datasets
     <pre>
     @incollection{,
           title="Efficient pairwise multilabel classification for large-scale problems in the legal domain",
@@ -81,3 +81,38 @@ First release of *mldr.datasets*. This version includes:
     }
     </pre>
     
+    * **medical**
+    <pre>
+    @inproceedings{,
+          title = "Automatic Code Assignment to Medical Text",
+          author = "Crammer, K. and Dredze, M. and Ganchev, K. and Talukdar, P. P. and Carroll, S.",
+          booktitle = "Proc. Workshop on Biological, Translational, and Clinical Language Processing,  Prague, Czech Republic, BioNLP07",
+          year = "2007",
+          pages = "129--136"
+    }
+    </pre>
+    
+    * **ohsumed**
+    <pre>
+    @inproceedings{,
+          title="Text Categorization with Suport Vector Machines: Learning with Many Relevant Features",
+          author="Joachims, Thorsten",
+          booktitle="Proc. 10th European Conference on Machine Learning",
+          pages="137--142",
+          year="1998"
+    }    
+    </pre>
+    
+    * **rcv1** - Five subsets of the RCV1 dataset with all the features (`rcv1sub1` to `rcv1sub5`) and a subset with only 500 features selected (`reutersk500`)
+    <pre>
+    @article{,
+          title="RCV1: A new benchmark collection for text categorization research",
+          author="Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F.",
+          journal="The Journal of Machine Learning Research",
+          volume="5",
+          pages="361--397",
+          year="2004"
+    }    
+    </pre>
+    
+
