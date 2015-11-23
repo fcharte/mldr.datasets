@@ -40,71 +40,75 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
   }
   if (!"mldr" %in% class(mld)) {
     if ("mldr.folds" %in% class(mld))
-      lapply(1:length(mld), function(i) write(m[[i]], format, sparse, basename = paste0(basename, "_folds_", i) ))
+      lapply(1:length(mld), function(i) {
+        write.mldr(mld[[i]]$train, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-tra') )
+        write.mldr(mld[[i]]$test, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-test') )
+      })
     else
       stop("Object must be of class mldr or mldr.folds")
-  }
+  } else {
 
-  inform <- function(name) cat(paste0("Wrote file ", name, "\n"))
+    inform <- function(name) cat(paste0("Wrote file ", name, "\n"))
 
-  if ("MULAN" %in% format) {
-    # Open and write ARFF file
-    if (!"MEKA" %in% format) {
+    if ("MULAN" %in% format) {
+      # Open and write ARFF file
+      if (!"MEKA" %in% format) {
+        name <- paste0(basename, ".arff")
+        arffConnection <- file(name)
+        writeLines(export.mulan(mld, sparse), arffConnection)
+        close(arffConnection)
+        inform(name)
+      }
+
+      # Open and write XML file
+      name <- paste0(basename, ".xml")
+      xmlConnection <- file(name)
+      writeLines(export.xml(mld), xmlConnection)
+      close(xmlConnection)
+      inform(name)
+    }
+
+    if ("MEKA" %in% format) {
+      # Open and write ARFF file
       name <- paste0(basename, ".arff")
       arffConnection <- file(name)
-      writeLines(export.mulan(mld, sparse), arffConnection)
+      writeLines(export.meka(mld, sparse), arffConnection)
       close(arffConnection)
       inform(name)
     }
 
-    # Open and write XML file
-    name <- paste0(basename, ".xml")
-    xmlConnection <- file(name)
-    writeLines(export.xml(mld), xmlConnection)
-    close(xmlConnection)
-    inform(name)
-  }
+    if ("KEEL" %in% format) {
+      # Open and write DAT file
+      name <- paste0(basename, ".dat")
+      datConnection <- file(name)
+      writeLines(export.keel(mld, sparse), datConnection)
+      close(datConnection)
+      inform(name)
+    }
 
-  if ("MEKA" %in% format) {
-    # Open and write ARFF file
-    name <- paste0(basename, ".arff")
-    arffConnection <- file(name)
-    writeLines(export.meka(mld, sparse), arffConnection)
-    close(arffConnection)
-    inform(name)
-  }
+    if ("CSV" %in% format) {
+      # Open and write CSV file
+      name <- paste0(basename, ".csv")
+      csvConnection <- file(name)
+      writeLines(export.csv(mld, sparse), csvConnection)
+      close(csvConnection)
+      inform(name)
 
-  if ("KEEL" %in% format) {
-    # Open and write DAT file
-    name <- paste0(basename, ".dat")
-    datConnection <- file(name)
-    writeLines(export.keel(mld, sparse), datConnection)
-    close(datConnection)
-    inform(name)
-  }
+      name <- paste0(basename, "_labels.csv")
+      labelConnection <- file(name)
+      writeLines(export.csv.labels(mld), labelConnection)
+      close(labelConnection)
+      inform(name)
+    }
 
-  if ("CSV" %in% format) {
-    # Open and write CSV file
-    name <- paste0(basename, ".csv")
-    csvConnection <- file(name)
-    writeLines(export.csv(mld, sparse), csvConnection)
-    close(csvConnection)
-    inform(name)
-
-    name <- paste0(basename, "_labels.csv")
-    labelConnection <- file(name)
-    writeLines(export.csv.labels(mld), labelConnection)
-    close(labelConnection)
-    inform(name)
-  }
-
-  if ("LIBSVM" %in% format) {
-    # Open and write SVM file
-    name <- paste0(basename, ".svm")
-    svmConnection <- file(name)
-    writeLines(export.libsvm(mld), svmConnection)
-    close(svmConnection)
-    inform(name)
+    if ("LIBSVM" %in% format) {
+      # Open and write SVM file
+      name <- paste0(basename, ".svm")
+      svmConnection <- file(name)
+      writeLines(export.libsvm(mld), svmConnection)
+      close(svmConnection)
+      inform(name)
+    }
   }
 }
 
