@@ -1,6 +1,12 @@
-## mldr.datasets 0.0.0
+## mldr.datasets 0.0.0.9000
 
 First release of *mldr.datasets*. This version includes:
+
+* 59 prebuilt `mldr` objects/functions corresponding to the multilabel datasets detailed below.
+* Generic `check_n_load.mldr` function to download new objects hosted in the repository
+* Specific implementation of the generic `toBibtex` function for `mldr` objects
+* `random.kfolds` and `stratified.kfolds` for dataset partitioning
+* `write.mldr` function to export `mldr`object to MULAN, MEKA, KEEL, LibSVM and CSV file formats
 
 * The list of mldr objects ready to be used generated from the following multilabel datasets:
     * **20ng** 
@@ -36,7 +42,7 @@ First release of *mldr.datasets*. This version includes:
           pages="4640--4650",
           year="2012"
     }
-  </pre>
+    </pre>
 
     * **bookmarks**
     <pre>
