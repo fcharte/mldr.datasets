@@ -15,8 +15,10 @@ stackex_coffee
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 toBibtex(stackex_coffee)
 stackex_coffee$measures
+}
 }
 \keyword{datasets}
 
