@@ -14,8 +14,10 @@ imdb()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 imdb()  # Check and load the dataset
 toBibtex(imdb)
 imdb$measures
+}
 }
 
