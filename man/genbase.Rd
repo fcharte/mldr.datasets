@@ -15,8 +15,10 @@ genbase
 Multilabel dataset from the biology domain.
 }
 \examples{
+\dontrun{
 toBibtex(genbase)
 genbase$measures
+}
 }
 \keyword{datasets}
 
