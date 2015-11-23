@@ -15,8 +15,10 @@ langlog
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 toBibtex(langlog)
 langlog$measures
+}
 }
 \keyword{datasets}
 
