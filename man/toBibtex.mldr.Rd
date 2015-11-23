@@ -4,10 +4,10 @@
 \alias{toBibtex.mldr}
 \title{Returns the BibTeX entry associated to the mldr object given as input}
 \usage{
-\method{toBibtex}{mldr}(mld)
+\method{toBibtex}{mldr}(mld, ...)
 }
 \arguments{
-\item{mldr}{The mldr object whose BibTeX entry is needed}
+\item{mld}{The mldr object whose BibTeX entry is needed}
 }
 \value{
 A string with the BibTeX entry
