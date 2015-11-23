@@ -14,8 +14,10 @@ yahoo_recreation()
 Multilabel dataset from the text domain.
 }
 \examples{
+\dontrun{
 yahoo_recreation()  # Check and load the dataset
 toBibtex(yahoo_recreation)
 yahoo_recreation$measures
+}
 }
 
