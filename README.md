@@ -1,7 +1,11 @@
 [mldr.datasets](https://fcharte.github.io/mldr.datasets)
 ====
 
-RUMDR - R Ultimate Multilabel Dataset Repository 
+[![Travis](https://img.shields.io/travis/fcharte/mldr.datasets/master.svg)](https://travis-ci.org/fcharte/mldr.datasets/)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/mldr.datasets)](http://cran.r-project.org/web/packages/mldr.datasets)
+[![Downloads](http://cranlogs.r-pkg.org/badges/mldr.datasets)](http://cran.rstudio.com/web/packages/mldr.datasets/index.html)
+
+RUMDR - R Ultimate Multilabel Dataset Repository
 
 ## Installation
 
@@ -40,7 +44,7 @@ emotions$attributes # All info about the attributes in the dataset
 scene$labelsets # List of labelsets and their frequencies
 cat(toBibtex(ng20)) # Print the BibTeX entry for the dataset
 ```
-The external datasets are automatically donwloaded from GitHub the first time they are needed, then saved locally. To obtain a list of 
+The external datasets are automatically donwloaded from GitHub the first time they are needed, then saved locally. To obtain a list of
 externally available datasets use the following commands:
 
 ```R
