@@ -6,10 +6,5 @@ sudo: required
 apt_packages:
  - texlive-math-extra
 
-# R dependencies for mldr.datasets
-r_packages:
-
 # Custom settings
 warnings_are_errors: true
-
-r_build_args: --compact-vignettes=gs+qpdf
