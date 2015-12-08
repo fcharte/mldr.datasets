@@ -212,7 +212,7 @@ export.csv.labels <- function(mld) {
 export.xml <- function(mld) {
   xmlheader <- '<?xml version="1.0" encoding="utf-8"?>'
   labelstag <- '<labels xmlns="http://mulan.sourceforge.net/labels">'
-  labeltags <- paste(c('<label name="'), rownames(mld$labels), c('"></label>'), sep = "\n")
+  labeltags <- paste(c('<label name="'), rownames(mld$labels), c('"></label>'), collapse = "\n", sep = "")
   labelsend <- '</labels>'
 
   paste(xmlheader, labelstag, labeltags, labelsend, sep = "\n")
