@@ -60,11 +60,11 @@ internal.kfolds <- function(mld, k, seed, type = "random") {
                       function(fold) (round(nrows/k*(fold-1))+1):round(nrows/k*fold))
     } else {
       dataset <- mld$dataset[ , -excmeasures]
-      dataset$weight <- apply(dataset[,labels], 1, function(row) {
+      weight <- apply(dataset[,labels], 1, function(row) {
         val <- Reduce(`*`, mld$labels$freq[row == 1])
         if(is.null(val)) 0 else val
       })
-      dataset <- dataset[order(dataset$weight), -length(dataset)]
+      dataset <- dataset[order(weight), ]
       strats <- lapply(1:k, function(strat)
         sample((round(nrows/k*(strat-1))+1):round(nrows/k*strat)))
       folds <- lapply(1:k, function(fold)
