@@ -11,21 +11,23 @@
 #' @export
 check_n_load.mldr <- function(mldr.name) {
   if(exists(mldr.name, .GlobalEnv, mode = "list"))
-    stop('The ', mldr.name, ' dataset is already loaded.')
+    cat('The ', mldr.name, ' dataset is already loaded.')
+  else {
 
-  fpath <- paste(find.package('mldr.datasets'), '/extdata/', mldr.name, '.rda', sep = '')
+    fpath <- paste(find.package('mldr.datasets'), '/extdata/', mldr.name, '.rda', sep = '')
 
-  if (!file.exists(fpath)) {
-    url <- availableMlds[availableMlds$Name == mldr.name, "URL"]
+    if (!file.exists(fpath)) {
+      url <- availableMlds[availableMlds$Name == mldr.name, "URL"]
 
-    if (length(url) > 0)
-      download.file(url, fpath)
+      if (length(url) > 0)
+        download.file(url, fpath)
+    }
+
+    if (file.exists(fpath))
+      load(fpath, .GlobalEnv)
+    else
+      stop('The ', mldr.name, ' dataset is not available. Try calling mldrs() to update the list of available datasets')
   }
-
-  if (file.exists(fpath))
-    load(fpath, .GlobalEnv)
-  else
-    stop('The ', mldr.name, ' dataset is not available. Try calling mldrs() to update the list of available datasets')
 }
 
 #' @title Obtain and show a list of additional datasets available to download
