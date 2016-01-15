@@ -181,12 +181,12 @@ export.arff.data <- function(mld, sparse, header = "@data\n") {
 
 
 export.dense.arff.data <- function(data) {
-  paste(
+  gsub("[[:blank:]]", "", paste(
     apply(data, 1, function(c)
       paste(c, collapse = ',')
     ),
     collapse = "\n"
-  )
+  ))
 }
 
 export.sparse.arff.data <- function(data) {
