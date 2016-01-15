@@ -5,8 +5,8 @@
 \title{Export an mldr object or set of mldr objects to different file formats}
 \usage{
 write.mldr(mld, format = c("MULAN", "MEKA"), sparse = FALSE,
-  basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0, mld$name,
-  "unnamed_mldr"))
+  basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
+  regmatches(mld$name, regexpr("(\\\\w)+", mld$name)), "unnamed_mldr"))
 }
 \arguments{
 \item{mld}{The \code{mldr/mldr.folds} object to be exported}
