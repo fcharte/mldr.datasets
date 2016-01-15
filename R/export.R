@@ -15,7 +15,7 @@
 #' }
 #' @export
 write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
-                                                                                           mld$name,
+                                                                                           regmatches(mld$name, regexpr("(\\w)+", mld$name)),
                                                                                            "unnamed_mldr")) {
   format <- toupper(format)
   available.formats <- c("MULAN", "MEKA", "KEEL", "CSV", "LIBSVM")
