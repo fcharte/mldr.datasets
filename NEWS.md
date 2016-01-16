@@ -1,4 +1,12 @@
-## mldr.datasets 0.3
+# Changelog
+## mldr.datasets 0.3.15
+
+* Fixes issues [#1](https://github.com/fcharte/mldr.datasets/issues/1), [#2](https://github.com/fcharte/mldr.datasets/issues/2) and [#3](https://github.com/fcharte/mldr.datasets/issues/3)
+* Fixes writing of XML files
+* Improve format of ARFF data sections
+* Better MLD name extraction from `mld$name`
+
+## mldr.datasets 0.3/0.3.1
 
 First release of *mldr.datasets*. This version includes:
 
