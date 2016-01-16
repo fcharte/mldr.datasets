@@ -189,13 +189,20 @@ export.dense.arff.data <- function(data) {
 
 export.sparse.arff.data <- function(data) {
   paste(
-    apply(data, 1, function(instance)
-      paste0("{",
-             paste(which(instance != 0) - 1, # features start counting at 0
-                   instance[instance != 0],
-                   sep = " ", collapse = ","
-                   ),
-             "}")
+    apply(
+      # 'as.matrix' implicit conversion of a data.frame will insert spaces to adjust
+      # width of values (when the inferred data type is 'character'). To prevent
+      # this, a workaround needs to be done by manually formatting the data.frame.
+      # Source: http://stackoverflow.com/a/15618761
+      sapply(data, format, trim = TRUE, justify = "none"),
+      1, function(instance)
+        paste0("{",
+               paste(which(instance != 0) - 1, # features start counting at 0
+                     instance[instance != 0],
+                     sep = " ", collapse = ","
+                     ),
+              "}"
+        )
     ),
     collapse = "\n"
   )
