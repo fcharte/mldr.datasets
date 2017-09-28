@@ -128,16 +128,22 @@ export.keel <- function(mld, sparse) {
 }
 
 export.mulan.header <- function(mld) {
-  paste0("@relation ", ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
-                             mld$name,
-                             "unnamed_mldr"))
+  paste0("@relation ",
+         if (!is.null(mld$name) && nchar(mld$name) > 0)
+           mld$name
+         else
+           "unnamed_mldr")
 }
 
 export.meka.header <- function(mld) {
-  paste0("@relation '", ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
-                             mld$name,
-                             "unnamed_mldr"),
-        ": -C ", mld$measures$num.labels, "'")
+  paste0("@relation '",
+         if (!is.null(mld$name) && nchar(mld$name) > 0)
+           mld$name
+         else
+           "unnamed_mldr",
+         ": -C ",
+         mld$measures$num.labels,
+         "'")
 }
 
 export.keel.header <- export.mulan.header
