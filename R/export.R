@@ -142,8 +142,18 @@ export.meka.header <- function(mld) {
 
 export.keel.header <- export.mulan.header
 
+
 export.arff.attributes <- function(mld) {
-  paste0("@attribute ", names(mld$attributes), " ", mld$attributes, collapse = "\n")
+  attrNames <- ifelse(grepl("(\\s|\"|\')", names(mld$attributes)),
+                      paste0("'", gsub(
+                        "'", "\\'", names(mld$attributes), fixed = T
+                      ), "'"),
+                      names(mld$attributes))
+  paste0("@attribute ",
+         attrNames,
+         " ",
+         mld$attributes,
+         collapse = "\n")
 }
 
 export.arff.inputs <- function(mld) {
