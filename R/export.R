@@ -1,4 +1,4 @@
-
+#
 # Functions to export a mldr object to several formats
 
 #' Export an mldr object or set of mldr objects to different file formats
@@ -13,6 +13,9 @@
 #' library(mldr.datasets)
 #' write.mldr(emotions, format = c('CSV', 'KEEL'))
 #' }
+#'
+#' @import data.table
+#'
 #' @export
 write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
                                                                                            regmatches(mld$name, regexpr("(\\w)+", mld$name)),
@@ -98,32 +101,29 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
   }
 }
 
-export.mulan <- function(mld, sparse) {
-  paste(
+export.mulan <- function(mld, sparse, con) {
+  c(
     export.mulan.header(mld),
     export.arff.attributes(mld),
-    export.arff.data(mld, sparse),
-    sep = "\n"
+    export.arff.data(mld, sparse)
   )
 }
 
 export.meka <- function(mld, sparse) {
-  paste(
+  c(
     export.meka.header(mld),
     export.arff.attributes(mld),
-    export.arff.data(mld, sparse),
-    sep = "\n"
+    export.arff.data(mld, sparse)
   )
 }
 
 export.keel <- function(mld, sparse) {
-  paste(
+  c(
     export.keel.header(mld),
     export.arff.attributes(mld),
     export.arff.inputs(mld),
     export.arff.outputs(mld),
-    export.arff.data(mld, sparse),
-    sep = "\n"
+    export.arff.data(mld, sparse)
   )
 }
 
@@ -155,11 +155,9 @@ export.arff.attributes <- function(mld) {
                         "'", "\\'", names(mld$attributes), fixed = T
                       ), "'"),
                       names(mld$attributes))
-  paste0("@attribute ",
+  paste("@attribute",
          attrNames,
-         " ",
-         mld$attributes,
-         collapse = "\n")
+         mld$attributes)
 }
 
 export.arff.inputs <- function(mld) {
@@ -186,25 +184,24 @@ export.arff.outputs <- function(mld) {
   )
 }
 
-export.arff.data <- function(mld, sparse, header = "@data\n") {
+export.arff.data <- function(mld, sparse, header = "@data") {
   data <- mld$dataset[, 1:mld$measures$num.attributes]
   data[is.na(data)] <- '?'
-  paste0(
+  c(
     header,
-    ifelse(sparse, export.sparse.arff.data(data), export.dense.arff.data(data))
+    (if (sparse) export.sparse.arff.data else export.dense.arff.data)(data)
   )
 }
 
 
 export.dense.arff.data <- function(data) {
   paste(
-    do.call("paste", c(unname(data), list(sep = ','))),
-    collapse = "\n"
+    do.call("paste", c(unname(data), list(sep = ',')))
   )
 }
 
 export.sparse.arff.data <- function(data) {
-  paste(
+  c(
     apply(
       # 'as.matrix' implicit conversion of a data.frame will insert spaces to adjust
       # width of values (when the inferred data type is 'character'). To prevent
@@ -219,15 +216,14 @@ export.sparse.arff.data <- function(data) {
                      ),
               "}"
         )
-    ),
-    collapse = "\n"
+    )
   )
 }
 
 export.csv <- function(mld, sparse) export.arff.data(mld, sparse, header = "")
 
 export.csv.labels <- function(mld) {
-  paste(rownames(mld$labels), mld$labels$index, sep = ", ", collapse = "\n")
+  c(rownames(mld$labels), mld$labels$index, sep = ", ")
 }
 
 export.xml <- function(mld) {
