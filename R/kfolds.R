@@ -4,6 +4,7 @@
 #' @param k The number of folds to be generated. By default is 5
 #' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
 #' different samples, for instance to use a 2x5 fcv strategy
+#' @param get.indices A logical value indicating whether to return lists of indices or lists of \code{"mldr"} objects
 #' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 #' of two mldr objects, called \code{train} and \code{test}
 #' @examples
@@ -15,8 +16,8 @@
 #' summary(folds.emotions[[1]]$test)
 #'}
 #' @export
-random.kfolds <- function(mld, k = 5, seed = 10) {
-  internal.kfolds(mld, k, seed, "random")
+random.kfolds <- function(mld, k = 5, seed = 10, get.indices = FALSE) {
+  internal.kfolds(mld, k, seed, "random", get.indices)
 }
 
 #' Partition an mldr object into k folds
@@ -25,6 +26,7 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
 #' @param k The number of folds to be generated. By default is 5
 #' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
 #' different samples, for instance to use a 2x5 fcv strategy
+#' @param get.indices A logical value indicating whether to return lists of indices or lists of \code{"mldr"} objects
 #' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
 #' of two mldr objects, called \code{train} and \code{test}
 #' @examples
@@ -36,12 +38,31 @@ random.kfolds <- function(mld, k = 5, seed = 10) {
 #' summary(folds.emotions[[1]]$test)
 #'}
 #' @export
-stratified.kfolds <- function(mld, k = 5, seed = 10) {
-  internal.kfolds(mld, k, seed, "stratified")
+stratified.kfolds <- function(mld, k = 5, seed = 10, get.indices = FALSE) {
+  internal.kfolds(mld, k, seed, "stratified", get.indices)
+}
+
+# builds "mldr" objects out of a list of folds
+mldr.from.kfolds <- function(mld, folds) {
+  folds <- lapply(folds, function(fold) list(
+    train = mldr::mldr_from_dataframe(mld$dataset[-fold,], labelIndices = mld$labels$index, attributes = mld$attributes, name = mld$name),
+    test = mldr::mldr_from_dataframe(mld$dataset[fold,], labelIndices = mld$labels$index, attributes = mld$attributes, name = mld$name)))
+
+  class(folds) <- "mldr.folds"
+  folds
+}
+
+# builds train and test index lists out of a list of folds
+indices.from.kfolds <- function(mld, folds) {
+  numRows <- dim(mld$dataset)[1]
+  # print(folds)
+  lapply(folds, function(fold)
+    list(train = (1:numRows)[-fold],
+         test = (1:numRows)[fold]))
 }
 
 # Partitions an mldr object using random or stratified strategy
-internal.kfolds <- function(mld, k, seed, type = "random") {
+internal.kfolds <- function(mld, k, seed, type = "random", get.indices) {
   if (class(mld) != 'mldr')
     stop(paste(substitute(mld), "isn't an mldr object"))
 
@@ -72,16 +93,8 @@ internal.kfolds <- function(mld, k, seed, type = "random") {
           strat[(round(length(strats[strat])/k*(fold-1))+1):round(length(strats[strat])/k*fold)])))
     }
 
-    folds <- lapply(folds, function(fold) list(
-      train = mldr::mldr_from_dataframe(dataset[-fold,], labelIndices = labels, attributes = mld$attributes, name = mld$name),
-      test = mldr::mldr_from_dataframe(dataset[fold,], labelIndices = labels, attributes = mld$attributes, name = mld$name)))
-
-    class(folds) <- "mldr.folds"
-    folds
+    (if (get.indices) indices.from.kfolds else mldr.from.kfolds)(mld, folds)
   } else {
     stop('The mldr package must be installed in order to run this function')
   }
 }
-
-
-
