@@ -20,4 +20,3 @@ toBibtex(ohsumed)
 ohsumed$measures
 }
 }
-

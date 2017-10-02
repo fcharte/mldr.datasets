@@ -20,4 +20,3 @@ toBibtex(nuswide_BoW)
 nuswide_BoW$measures
 }
 }
-

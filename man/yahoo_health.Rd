@@ -20,4 +20,3 @@ toBibtex(yahoo_health)
 yahoo_health$measures
 }
 }
-

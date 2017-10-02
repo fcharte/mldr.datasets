@@ -20,4 +20,3 @@ toBibtex(imdb)
 imdb$measures
 }
 }
-

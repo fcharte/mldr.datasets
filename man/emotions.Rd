@@ -21,4 +21,3 @@ emotions$measures
 }
 }
 \keyword{datasets}
-

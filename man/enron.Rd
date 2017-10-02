@@ -20,4 +20,3 @@ toBibtex(enron)
 enron$measures
 }
 }
-

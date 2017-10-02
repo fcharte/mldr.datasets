@@ -20,4 +20,3 @@ toBibtex(reutersk500)
 reutersk500$measures
 }
 }
-

@@ -20,4 +20,3 @@ toBibtex(yahoo_business)
 yahoo_business$measures
 }
 }
-

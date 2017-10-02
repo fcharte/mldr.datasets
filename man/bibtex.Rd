@@ -20,4 +20,3 @@ toBibtex(bibtex)
 bibtex$measures
 }
 }
-

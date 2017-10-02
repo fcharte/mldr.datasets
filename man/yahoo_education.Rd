@@ -20,4 +20,3 @@ toBibtex(yahoo_education)
 yahoo_education$measures
 }
 }
-

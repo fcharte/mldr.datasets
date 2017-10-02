@@ -26,5 +26,5 @@ Writes one or more files in the specified formats with the content of the \code{
 library(mldr.datasets)
 write.mldr(emotions, format = c('CSV', 'KEEL'))
 }
-}
 
+}

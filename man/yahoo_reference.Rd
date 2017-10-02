@@ -20,4 +20,3 @@ toBibtex(yahoo_reference)
 yahoo_reference$measures
 }
 }
-

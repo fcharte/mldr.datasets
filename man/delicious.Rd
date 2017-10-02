@@ -20,4 +20,3 @@ toBibtex(delicious)
 delicious$measures
 }
 }
-

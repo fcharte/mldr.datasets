@@ -20,4 +20,3 @@ toBibtex(corel5k)
 corel5k$measures
 }
 }
-

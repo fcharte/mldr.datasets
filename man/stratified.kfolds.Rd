@@ -4,7 +4,7 @@
 \alias{stratified.kfolds}
 \title{Partition an mldr object into k folds}
 \usage{
-stratified.kfolds(mld, k = 5, seed = 10)
+stratified.kfolds(mld, k = 5, seed = 10, get.indices = FALSE)
 }
 \arguments{
 \item{mld}{The \code{mldr} object to be partitioned}
@@ -13,6 +13,8 @@ stratified.kfolds(mld, k = 5, seed = 10)
 
 \item{seed}{The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
 different samples, for instance to use a 2x5 fcv strategy}
+
+\item{get.indices}{A logical value indicating whether to return lists of indices or lists of \code{"mldr"} objects}
 }
 \value{
 An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
@@ -30,4 +32,3 @@ summary(folds.emotions[[1]]$train)
 summary(folds.emotions[[1]]$test)
 }
 }
-

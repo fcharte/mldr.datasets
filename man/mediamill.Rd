@@ -20,4 +20,3 @@ toBibtex(mediamill)
 mediamill$measures
 }
 }
-

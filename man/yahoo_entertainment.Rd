@@ -20,4 +20,3 @@ toBibtex(yahoo_entertainment)
 yahoo_entertainment$measures
 }
 }
-

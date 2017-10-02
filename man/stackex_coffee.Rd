@@ -20,4 +20,3 @@ toBibtex(stackex_coffee)
 stackex_coffee$measures
 }
 }
-

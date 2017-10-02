@@ -20,4 +20,3 @@ toBibtex(yahoo_social)
 yahoo_social$measures
 }
 }
-

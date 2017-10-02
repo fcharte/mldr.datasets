@@ -20,4 +20,3 @@ toBibtex(yahoo_recreation)
 yahoo_recreation$measures
 }
 }
-

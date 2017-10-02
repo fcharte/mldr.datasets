@@ -20,4 +20,3 @@ toBibtex(stackex_cooking)
 stackex_cooking$measures
 }
 }
-

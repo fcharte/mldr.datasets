@@ -20,4 +20,3 @@ toBibtex(rcv1sub1)
 rcv1sub1$measures
 }
 }
-

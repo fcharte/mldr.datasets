@@ -21,4 +21,3 @@ stackex_chess$measures
 }
 }
 \keyword{datasets}
-

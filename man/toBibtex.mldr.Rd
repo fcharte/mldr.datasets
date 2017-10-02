@@ -23,4 +23,3 @@ library(mldr.datasets)
 cat(toBibtex(emotions))
 }
 }
-

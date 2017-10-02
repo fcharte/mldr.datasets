@@ -20,4 +20,3 @@ toBibtex(yeast)
 yeast$measures
 }
 }
-

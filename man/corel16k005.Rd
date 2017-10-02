@@ -20,4 +20,3 @@ toBibtex(corel16k005)
 corel16k005$measures
 }
 }
-

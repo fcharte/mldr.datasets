@@ -20,4 +20,3 @@ toBibtex(stackex_cs)
 stackex_cs$measures
 }
 }
-

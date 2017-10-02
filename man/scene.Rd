@@ -20,4 +20,3 @@ toBibtex(scene)
 scene$measures
 }
 }
-

@@ -20,4 +20,3 @@ toBibtex(stackex_chemistry)
 stackex_chemistry$measures
 }
 }
-

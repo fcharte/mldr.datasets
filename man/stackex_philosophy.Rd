@@ -20,4 +20,3 @@ toBibtex(stackex_philosophy)
 stackex_philosophy$measures
 }
 }
-

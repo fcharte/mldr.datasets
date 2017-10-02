@@ -20,4 +20,3 @@ toBibtex(bookmarks)
 bookmarks$measures
 }
 }
-

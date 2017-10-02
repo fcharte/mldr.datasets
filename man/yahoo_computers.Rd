@@ -20,4 +20,3 @@ toBibtex(yahoo_computers)
 yahoo_computers$measures
 }
 }
-

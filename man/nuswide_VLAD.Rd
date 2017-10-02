@@ -20,4 +20,3 @@ toBibtex(nuswide_VLAD)
 nuswide_VLAD$measures
 }
 }
-

@@ -20,4 +20,3 @@ toBibtex(yahoo_society)
 yahoo_society$measures
 }
 }
-

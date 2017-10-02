@@ -20,4 +20,3 @@ toBibtex(eurlexsm_test[[1]])
 eurlexsm_test[[1]]$measures
 }
 }
-
