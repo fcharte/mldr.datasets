@@ -69,32 +69,31 @@ internal.kfolds <- function(mld, k, seed, type = "random", get.indices) {
   if(!k > 1)
     stop('k > 1 required')
 
-  if (requireNamespace("mldr", quietly = TRUE)) {
-    set.seed(seed)
-    excmeasures <- (mld$measures$num.attributes+1):length(mld$dataset)
-    nrows <- mld$measures$num.instances
-    labels <- mld$labels$index
-
-    if(type == "random") {
-      dataset <- mld$dataset[sample(nrows), -excmeasures]
-      folds <- lapply(1:k,
-                      function(fold) (round(nrows/k*(fold-1))+1):round(nrows/k*fold))
-    } else {
-      dataset <- mld$dataset[ , -excmeasures]
-      weight <- apply(dataset[,labels], 1, function(row) {
-        val <- Reduce(`*`, mld$labels$freq[row == 1])
-        if(is.null(val)) 0 else val
-      })
-      dataset <- dataset[order(weight), ]
-      strats <- lapply(1:k, function(strat)
-        sample((round(nrows/k*(strat-1))+1):round(nrows/k*strat)))
-      folds <- lapply(1:k, function(fold)
-        unlist(sapply(strats, function(strat)
-          strat[(round(length(strats[strat])/k*(fold-1))+1):round(length(strats[strat])/k*fold)])))
-    }
-
-    (if (get.indices) indices.from.kfolds else mldr.from.kfolds)(mld, folds)
-  } else {
+  if (!(get.indices || requireNamespace("mldr", quietly = TRUE)))
     stop('The mldr package must be installed in order to run this function')
+
+  set.seed(seed)
+  excmeasures <- (mld$measures$num.attributes+1):length(mld$dataset)
+  nrows <- mld$measures$num.instances
+  labels <- mld$labels$index
+
+  if (type == "random") {
+    randomized <- sample(nrows)
+    folds <- lapply(1:k,
+                    function(fold) randomized[(round(nrows/k*(fold-1))+1):round(nrows/k*fold)])
+  } else {
+    dataset <- mld$dataset[ , -excmeasures]
+    weight <- apply(dataset[,labels], 1, function(row) {
+      val <- Reduce(`*`, mld$labels$freq[row == 1])
+      if(is.null(val)) 0 else val
+    })
+    dataset <- dataset[order(weight), ]
+    strats <- lapply(1:k, function(strat)
+      sample((round(nrows/k*(strat-1))+1):round(nrows/k*strat)))
+    folds <- lapply(1:k, function(fold)
+      unlist(sapply(strats, function(strat)
+        strat[(round(length(strats[strat])/k*(fold-1))+1):round(length(strats[strat])/k*fold)])))
   }
+
+  (if (get.indices) indices.from.kfolds else mldr.from.kfolds)(mld, folds)
 }
