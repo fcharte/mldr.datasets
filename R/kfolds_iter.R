@@ -1,17 +1,7 @@
-# returns the arg f of a vector, breaking ties randomly
-# f must return an index of the vector
-arg.f <- function(x, f) {
-  randomized_indices <- sample(1:length(x))
-  randomized_indices[f(x[randomized_indices])]
-}
-
-arg.min <- function(x) arg.f(x, which.min)
-arg.max <- function(x) arg.f(x, which.max)
-
 #' Partition an mldr object into k folds
 #' @description Iterative stratification
 #'
-#' implemented from the algorithm explained in:
+#' Implemented from the algorithm explained in:
 #'   Konstantinos Sechidis, Grigorios Tsoumakas, and Ioannis Vlahavas. 2011.
 #'   On the stratification of multi-label data. In Proceedings of the 2011
 #'   European conference on Machine learning and knowledge discovery in
@@ -35,16 +25,7 @@ arg.max <- function(x) arg.f(x, which.max)
 #'}
 #' @export
 iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices = FALSE) {
-  if (class(mld) != 'mldr')
-    stop(paste(substitute(mld), "isn't an mldr object"))
-
-  if(!k > 1)
-    stop('k > 1 required')
-
-  if (!(get.indices || requireNamespace("mldr", quietly = TRUE)))
-    stop('The mldr package must be installed in order to run this function')
-
-  set.seed(seed)
+  nrows <- internal.kfolds.preamble(mld, k, seed, get.indices)
 
   r = rep(1. / k, k)
   desired_instances <- mld$measures$num.instances * r
@@ -55,7 +36,7 @@ iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices =
       sum(mld$dataset[, l])), function(amount)
         amount * r)
 
-  remaining_instances <- mld$measures$num.instances
+  remaining_instances <- nrows
   available <- rep(T, remaining_instances)
   remaining_by_label <- sapply(mld$labels$index, function(l) sum(mld$dataset[, l]))
 
