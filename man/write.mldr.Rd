@@ -6,7 +6,7 @@
 \usage{
 write.mldr(mld, format = c("MULAN", "MEKA"), sparse = FALSE,
   basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
-  regmatches(mld$name, regexpr("(\\\\w)+", mld$name)), "unnamed_mldr"))
+  regmatches(mld$name, regexpr("(\\\\w)+", mld$name)), "unnamed_mldr"), ...)
 }
 \arguments{
 \item{mld}{The \code{mldr/mldr.folds} object to be exported}
