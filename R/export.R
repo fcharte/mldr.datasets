@@ -191,21 +191,20 @@ export.dense.arff.data <- function(data) {
 }
 
 export.sparse.arff.data <- function(data) {
-  apply(
-    # 'as.matrix' implicit conversion of a data.frame will insert spaces to adjust
-    # width of values (when the inferred data type is 'character'). To prevent
-    # this, a workaround needs to be done by manually formatting the data.frame.
-    # Source: http://stackoverflow.com/a/15618761
-    sapply(data, format, trim = TRUE, justify = "none"),
-    1, function(instance)
-      paste0("{",
-             paste(which(instance != 0) - 1, # features start counting at 0
-                   instance[instance != 0],
-                   sep = " ", collapse = ","
-                   ),
-            "}"
-      )
-  )
+  apply(data, 1, function(instance) {
+    print(length(instance))
+    select <- instance != 0
+    paste0(
+      "{",
+      paste(
+        which(select) - 1,
+        instance[select],
+        sep = " ",
+        collapse = ","
+      ),
+      "}"
+    )
+  })
 }
 
 export.arff.chunks <-
@@ -250,7 +249,9 @@ export.libsvm <- function(mld, ...) {
       inputs <- instance[mld$attributesIndexes]
       outputs <- instance[mld$labels$index]
       paste(
-        paste(which(outputs == 1) - 1, collapse = ","), # libSVM counts labels starting from zero
+        # libSVM counts labels starting from zero
+        # and attributes starting from one
+        paste(which(outputs == 1) - 1, collapse = ","),
         paste(which(instance != 0), instance[instance != 0], sep = ":", collapse = " "),
         sep = " "
       )
