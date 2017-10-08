@@ -192,7 +192,6 @@ export.dense.arff.data <- function(data) {
 
 export.sparse.arff.data <- function(data) {
   apply(data, 1, function(instance) {
-    print(length(instance))
     select <- instance != 0
     paste0(
       "{",
