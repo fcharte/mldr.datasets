@@ -44,14 +44,20 @@ iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices =
   subsets <- rep(list(c()), k)
 
   while (remaining_instances > 0) {
-    # find the label with the fewest (but at least one) remaining examples,
-    # breaking ties randomly
     possible_labels <- which(remaining_by_label > 0)
-    chosen_label <- possible_labels[arg.min(remaining_by_label[possible_labels])]
-    chosen_index <- mld$labels$index[chosen_label]
 
-    # there is at least one instance here
-    instances <- which(mld$dataset[[chosen_index]] & available)
+    instances <- if (length(possible_labels) > 0) {
+      # find the label with the fewest (but at least one) remaining examples,
+      # breaking ties randomly
+      chosen_label <- possible_labels[arg.min(remaining_by_label[possible_labels])]
+      chosen_index <- mld$labels$index[chosen_label]
+      # there is at least one instance here
+      which(mld$dataset[[chosen_index]] & available)
+    } else {
+      # there are no instances with active labels left
+      which(available)
+    }
+
     for (instance in instances) {
       # subsets with largest number of desired examples for this label
       possible <- which(desired_by_label[, chosen_label] == max(desired_by_label[, chosen_label]))
