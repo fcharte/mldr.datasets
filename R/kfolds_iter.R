@@ -45,8 +45,9 @@ iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices =
 
   while (remaining_instances > 0) {
     possible_labels <- which(remaining_by_label > 0)
+    annotated <- length(possible_labels) > 0
 
-    instances <- if (length(possible_labels) > 0) {
+    instances <- if (annotated) {
       # find the label with the fewest (but at least one) remaining examples,
       # breaking ties randomly
       chosen_label <- possible_labels[arg.min(remaining_by_label[possible_labels])]
@@ -59,10 +60,18 @@ iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices =
     }
 
     for (instance in instances) {
-      # subsets with largest number of desired examples for this label
-      possible <- which(desired_by_label[, chosen_label] == max(desired_by_label[, chosen_label]))
-      # break ties by considering largest overall number of desired examples
-      chosen_subset <- possible[arg.max(desired_instances[possible])]
+      chosen_subset <- if (annotated) {
+        # subsets with largest number of desired examples for this label
+        possible <- which(desired_by_label[, chosen_label] == max(desired_by_label[, chosen_label]))
+        # break ties by considering largest overall number of desired examples
+        possible[arg.max(desired_instances[possible])]
+      } else {
+        # consider largest overall number of desired examples
+        possible <- which(desired_instances == max(desired_instances))
+        # find the one with the least amount of instances,
+        # break ties randomly
+        possible[arg.min(sapply(subsets[possible], length))]
+      }
 
       # put instance in subset and update counters
       subsets[[chosen_subset]] <- c(subsets[[chosen_subset]], instance)
