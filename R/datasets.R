@@ -17,12 +17,12 @@
 #' @source Katakis, I. and Tsoumakas, G. and Vlahavas, I., "Multilabel Text Classification for Automated Tag Suggestion", in Proc. ECML PKDD08 Discovery Challenge, Antwerp, Belgium, pp. 75-83, 2008
 #' @examples
 #'\dontrun{
-#' bibtex()  # Check and load the dataset
+#' bibtex <- bibtex()  # Check and load the dataset
 #' toBibtex(bibtex)
 #' bibtex$measures
 #' }
 #' @export
-bibtex <- function() check_n_load.mldr("bibtex")
+bibtex <- function(...) get.mldr("bibtex", ...)
 
 #'  Dataset with sounds produced by birds and the species they belong to
 #'
@@ -43,12 +43,12 @@ bibtex <- function() check_n_load.mldr("bibtex")
 #' @source Katakis, I. and Tsoumakas, G. and Vlahavas, I., "Multilabel Text Classification for Automated Tag Suggestion", in Proc. ECML PKDD08 Discovery Challenge, Antwerp, Belgium, pp. 75-83, 2008
 #' @examples
 #'\dontrun{
-#' bookmarks()  # Check and load the dataset
+#' bookmarks <- bookmarks()  # Check and load the dataset
 #' toBibtex(bookmarks)
 #' bookmarks$measures
 #' }
 #' @export
-bookmarks <- function() check_n_load.mldr("bookmarks")
+bookmarks <- function(...) get.mldr("bookmarks", ...)
 
 #'  Dataset with music data along with labels for emotions, instruments, genres, etc.
 #'
@@ -69,12 +69,12 @@ bookmarks <- function() check_n_load.mldr("bookmarks")
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k001()  # Check and load the dataset
+#' corel16k001 <- corel16k001()  # Check and load the dataset
 #' toBibtex(corel16k001)
 #' corel16k001$measures
 #' }
 #' @export
-corel16k001 <- function() check_n_load.mldr('corel16k001')
+corel16k001 <- function(...) get.mldr("corel16k001", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -83,12 +83,12 @@ corel16k001 <- function() check_n_load.mldr('corel16k001')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k002()  # Check and load the dataset
+#' corel16k002 <- corel16k002()  # Check and load the dataset
 #' toBibtex(corel16k002)
 #' corel16k002$measures
 #' }
 #' @export
-corel16k002 <- function() check_n_load.mldr('corel16k002')
+corel16k002 <- function(...) get.mldr("corel16k002", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -97,12 +97,12 @@ corel16k002 <- function() check_n_load.mldr('corel16k002')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k003()  # Check and load the dataset
+#' corel16k003 <- corel16k003()  # Check and load the dataset
 #' toBibtex(corel16k003)
 #' corel16k003$measures
 #' }
 #' @export
-corel16k003 <- function() check_n_load.mldr('corel16k003')
+corel16k003 <- function(...) get.mldr("corel16k003", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -111,12 +111,12 @@ corel16k003 <- function() check_n_load.mldr('corel16k003')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k004()  # Check and load the dataset
+#' corel16k004 <- corel16k004()  # Check and load the dataset
 #' toBibtex(corel16k004)
 #' corel16k004$measures
 #' }
 #' @export
-corel16k004 <- function() check_n_load.mldr('corel16k004')
+corel16k004 <- function(...) get.mldr("corel16k004", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -125,12 +125,12 @@ corel16k004 <- function() check_n_load.mldr('corel16k004')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k005()  # Check and load the dataset
+#' corel16k005 <- corel16k005()  # Check and load the dataset
 #' toBibtex(corel16k005)
 #' corel16k005$measures
 #' }
 #' @export
-corel16k005 <- function() check_n_load.mldr('corel16k005')
+corel16k005 <- function(...) get.mldr("corel16k005", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -139,12 +139,12 @@ corel16k005 <- function() check_n_load.mldr('corel16k005')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k006()  # Check and load the dataset
+#' corel16k006 <- corel16k006()  # Check and load the dataset
 #' toBibtex(corel16k006)
 #' corel16k006$measures
 #' }
 #' @export
-corel16k006 <- function() check_n_load.mldr('corel16k006')
+corel16k006 <- function(...) get.mldr("corel16k006", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -153,12 +153,12 @@ corel16k006 <- function() check_n_load.mldr('corel16k006')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k007()  # Check and load the dataset
+#' corel16k007 <- corel16k007()  # Check and load the dataset
 #' toBibtex(corel16k007)
 #' corel16k007$measures
 #' }
 #' @export
-corel16k007 <- function() check_n_load.mldr('corel16k007')
+corel16k007 <- function(...) get.mldr("corel16k007", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -167,12 +167,12 @@ corel16k007 <- function() check_n_load.mldr('corel16k007')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k008()  # Check and load the dataset
+#' corel16k008 <- corel16k008()  # Check and load the dataset
 #' toBibtex(corel16k008)
 #' corel16k008$measures
 #' }
 #' @export
-corel16k008 <- function() check_n_load.mldr('corel16k008')
+corel16k008 <- function(...) get.mldr("corel16k008", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -181,12 +181,12 @@ corel16k008 <- function() check_n_load.mldr('corel16k008')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k009()  # Check and load the dataset
+#' corel16k009 <- corel16k009()  # Check and load the dataset
 #' toBibtex(corel16k009)
 #' corel16k009$measures
 #' }
 #' @export
-corel16k009 <- function() check_n_load.mldr('corel16k009')
+corel16k009 <- function(...) get.mldr("corel16k009", ...)
 
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
@@ -195,12 +195,12 @@ corel16k009 <- function() check_n_load.mldr('corel16k009')
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
 #'\dontrun{
-#' corel16k010()  # Check and load the dataset
+#' corel16k010 <- corel16k010()  # Check and load the dataset
 #' toBibtex(corel16k010)
 #' corel16k010$measures
 #' }
 #' @export
-corel16k010 <- function() check_n_load.mldr('corel16k010')
+corel16k010 <- function(...) get.mldr("corel16k010", ...)
 
 #'  Dataset with data from the Corel image collection
 #'
@@ -209,12 +209,12 @@ corel16k010 <- function() check_n_load.mldr('corel16k010')
 #' @source Duygulu, P. and Barnard, K. and de Freitas, J.F.G. and Forsyth, D.A., "Object Recognition as Machine Translation: Learning a Lexicon for a Fixed Image Vocabulary", Computer Vision, ECCV 2002, pp. 97-112, 2002
 #' @examples
 #'\dontrun{
-#' corel5k()  # Check and load the dataset
+#' corel5k <- corel5k()  # Check and load the dataset
 #' toBibtex(corel5k)
 #' corel5k$measures
 #' }
 #' @export
-corel5k <- function() check_n_load.mldr("corel5k")
+corel5k <- function(...) get.mldr("corel5k", ...)
 
 #'  Dataset generated from the del.icio.us site bookmarks
 #'
@@ -223,12 +223,12 @@ corel5k <- function() check_n_load.mldr("corel5k")
 #' @source Tsoumakas, G. and Katakis, I. and Vlahavas, I., "Effective and Efficient Multilabel Classification in Domains with Large Number of Labels", in Proc. ECML/PKDD Workshop on Mining Multidimensional Data, Antwerp, Belgium, MMD08, pp. 30--44, 2008
 #' @examples
 #'\dontrun{
-#' delicious()  # Check and load the dataset
+#' delicious <- delicious()  # Check and load the dataset
 #' toBibtex(delicious)
 #' delicious$measures
 #' }
 #' @export
-delicious <- function() check_n_load.mldr('delicious')
+delicious <- function(...) get.mldr("delicious", ...)
 
 #'  Dataset with features extracted from music tracks and the emotions they produce
 #'
@@ -249,12 +249,12 @@ delicious <- function() check_n_load.mldr('delicious')
 #' @source Klimt, B. and Yang, Y., "The Enron Corpus: A New Dataset for Email Classification Research", in Proc. ECML04, Pisa, Italy, pp. 217-226, 2004
 #' @examples
 #'\dontrun{
-#' enron()  # Check and load the dataset
+#' enron <- enron()  # Check and load the dataset
 #' toBibtex(enron)
 #' enron$measures
 #' }
 #' @export
-enron <- function() check_n_load.mldr("enron")
+enron <- function(...) get.mldr("enron", ...)
 
 #'  List  with 10 folds of the test data from the EUR-Lex directory codes dataset
 #'
@@ -263,12 +263,12 @@ enron <- function() check_n_load.mldr("enron")
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
 #'\dontrun{
-#' eurlexdc_test()  # Check and load the dataset
+#' eurlexdc_test <- eurlexdc_test()  # Check and load the dataset
 #' toBibtex(eurlexdc_test[[1]])
 #' eurlexdc_test[[1]]$measures
 #' }
 #' @export
-eurlexdc_test <- function() check_n_load.mldr('eurlexdc_test')
+eurlexdc_test <- function(...) get.mldr("eurlexdc_test", ...)
 
 #'  List  with 10 folds of the train data from the EUR-Lex directory codes dataset
 #'
@@ -277,12 +277,12 @@ eurlexdc_test <- function() check_n_load.mldr('eurlexdc_test')
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
 #'\dontrun{
-#' eurlexdc_tra()  # Check and load the dataset
+#' eurlexdc_tra <- eurlexdc_tra()  # Check and load the dataset
 #' toBibtex(eurlexdc_test[[1]])
 #' eurlexdc_test[[1]]$measures
 #' }
 #' @export
-eurlexdc_tra <- function() check_n_load.mldr('eurlexdc_tra')
+eurlexdc_tra <- function(...) get.mldr("eurlexdc_tra", ...)
 
 #'  List  with 10 folds of the test data from the EUR-Lex EUROVOC descriptors dataset
 #'
@@ -291,12 +291,12 @@ eurlexdc_tra <- function() check_n_load.mldr('eurlexdc_tra')
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
 #'\dontrun{
-#' eurlexev_test()  # Check and load the dataset
+#' eurlexev_test <- eurlexev_test()  # Check and load the dataset
 #' toBibtex(eurlexev_test[[1]])
 #' eurlexev_test[[1]]$measures
 #' }
 #' @export
-eurlexev_test <- function() check_n_load.mldr('eurlexev_test')
+eurlexev_test <- function(...) get.mldr("eurlexev_test", ...)
 
 #'  List  with 10 folds of the train data from the EUR-Lex EUROVOC descriptors dataset
 #'
@@ -305,12 +305,12 @@ eurlexev_test <- function() check_n_load.mldr('eurlexev_test')
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
 #'\dontrun{
-#' eurlexev_tra()  # Check and load the dataset
+#' eurlexev_tra <- eurlexev_tra()  # Check and load the dataset
 #' toBibtex(eurlexev_tra[[1]])
 #' eurlexev_tra[[1]]$measures
 #' }
 #' @export
-eurlexev_tra <- function() check_n_load.mldr('eurlexev_tra')
+eurlexev_tra <- function(...) get.mldr("eurlexev_tra", ...)
 
 #'  List  with 10 folds of the test data from the EUR-Lex subject matters dataset
 #'
@@ -319,12 +319,12 @@ eurlexev_tra <- function() check_n_load.mldr('eurlexev_tra')
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
 #'\dontrun{
-#' eurlexsm_test()  # Check and load the dataset
+#' eurlexsm_test <- eurlexsm_test()  # Check and load the dataset
 #' toBibtex(eurlexsm_test[[1]])
 #' eurlexsm_test[[1]]$measures
 #' }
 #' @export
-eurlexsm_test <- function() check_n_load.mldr('eurlexsm_test')
+eurlexsm_test <- function(...) get.mldr("eurlexsm_test", ...)
 
 #'  List  with 10 folds of the train data from the EUR-Lex subject matters dataset
 #'
@@ -333,12 +333,12 @@ eurlexsm_test <- function() check_n_load.mldr('eurlexsm_test')
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
 #'\dontrun{
-#' eurlexsm_tra()  # Check and load the dataset
+#' eurlexsm_tra <- eurlexsm_tra()  # Check and load the dataset
 #' toBibtex(eurlexsm_tra[[1]])
 #' eurlexsm_tra[[1]]$measures
 #' }
 #' @export
-eurlexsm_tra <- function() check_n_load.mldr('eurlexsm_tra')
+eurlexsm_tra <- function(...) get.mldr("eurlexsm_tra", ...)
 
 #'  Dataset with features correspoinding to world flags
 #'
@@ -371,12 +371,12 @@ eurlexsm_tra <- function() check_n_load.mldr('eurlexsm_tra')
 #' @source Read, J. and Pfahringer, B. and Holmes, G. and Frank, E., "Classifier chains for multi-label classification", Machine Learning, (3)85, pp. 333-359, 2011
 #' @examples
 #'\dontrun{
-#' imdb()  # Check and load the dataset
+#' imdb <- imdb()  # Check and load the dataset
 #' toBibtex(imdb)
 #' imdb$measures
 #' }
 #' @export
-imdb <- function() check_n_load.mldr('imdb')
+imdb <- function(...) get.mldr("imdb", ...)
 
 #'  Dataset with data from the Language forum discussion
 #'
@@ -397,12 +397,12 @@ imdb <- function() check_n_load.mldr('imdb')
 #' @source Snoek, C. G. M. and Worring, M. and van Gemert, J. C. and Geusebroek, J. M. and Smeulders, A. W. M., "The challenge problem for automated detection of 101 semantic concepts in multimedia", in Proc. 14th ACM International Conference on Multimedia, MULTIMEDIA06, pp. 421-430, 2006
 #' @examples
 #'\dontrun{
-#' mediamill()  # Check and load the dataset
+#' mediamill <- mediamill()  # Check and load the dataset
 #' toBibtex(mediamill)
 #' mediamill$measures
 #' }
 #' @export
-mediamill <- function() check_n_load.mldr('mediamill')
+mediamill <- function(...) get.mldr("mediamill", ...)
 
 #'  Dataset generated from medical reports
 #'
@@ -423,12 +423,12 @@ mediamill <- function() check_n_load.mldr('mediamill')
 #' @source Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao, "NUS-WIDE: a real-world web image database from National University of Singapore", in Proc. of the ACM international conference on image and video retrieval, pp. 48, 2009
 #' @examples
 #'\dontrun{
-#' nuswide_BoW()  # Check and load the dataset
+#' nuswide_BoW <- nuswide_BoW()  # Check and load the dataset
 #' toBibtex(nuswide_BoW)
 #' nuswide_BoW$measures
 #' }
 #' @export
-nuswide_BoW <- function() check_n_load.mldr('nuswide_BoW')
+nuswide_BoW <- function(...) get.mldr("nuswide_BoW", ...)
 
 #'  Dataset obtained from the NUS-WIDE database with cVLAD+ representation
 #'
@@ -437,12 +437,12 @@ nuswide_BoW <- function() check_n_load.mldr('nuswide_BoW')
 #' @source Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao, "NUS-WIDE: a real-world web image database from National University of Singapore", in Proc. of the ACM international conference on image and video retrieval, pp. 48, 2009
 #' @examples
 #'\dontrun{
-#' nuswide_VLAD()  # Check and load the dataset
+#' nuswide_VLAD <- nuswide_VLAD()  # Check and load the dataset
 #' toBibtex(nuswide_VLAD)
 #' nuswide_VLAD$measures
 #' }
 #' @export
-nuswide_VLAD <- function() check_n_load.mldr('nuswide_VLAD')
+nuswide_VLAD <- function(...) get.mldr("nuswide_VLAD", ...)
 
 #'  Dataset generated from a subset of the Medline database
 #'
@@ -451,12 +451,12 @@ nuswide_VLAD <- function() check_n_load.mldr('nuswide_VLAD')
 #' @source Joachims, Thorsten, "Text Categorization with Suport Vector Machines: Learning with Many Relevant Features", in Proc. 10th European Conference on Machine Learning, pp. 137-142, 1998
 #' @examples
 #'\dontrun{
-#' ohsumed()  # Check and load the dataset
+#' ohsumed <- ohsumed()  # Check and load the dataset
 #' toBibtex(ohsumed)
 #' ohsumed$measures
 #' }
 #' @export
-ohsumed <- function() check_n_load.mldr('ohsumed')
+ohsumed <- function(...) get.mldr("ohsumed", ...)
 
 #'  Dataset from the Reuters corpus (subset 1)
 #'
@@ -465,12 +465,12 @@ ohsumed <- function() check_n_load.mldr('ohsumed')
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
 #'\dontrun{
-#' rcv1sub1()  # Check and load the dataset
+#' rcv1sub1 <- rcv1sub1()  # Check and load the dataset
 #' toBibtex(rcv1sub1)
 #' rcv1sub1$measures
 #' }
 #' @export
-rcv1sub1 <- function() check_n_load.mldr('rcv1sub1')
+rcv1sub1 <- function(...) get.mldr("rcv1sub1", ...)
 
 #'  Dataset from the Reuters corpus (subset 2)
 #'
@@ -479,12 +479,12 @@ rcv1sub1 <- function() check_n_load.mldr('rcv1sub1')
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
 #'\dontrun{
-#' rcv1sub2()  # Check and load the dataset
+#' rcv1sub2 <- rcv1sub2()  # Check and load the dataset
 #' toBibtex(rcv1sub2)
 #' rcv1sub2$measures
 #' }
 #' @export
-rcv1sub2 <- function() check_n_load.mldr('rcv1sub2')
+rcv1sub2 <- function(...) get.mldr("rcv1sub2", ...)
 
 #'  Dataset from the Reuters corpus (subset 3)
 #'
@@ -493,12 +493,12 @@ rcv1sub2 <- function() check_n_load.mldr('rcv1sub2')
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
 #'\dontrun{
-#' rcv1sub3()  # Check and load the dataset
+#' rcv1sub3 <- rcv1sub3()  # Check and load the dataset
 #' toBibtex(rcv1sub3)
 #' rcv1sub3$measures
 #' }
 #' @export
-rcv1sub3 <- function() check_n_load.mldr('rcv1sub3')
+rcv1sub3 <- function(...) get.mldr("rcv1sub3", ...)
 
 #'  Dataset from the Reuters corpus (subset 4)
 #'
@@ -507,12 +507,12 @@ rcv1sub3 <- function() check_n_load.mldr('rcv1sub3')
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
 #'\dontrun{
-#' rcv1sub4()  # Check and load the dataset
+#' rcv1sub4 <- rcv1sub4()  # Check and load the dataset
 #' toBibtex(rcv1sub4)
 #' rcv1sub4$measures
 #' }
 #' @export
-rcv1sub4 <- function() check_n_load.mldr('rcv1sub4')
+rcv1sub4 <- function(...) get.mldr("rcv1sub4", ...)
 
 #'  Dataset from the Reuters corpus (subset 5)
 #'
@@ -521,12 +521,12 @@ rcv1sub4 <- function() check_n_load.mldr('rcv1sub4')
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
 #'\dontrun{
-#' rcv1sub5()  # Check and load the dataset
+#' rcv1sub5 <- rcv1sub5()  # Check and load the dataset
 #' toBibtex(rcv1sub5)
 #' rcv1sub5$measures
 #' }
 #' @export
-rcv1sub5 <- function() check_n_load.mldr('rcv1sub5')
+rcv1sub5 <- function(...) get.mldr("rcv1sub5", ...)
 
 #' Dataset from the Reuters Corpus with the 500 most relevant features selected
 #'
@@ -535,12 +535,12 @@ rcv1sub5 <- function() check_n_load.mldr('rcv1sub5')
 #' @source Read, Jesse, "Scalable multi-label classification", University of Waikato, 2010
 #' @examples
 #'\dontrun{
-#' reutersk500()  # Check and load the dataset
+#' reutersk500 <- reutersk500()  # Check and load the dataset
 #' toBibtex(reutersk500)
 #' reutersk500$measures
 #' }
 #' @export
-reutersk500 <- function() check_n_load.mldr('reutersk500')
+reutersk500 <- function(...) get.mldr("reutersk500", ...)
 
 #'  Dataset from images with different natural scenes
 #'
@@ -549,11 +549,11 @@ reutersk500 <- function() check_n_load.mldr('reutersk500')
 #' @source Boutell, M. and Luo, J. and Shen, X. and Brown, C., "Learning multi-label scene classification", Pattern Recognition, (9)37, pp. 1757--1771, 2004
 #' @examples
 #'\dontrun{
-#' scene()
+#' scene <- scene()
 #' toBibtex(scene)
 #' scene$measures
 #' }
-scene <- function() check_n_load.mldr('scene')
+scene <- function(...) get.mldr("scene", ...)
 
 #'  Dataset generated from slashdot.org site entries
 #'
@@ -574,12 +574,12 @@ scene <- function() check_n_load.mldr('scene')
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
 #'\dontrun{
-#' stackex_chemistry()  # Check and load the dataset
+#' stackex_chemistry <- stackex_chemistry()  # Check and load the dataset
 #' toBibtex(stackex_chemistry)
 #' stackex_chemistry$measures
 #' }
 #' @export
-stackex_chemistry <- function() check_n_load.mldr('stackex_chemistry')
+stackex_chemistry <- function(...) get.mldr("stackex_chemistry", ...)
 
 #'  Dataset from the Stack Exchange's chess forum
 #'
@@ -600,12 +600,12 @@ stackex_chemistry <- function() check_n_load.mldr('stackex_chemistry')
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
 #'\dontrun{
-#' stackex_coffee()
+#' stackex_coffee <- stackex_coffee()
 #' toBibtex(stackex_coffee)
 #' stackex_coffee$measures
 #' }
 #' @export
-stackex_coffee <- function() check_n_load.mldr('stackex_coffee')
+stackex_coffee <- function(...) get.mldr("stackex_coffee", ...)
 
 #'  Dataset from the Stack Exchange's cooking forum
 #'
@@ -614,12 +614,12 @@ stackex_coffee <- function() check_n_load.mldr('stackex_coffee')
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
 #'\dontrun{
-#' stackex_cooking()  # Check and load the dataset
+#' stackex_cooking <- stackex_cooking()  # Check and load the dataset
 #' toBibtex(stackex_cooking)
 #' stackex_cooking$measures
 #' }
 #' @export
-stackex_cooking <- function() check_n_load.mldr('stackex_cooking')
+stackex_cooking <- function(...) get.mldr("stackex_cooking", ...)
 
 #'  Dataset from the Stack Exchange's computer science forum
 #'
@@ -628,12 +628,12 @@ stackex_cooking <- function() check_n_load.mldr('stackex_cooking')
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
 #'\dontrun{
-#' stackex_cs()  # Check and load the dataset
+#' stackex_cs <- stackex_cs()  # Check and load the dataset
 #' toBibtex(stackex_cs)
 #' stackex_cs$measures
 #' }
 #' @export
-stackex_cs <- function() check_n_load.mldr('stackex_cs')
+stackex_cs <- function(...) get.mldr("stackex_cs", ...)
 
 #'  Dataset from the Stack Exchange's philosophy forum
 #'
@@ -642,12 +642,12 @@ stackex_cs <- function() check_n_load.mldr('stackex_cs')
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
 #'\dontrun{
-#' stackex_philosophy()  # Check and load the dataset
+#' stackex_philosophy <- stackex_philosophy()  # Check and load the dataset
 #' toBibtex(stackex_philosophy)
 #' stackex_philosophy$measures
 #' }
 #' @export
-stackex_philosophy <- function() check_n_load.mldr('stackex_philosophy')
+stackex_philosophy <- function(...) get.mldr("stackex_philosophy", ...)
 
 #'  Dataset from airplanes failures reports
 #'
@@ -656,12 +656,12 @@ stackex_philosophy <- function() check_n_load.mldr('stackex_philosophy')
 #' @source Srivastava, A. N. and Zane-Ulman, B., "Discovering recurring anomalies in text reports regarding complex space systems", Aerospace Conference, pp. 3853-3862, 2005
 #' @examples
 #'\dontrun{
-#' tmc2007()  # Check and load the dataset
+#' tmc2007 <- tmc2007()  # Check and load the dataset
 #' toBibtex(tmc2007)
 #' tmc2007$measures
 #' }
 #' @export
-tmc2007 <- function() check_n_load.mldr('tmc2007')
+tmc2007 <- function(...) get.mldr("tmc2007", ...)
 
 #'  Dataset from airplanes failures reports (500 most relevant features extracted)
 #'
@@ -670,12 +670,12 @@ tmc2007 <- function() check_n_load.mldr('tmc2007')
 #' @source Srivastava, A. N. and Zane-Ulman, B., "Discovering recurring anomalies in text reports regarding complex space systems", Aerospace Conference, pp. 3853-3862, 2005
 #' @examples
 #'\dontrun{
-#' tmc2007_500()  # Check and load the dataset
+#' tmc2007_500 <- tmc2007_500()  # Check and load the dataset
 #' toBibtex(tmc2007_500)
 #' tmc2007_500$measures
 #' }
 #' @export
-tmc2007_500 <- function() check_n_load.mldr('tmc2007_500')
+tmc2007_500 <- function(...) get.mldr("tmc2007_500", ...)
 
 #' Dataset generated from the Yahoo! web site index (arts category)
 #'
@@ -684,12 +684,12 @@ tmc2007_500 <- function() check_n_load.mldr('tmc2007_500')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_arts()  # Check and load the dataset
+#' yahoo_arts <- yahoo_arts()  # Check and load the dataset
 #' toBibtex(yahoo_arts)
 #' yahoo_arts$measures
 #' }
 #' @export
-yahoo_arts <- function() check_n_load.mldr('yahoo_arts')
+yahoo_arts <- function(...) get.mldr("yahoo_arts", ...)
 
 #' Dataset generated from the Yahoo! web site index (business category)
 #'
@@ -698,12 +698,12 @@ yahoo_arts <- function() check_n_load.mldr('yahoo_arts')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_business()  # Check and load the dataset
+#' yahoo_business <- yahoo_business()  # Check and load the dataset
 #' toBibtex(yahoo_business)
 #' yahoo_business$measures
 #' }
 #' @export
-yahoo_business <- function() check_n_load.mldr('yahoo_business')
+yahoo_business <- function(...) get.mldr("yahoo_business", ...)
 
 #' Dataset generated from the Yahoo! web site index (computers category)
 #'
@@ -712,12 +712,12 @@ yahoo_business <- function() check_n_load.mldr('yahoo_business')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_computers()  # Check and load the dataset
+#' yahoo_computers <- yahoo_computers()  # Check and load the dataset
 #' toBibtex(yahoo_computers)
 #' yahoo_computers$measures
 #' }
 #' @export
-yahoo_computers <- function() check_n_load.mldr('yahoo_computers')
+yahoo_computers <- function(...) get.mldr("yahoo_computers", ...)
 
 #' Dataset generated from the Yahoo! web site index (arts education)
 #'
@@ -726,12 +726,12 @@ yahoo_computers <- function() check_n_load.mldr('yahoo_computers')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_education()  # Check and load the dataset
+#' yahoo_education <- yahoo_education()  # Check and load the dataset
 #' toBibtex(yahoo_education)
 #' yahoo_education$measures
 #' }
 #' @export
-yahoo_education <- function() check_n_load.mldr('yahoo_education')
+yahoo_education <- function(...) get.mldr("yahoo_education", ...)
 
 #' Dataset generated from the Yahoo! web site index (arts entertainment)
 #'
@@ -740,12 +740,12 @@ yahoo_education <- function() check_n_load.mldr('yahoo_education')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_entertainment()  # Check and load the dataset
+#' yahoo_entertainment <- yahoo_entertainment()  # Check and load the dataset
 #' toBibtex(yahoo_entertainment)
 #' yahoo_entertainment$measures
 #' }
 #' @export
-yahoo_entertainment <- function() check_n_load.mldr('yahoo_entertainment')
+yahoo_entertainment <- function(...) get.mldr("yahoo_entertainment", ...)
 
 #' Dataset generated from the Yahoo! web site index (health category)
 #'
@@ -754,12 +754,12 @@ yahoo_entertainment <- function() check_n_load.mldr('yahoo_entertainment')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_health()  # Check and load the dataset
+#' yahoo_health <- yahoo_health()  # Check and load the dataset
 #' toBibtex(yahoo_health)
 #' yahoo_health$measures
 #' }
 #' @export
-yahoo_health <- function() check_n_load.mldr('yahoo_health')
+yahoo_health <- function(...) get.mldr("yahoo_health", ...)
 
 #' Dataset generated from the Yahoo! web site index (recreation category)
 #'
@@ -768,12 +768,12 @@ yahoo_health <- function() check_n_load.mldr('yahoo_health')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_recreation()  # Check and load the dataset
+#' yahoo_recreation <- yahoo_recreation()  # Check and load the dataset
 #' toBibtex(yahoo_recreation)
 #' yahoo_recreation$measures
 #' }
 #' @export
-yahoo_recreation <- function() check_n_load.mldr('yahoo_recreation')
+yahoo_recreation <- function(...) get.mldr("yahoo_recreation", ...)
 
 #' Dataset generated from the Yahoo! web site index (reference category)
 #'
@@ -782,12 +782,12 @@ yahoo_recreation <- function() check_n_load.mldr('yahoo_recreation')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_reference()  # Check and load the dataset
+#' yahoo_reference <- yahoo_reference()  # Check and load the dataset
 #' toBibtex(yahoo_reference)
 #' yahoo_reference$measures
 #' }
 #' @export
-yahoo_reference <- function() check_n_load.mldr('yahoo_reference')
+yahoo_reference <- function(...) get.mldr("yahoo_reference", ...)
 
 #' Dataset generated from the Yahoo! web site index (science category)
 #'
@@ -796,12 +796,12 @@ yahoo_reference <- function() check_n_load.mldr('yahoo_reference')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_science()  # Check and load the dataset
+#' yahoo_science <- yahoo_science()  # Check and load the dataset
 #' toBibtex(yahoo_science)
 #' yahoo_science$measures
 #' }
 #' @export
-yahoo_science <- function() check_n_load.mldr('yahoo_science')
+yahoo_science <- function(...) get.mldr("yahoo_science", ...)
 
 #' Dataset generated from the Yahoo! web site index (social category)
 #'
@@ -810,12 +810,12 @@ yahoo_science <- function() check_n_load.mldr('yahoo_science')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_social()  # Check and load the dataset
+#' yahoo_social <- yahoo_social()  # Check and load the dataset
 #' toBibtex(yahoo_social)
 #' yahoo_social$measures
 #' }
 #' @export
-yahoo_social <- function() check_n_load.mldr('yahoo_social')
+yahoo_social <- function(...) get.mldr("yahoo_social", ...)
 
 #' Dataset generated from the Yahoo! web site index (society category)
 #'
@@ -824,12 +824,12 @@ yahoo_social <- function() check_n_load.mldr('yahoo_social')
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
 #'\dontrun{
-#' yahoo_society()  # Check and load the dataset
+#' yahoo_society <- yahoo_society()  # Check and load the dataset
 #' toBibtex(yahoo_society)
 #' yahoo_society$measures
 #' }
 #' @export
-yahoo_society <- function() check_n_load.mldr('yahoo_society')
+yahoo_society <- function(...) get.mldr("yahoo_society", ...)
 
 #'  Dataset with protein profiles and their categories
 #'
@@ -838,9 +838,9 @@ yahoo_society <- function() check_n_load.mldr('yahoo_society')
 #' @source Elisseeff, A. and Weston, J., "A Kernel Method for Multi-Labelled Classification", Advances in Neural Information Processing Systems, Vol. 14, pp. 681--687, 2001
 #' @examples
 #'\dontrun{
-#' yeast()  # Check and load the dataset
+#' yeast <- yeast()  # Check and load the dataset
 #' toBibtex(yeast)
 #' yeast$measures
 #' }
 #' @export
-yeast <- function() check_n_load.mldr('yeast')
+yeast <- function(...) get.mldr("yeast", ...)

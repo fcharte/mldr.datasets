@@ -6,6 +6,9 @@ RDS_CSV <- "https://fcharte.github.io/mldr.datasets/datasets_rds.csv"
 #' @examples
 #'\dontrun{
 #' library(mldr.datasets)
+#' # customize the download directory
+#' options(mldr.download.dir = "./datasets")
+#' # retrieve the bibtex dataset, as an mldr object, into a variable
 #' bibtex <- get.mldr("bibtex")
 #' bibtex$measures
 #' }
