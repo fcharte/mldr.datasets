@@ -247,14 +247,18 @@ export.xml <- function(mld) {
 }
 
 export.libsvm <- function(mld, ...) {
-  apply(mld$dataset, 1, function(instance) {
-      inputs <- instance[mld$attributesIndexes]
-      outputs <- instance[mld$labels$index]
+  ischar <- !sapply(mld$dataset, is.numeric)
+  nonzero <- mld$dataset != 0
+
+  sapply(1:nrow(mld$dataset), function(i) {
+      inputs <- mld$dataset[i, mld$attributesIndexes]
+      outputs <- mld$dataset[i, mld$labels$index]
+      select <- ischar | nonzero[i, ]
       paste(
         # libSVM counts labels starting from zero
         # and attributes starting from one
         paste(which(outputs == 1) - 1, collapse = ","),
-        paste(which(instance != 0), instance[instance != 0], sep = ":", collapse = " "),
+        paste(which(select), mld$dataset[i, select], sep = ":", collapse = " "),
         sep = " "
       )
     }
