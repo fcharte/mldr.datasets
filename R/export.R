@@ -191,13 +191,16 @@ export.dense.arff.data <- function(data) {
 }
 
 export.sparse.arff.data <- function(data) {
-  apply(data, 1, function(instance) {
-    select <- instance != 0
+  ischar <- !sapply(data, is.numeric)
+  nonzero <- data != 0
+
+  sapply(1:nrow(data), function(i) {
+    select <- ischar | nonzero[i, ]
     paste0(
       "{",
       paste(
         which(select) - 1,
-        instance[select],
+        data[i, select],
         sep = " ",
         collapse = ","
       ),
@@ -216,7 +219,7 @@ export.arff.chunks <-
            else
              export.dense.arff.data) {
     num_instances <- dim(data)[1]
-    chunks <- floor(num_instances / chunk_size)
+    chunks <- floor((num_instances - 1) / chunk_size)
 
   for (ch in 0:chunks) {
     start <- 1 + ch*chunk_size
