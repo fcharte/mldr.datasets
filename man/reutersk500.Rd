@@ -8,14 +8,17 @@
 Read, Jesse, "Scalable multi-label classification", University of Waikato, 2010
 }
 \usage{
-reutersk500()
+reutersk500(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-reutersk500()  # Check and load the dataset
+reutersk500 <- reutersk500()  # Check and load the dataset
 toBibtex(reutersk500)
 reutersk500$measures
 }

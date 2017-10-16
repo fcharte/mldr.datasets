@@ -8,14 +8,17 @@
 Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 }
 \usage{
-yahoo_business()
+yahoo_business(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-yahoo_business()  # Check and load the dataset
+yahoo_business <- yahoo_business()  # Check and load the dataset
 toBibtex(yahoo_business)
 yahoo_business$measures
 }

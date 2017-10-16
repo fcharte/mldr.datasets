@@ -13,6 +13,7 @@
 #'  Dataset with BibTeX entries
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 7395 instances, 1836 attributes and 159 labels
 #' @source Katakis, I. and Tsoumakas, G. and Vlahavas, I., "Multilabel Text Classification for Automated Tag Suggestion", in Proc. ECML PKDD08 Discovery Challenge, Antwerp, Belgium, pp. 75-83, 2008
 #' @examples
@@ -39,6 +40,7 @@ bibtex <- function(...) get.mldr("bibtex", ...)
 #'  Dataset with data from web bookmarks and their categories
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 87856 instances, 2150 attributes and 208 labels
 #' @source Katakis, I. and Tsoumakas, G. and Vlahavas, I., "Multilabel Text Classification for Automated Tag Suggestion", in Proc. ECML PKDD08 Discovery Challenge, Antwerp, Belgium, pp. 75-83, 2008
 #' @examples
@@ -65,6 +67,7 @@ bookmarks <- function(...) get.mldr("bookmarks", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13766 instances, 500 attributes and 153 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -79,6 +82,7 @@ corel16k001 <- function(...) get.mldr("corel16k001", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13761 instances, 500 attributes and 164 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -93,6 +97,7 @@ corel16k002 <- function(...) get.mldr("corel16k002", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13760 instances, 500 attributes and 154 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -107,6 +112,7 @@ corel16k003 <- function(...) get.mldr("corel16k003", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13837 instances, 500 attributes and 162 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -121,6 +127,7 @@ corel16k004 <- function(...) get.mldr("corel16k004", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13847 instances, 500 attributes and 160 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -135,6 +142,7 @@ corel16k005 <- function(...) get.mldr("corel16k005", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13859 instances, 500 attributes and 162 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -149,6 +157,7 @@ corel16k006 <- function(...) get.mldr("corel16k006", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13915 instances, 500 attributes and 174 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -163,6 +172,7 @@ corel16k007 <- function(...) get.mldr("corel16k007", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13864 instances, 500 attributes and 168 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -177,6 +187,7 @@ corel16k008 <- function(...) get.mldr("corel16k008", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13884 instances, 500 attributes and 173 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -191,6 +202,7 @@ corel16k009 <- function(...) get.mldr("corel16k009", ...)
 #'  Datasets with data from the Corel image collection. There are 10 subsets in corel16k
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13618 instances, 500 attributes and 144 labels
 #' @source Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 #' @examples
@@ -205,6 +217,7 @@ corel16k010 <- function(...) get.mldr("corel16k010", ...)
 #'  Dataset with data from the Corel image collection
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 5000 instances, 499 attributes and 374 labels
 #' @source Duygulu, P. and Barnard, K. and de Freitas, J.F.G. and Forsyth, D.A., "Object Recognition as Machine Translation: Learning a Lexicon for a Fixed Image Vocabulary", Computer Vision, ECCV 2002, pp. 97-112, 2002
 #' @examples
@@ -219,6 +232,7 @@ corel5k <- function(...) get.mldr("corel5k", ...)
 #'  Dataset generated from the del.icio.us site bookmarks
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 16105 instances, 500 attributes and 983 labels
 #' @source Tsoumakas, G. and Katakis, I. and Vlahavas, I., "Effective and Efficient Multilabel Classification in Domains with Large Number of Labels", in Proc. ECML/PKDD Workshop on Mining Multidimensional Data, Antwerp, Belgium, MMD08, pp. 30--44, 2008
 #' @examples
@@ -245,6 +259,7 @@ delicious <- function(...) get.mldr("delicious", ...)
 #'  Dataset with email messages and the folders where the users stored them
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 1702 instances, 1001 attributes and 53 labels
 #' @source Klimt, B. and Yang, Y., "The Enron Corpus: A New Dataset for Email Classification Research", in Proc. ECML04, Pisa, Italy, pp. 217-226, 2004
 #' @examples
@@ -259,6 +274,7 @@ enron <- function(...) get.mldr("enron", ...)
 #'  List  with 10 folds of the test data from the EUR-Lex directory codes dataset
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 1935 instances, 5000 attributes and 412 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
@@ -273,6 +289,7 @@ eurlexdc_test <- function(...) get.mldr("eurlexdc_test", ...)
 #'  List  with 10 folds of the train data from the EUR-Lex directory codes dataset
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 17413 instances, 5000 attributes and 412 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
@@ -287,6 +304,7 @@ eurlexdc_tra <- function(...) get.mldr("eurlexdc_tra", ...)
 #'  List  with 10 folds of the test data from the EUR-Lex EUROVOC descriptors dataset
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 1935 instances, 5000 attributes and 3993 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
@@ -301,6 +319,7 @@ eurlexev_test <- function(...) get.mldr("eurlexev_test", ...)
 #'  List  with 10 folds of the train data from the EUR-Lex EUROVOC descriptors dataset
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 17413 instances, 5000 attributes and 3993 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
@@ -315,6 +334,7 @@ eurlexev_tra <- function(...) get.mldr("eurlexev_tra", ...)
 #'  List  with 10 folds of the test data from the EUR-Lex subject matters dataset
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 1935 instances, 5000 attributes and 201 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
@@ -329,6 +349,7 @@ eurlexsm_test <- function(...) get.mldr("eurlexsm_test", ...)
 #'  List  with 10 folds of the train data from the EUR-Lex subject matters dataset
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 17413 instances, 5000 attributes and 201 labels
 #' @source Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 #' @examples
@@ -367,6 +388,7 @@ eurlexsm_tra <- function(...) get.mldr("eurlexsm_tra", ...)
 #'  Dataset generated from the IMDB film database
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 120919 instances, 1001 attributes and 28 labels
 #' @source Read, J. and Pfahringer, B. and Holmes, G. and Frank, E., "Classifier chains for multi-label classification", Machine Learning, (3)85, pp. 333-359, 2011
 #' @examples
@@ -393,6 +415,7 @@ imdb <- function(...) get.mldr("imdb", ...)
 #'  Dataset with features extracted from video sequences and semantic concepts assigned as labels
 #'
 #' @description Multilabel dataset from the video domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 43907 instances, 120 attributes and 101 labels
 #' @source Snoek, C. G. M. and Worring, M. and van Gemert, J. C. and Geusebroek, J. M. and Smeulders, A. W. M., "The challenge problem for automated detection of 101 semantic concepts in multimedia", in Proc. 14th ACM International Conference on Multimedia, MULTIMEDIA06, pp. 421-430, 2006
 #' @examples
@@ -419,6 +442,7 @@ mediamill <- function(...) get.mldr("mediamill", ...)
 #'  Dataset obtained from the NUS-WIDE database with BoW representation
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 269648 instances, 501 attributes and 81 labels
 #' @source Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao, "NUS-WIDE: a real-world web image database from National University of Singapore", in Proc. of the ACM international conference on image and video retrieval, pp. 48, 2009
 #' @examples
@@ -433,6 +457,7 @@ nuswide_BoW <- function(...) get.mldr("nuswide_BoW", ...)
 #'  Dataset obtained from the NUS-WIDE database with cVLAD+ representation
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 269648 instances, 129 attributes and 81 labels
 #' @source Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao, "NUS-WIDE: a real-world web image database from National University of Singapore", in Proc. of the ACM international conference on image and video retrieval, pp. 48, 2009
 #' @examples
@@ -447,6 +472,7 @@ nuswide_VLAD <- function(...) get.mldr("nuswide_VLAD", ...)
 #'  Dataset generated from a subset of the Medline database
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 13929 instances, 1002 attributes and 23 labels
 #' @source Joachims, Thorsten, "Text Categorization with Suport Vector Machines: Learning with Many Relevant Features", in Proc. 10th European Conference on Machine Learning, pp. 137-142, 1998
 #' @examples
@@ -461,6 +487,7 @@ ohsumed <- function(...) get.mldr("ohsumed", ...)
 #'  Dataset from the Reuters corpus (subset 1)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6000 instances, 47236 attributes and 101 labels
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
@@ -475,6 +502,7 @@ rcv1sub1 <- function(...) get.mldr("rcv1sub1", ...)
 #'  Dataset from the Reuters corpus (subset 2)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6000 instances, 47236 attributes and 101 labels
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
@@ -489,6 +517,7 @@ rcv1sub2 <- function(...) get.mldr("rcv1sub2", ...)
 #'  Dataset from the Reuters corpus (subset 3)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6000 instances, 47236 attributes and 101 labels
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
@@ -503,6 +532,7 @@ rcv1sub3 <- function(...) get.mldr("rcv1sub3", ...)
 #'  Dataset from the Reuters corpus (subset 4)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6000 instances, 47229 attributes and 101 labels
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
@@ -517,6 +547,7 @@ rcv1sub4 <- function(...) get.mldr("rcv1sub4", ...)
 #'  Dataset from the Reuters corpus (subset 5)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6000 instances, 47235 attributes and 101 labels
 #' @source Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 #' @examples
@@ -531,6 +562,7 @@ rcv1sub5 <- function(...) get.mldr("rcv1sub5", ...)
 #' Dataset from the Reuters Corpus with the 500 most relevant features selected
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6000 instances, 500 attributes and 103 labels
 #' @source Read, Jesse, "Scalable multi-label classification", University of Waikato, 2010
 #' @examples
@@ -545,6 +577,7 @@ reutersk500 <- function(...) get.mldr("reutersk500", ...)
 #'  Dataset from images with different natural scenes
 #'
 #' @description Multilabel dataset from the image domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 2407 instances, 294 attributes and 6 labels
 #' @source Boutell, M. and Luo, J. and Shen, X. and Brown, C., "Learning multi-label scene classification", Pattern Recognition, (9)37, pp. 1757--1771, 2004
 #' @examples
@@ -570,6 +603,7 @@ scene <- function(...) get.mldr("scene", ...)
 #'  Dataset from the Stack Exchange's chemistry forum
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6961 instances, 540 attributes and 175 labels
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
@@ -596,6 +630,7 @@ stackex_chemistry <- function(...) get.mldr("stackex_chemistry", ...)
 #'  Dataset from the Stack Exchange's coffee forum
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 225 instances, 1763 attributes and 123 labels
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
@@ -610,6 +645,7 @@ stackex_coffee <- function(...) get.mldr("stackex_coffee", ...)
 #'  Dataset from the Stack Exchange's cooking forum
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 10491 instances, 577 attributes and 400 labels
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
@@ -624,6 +660,7 @@ stackex_cooking <- function(...) get.mldr("stackex_cooking", ...)
 #'  Dataset from the Stack Exchange's computer science forum
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 9270 instances, 635 attributes and 274 labels
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
@@ -638,6 +675,7 @@ stackex_cs <- function(...) get.mldr("stackex_cs", ...)
 #'  Dataset from the Stack Exchange's philosophy forum
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 3971 instances, 842 attributes and 233 labels
 #' @source Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 #' @examples
@@ -652,6 +690,7 @@ stackex_philosophy <- function(...) get.mldr("stackex_philosophy", ...)
 #'  Dataset from airplanes failures reports
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 28596 instances, 49060 attributes and 22 labels
 #' @source Srivastava, A. N. and Zane-Ulman, B., "Discovering recurring anomalies in text reports regarding complex space systems", Aerospace Conference, pp. 3853-3862, 2005
 #' @examples
@@ -666,6 +705,7 @@ tmc2007 <- function(...) get.mldr("tmc2007", ...)
 #'  Dataset from airplanes failures reports (500 most relevant features extracted)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 28596 instances, 500 attributes and 22 labels
 #' @source Srivastava, A. N. and Zane-Ulman, B., "Discovering recurring anomalies in text reports regarding complex space systems", Aerospace Conference, pp. 3853-3862, 2005
 #' @examples
@@ -680,6 +720,7 @@ tmc2007_500 <- function(...) get.mldr("tmc2007_500", ...)
 #' Dataset generated from the Yahoo! web site index (arts category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 7484 instances, 23146 attributes and 26 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -694,6 +735,7 @@ yahoo_arts <- function(...) get.mldr("yahoo_arts", ...)
 #' Dataset generated from the Yahoo! web site index (business category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 11214 instances, 21924 attributes and 30 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -708,6 +750,7 @@ yahoo_business <- function(...) get.mldr("yahoo_business", ...)
 #' Dataset generated from the Yahoo! web site index (computers category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 12444 instances, 34096 attributes and 33 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -722,6 +765,7 @@ yahoo_computers <- function(...) get.mldr("yahoo_computers", ...)
 #' Dataset generated from the Yahoo! web site index (arts education)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 12030 instances, 27534 attributes and 33 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -736,6 +780,7 @@ yahoo_education <- function(...) get.mldr("yahoo_education", ...)
 #' Dataset generated from the Yahoo! web site index (arts entertainment)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 12730 instances, 32001 attributes and 21 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -750,6 +795,7 @@ yahoo_entertainment <- function(...) get.mldr("yahoo_entertainment", ...)
 #' Dataset generated from the Yahoo! web site index (health category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 8205 instances, 30605 attributes and 32 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -764,6 +810,7 @@ yahoo_health <- function(...) get.mldr("yahoo_health", ...)
 #' Dataset generated from the Yahoo! web site index (recreation category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 12828 instances, 30324 attributes and 22 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -778,6 +825,7 @@ yahoo_recreation <- function(...) get.mldr("yahoo_recreation", ...)
 #' Dataset generated from the Yahoo! web site index (reference category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 8027 instances, 39679 attributes and 33 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -792,6 +840,7 @@ yahoo_reference <- function(...) get.mldr("yahoo_reference", ...)
 #' Dataset generated from the Yahoo! web site index (science category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 6428 instances, 37187 attributes and 40 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -806,6 +855,7 @@ yahoo_science <- function(...) get.mldr("yahoo_science", ...)
 #' Dataset generated from the Yahoo! web site index (social category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 12111 instances, 52350 attributes and 39 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -820,6 +870,7 @@ yahoo_social <- function(...) get.mldr("yahoo_social", ...)
 #' Dataset generated from the Yahoo! web site index (society category)
 #'
 #' @description Multilabel dataset from the text domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 14512 instances, 31802 attributes and 27 labels
 #' @source Ueda, N. and Saito, K., "Parametric mixture models for multi-labeled text", Advances in neural information processing systems, pp. 721--728, 2002
 #' @examples
@@ -834,6 +885,7 @@ yahoo_society <- function(...) get.mldr("yahoo_society", ...)
 #'  Dataset with protein profiles and their categories
 #'
 #' @description Multilabel dataset from the biology domain.
+#' @param ... Additional options for the loading function (e.g. \code{download.dir})
 #' @format An mldr object with 2417 instances, 103 attributes and 14 labels
 #' @source Elisseeff, A. and Weston, J., "A Kernel Method for Multi-Labelled Classification", Advances in Neural Information Processing Systems, Vol. 14, pp. 681--687, 2001
 #' @examples

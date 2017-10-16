@@ -8,14 +8,17 @@
 Snoek, C. G. M. and Worring, M. and van Gemert, J. C. and Geusebroek, J. M. and Smeulders, A. W. M., "The challenge problem for automated detection of 101 semantic concepts in multimedia", in Proc. 14th ACM International Conference on Multimedia, MULTIMEDIA06, pp. 421-430, 2006
 }
 \usage{
-mediamill()
+mediamill(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the video domain.
 }
 \examples{
 \dontrun{
-mediamill()  # Check and load the dataset
+mediamill <- mediamill()  # Check and load the dataset
 toBibtex(mediamill)
 mediamill$measures
 }

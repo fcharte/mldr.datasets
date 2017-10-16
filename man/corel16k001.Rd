@@ -8,14 +8,17 @@
 Barnard, K. and Duygulu, P. and Forsyth, D. and de Freitas, N. and Blei, D. M. and Jordan, M. I., "Matching words and pictures", Journal of Machine Learning Research, Vol. 3, pp. 1107--1135, 2003
 }
 \usage{
-corel16k001()
+corel16k001(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the image domain.
 }
 \examples{
 \dontrun{
-corel16k001()  # Check and load the dataset
+corel16k001 <- corel16k001()  # Check and load the dataset
 toBibtex(corel16k001)
 corel16k001$measures
 }

@@ -8,13 +8,12 @@
 #' \code{'KEEL'}, \code{'CSV'} and \code{'LIBSVM'}
 #' @param sparse Boolean value indicating if sparse representation has to be used for ARFF-based file formats
 #' @param basename Base name for the files. \code{'unnamed_mldr'} is used by default
+#' @param ... Additional options for the exporting functions (e.g. \code{chunk_size}, the number of instances to write at a time)
 #' @examples
 #'\dontrun{
 #' library(mldr.datasets)
 #' write.mldr(emotions, format = c('CSV', 'KEEL'))
 #' }
-#'
-#' @import data.table
 #'
 #' @export
 write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,

@@ -8,14 +8,17 @@
 Read, J. and Pfahringer, B. and Holmes, G. and Frank, E., "Classifier chains for multi-label classification", Machine Learning, (3)85, pp. 333-359, 2011
 }
 \usage{
-imdb()
+imdb(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-imdb()  # Check and load the dataset
+imdb <- imdb()  # Check and load the dataset
 toBibtex(imdb)
 imdb$measures
 }

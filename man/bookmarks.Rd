@@ -8,14 +8,17 @@
 Katakis, I. and Tsoumakas, G. and Vlahavas, I., "Multilabel Text Classification for Automated Tag Suggestion", in Proc. ECML PKDD08 Discovery Challenge, Antwerp, Belgium, pp. 75-83, 2008
 }
 \usage{
-bookmarks()
+bookmarks(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-bookmarks()  # Check and load the dataset
+bookmarks <- bookmarks()  # Check and load the dataset
 toBibtex(bookmarks)
 bookmarks$measures
 }

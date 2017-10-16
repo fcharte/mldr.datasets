@@ -10,6 +10,8 @@ get.mldr(name, download.dir = if (is.null(getOption("mldr.download.dir")))
 }
 \arguments{
 \item{name}{Name of the dataset to load}
+
+\item{download.dir}{The path to the download directory, can be also set through \code{options()}}
 }
 \description{
 \code{get.mldr} obtains a multilabel dataset, either by finding it in the download directory or downloading it.
@@ -17,6 +19,9 @@ get.mldr(name, download.dir = if (is.null(getOption("mldr.download.dir")))
 \examples{
 \dontrun{
 library(mldr.datasets)
+# customize the download directory
+options(mldr.download.dir = "./datasets")
+# retrieve the bibtex dataset, as an mldr object, into a variable
 bibtex <- get.mldr("bibtex")
 bibtex$measures
 }

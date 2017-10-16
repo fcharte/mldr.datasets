@@ -8,14 +8,17 @@
 Elisseeff, A. and Weston, J., "A Kernel Method for Multi-Labelled Classification", Advances in Neural Information Processing Systems, Vol. 14, pp. 681--687, 2001
 }
 \usage{
-yeast()
+yeast(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the biology domain.
 }
 \examples{
 \dontrun{
-yeast()  # Check and load the dataset
+yeast <- yeast()  # Check and load the dataset
 toBibtex(yeast)
 yeast$measures
 }

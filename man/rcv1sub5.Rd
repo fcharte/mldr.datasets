@@ -8,14 +8,17 @@
 Lewis, D. D. and Yang, Y. and Rose, T. G. and Li, F., "RCV1: A new benchmark collection for text categorization research", The Journal of Machine Learning Research, Vol. 5, pp. 361-397, 2004
 }
 \usage{
-rcv1sub5()
+rcv1sub5(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-rcv1sub5()  # Check and load the dataset
+rcv1sub5 <- rcv1sub5()  # Check and load the dataset
 toBibtex(rcv1sub5)
 rcv1sub5$measures
 }

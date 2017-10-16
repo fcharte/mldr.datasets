@@ -8,14 +8,17 @@
 Boutell, M. and Luo, J. and Shen, X. and Brown, C., "Learning multi-label scene classification", Pattern Recognition, (9)37, pp. 1757--1771, 2004
 }
 \usage{
-scene()
+scene(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the image domain.
 }
 \examples{
 \dontrun{
-scene()
+scene <- scene()
 toBibtex(scene)
 scene$measures
 }

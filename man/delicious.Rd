@@ -8,14 +8,17 @@
 Tsoumakas, G. and Katakis, I. and Vlahavas, I., "Effective and Efficient Multilabel Classification in Domains with Large Number of Labels", in Proc. ECML/PKDD Workshop on Mining Multidimensional Data, Antwerp, Belgium, MMD08, pp. 30--44, 2008
 }
 \usage{
-delicious()
+delicious(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-delicious()  # Check and load the dataset
+delicious <- delicious()  # Check and load the dataset
 toBibtex(delicious)
 delicious$measures
 }

@@ -8,14 +8,17 @@
 Mencia, E. L. and Furnkranz, J., "Efficient pairwise multilabel classification for large-scale problems in the legal domain", Machine Learning and Knowledge Discovery in Databases, pp. 50--65, 2008
 }
 \usage{
-eurlexsm_test()
+eurlexsm_test(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-eurlexsm_test()  # Check and load the dataset
+eurlexsm_test <- eurlexsm_test()  # Check and load the dataset
 toBibtex(eurlexsm_test[[1]])
 eurlexsm_test[[1]]$measures
 }

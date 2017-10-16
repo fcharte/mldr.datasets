@@ -8,14 +8,17 @@
 Charte, Francisco and Rivera, Antonio J. and del Jesus, Maria J. and Herrera, Francisco, "QUINTA: A question tagging assistant to improve the answering ratio in electronic forums", in EUROCON 2015 - International Conference on Computer as a Tool (EUROCON), IEEE, pp. 1-6, 2015
 }
 \usage{
-stackex_coffee()
+stackex_coffee(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-stackex_coffee()
+stackex_coffee <- stackex_coffee()
 toBibtex(stackex_coffee)
 stackex_coffee$measures
 }

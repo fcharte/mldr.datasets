@@ -3,6 +3,7 @@ RDS_CSV <- "https://fcharte.github.io/mldr.datasets/datasets_rds.csv"
 #' @title Get a multilabel dataset by name
 #' @description \code{get.mldr} obtains a multilabel dataset, either by finding it in the download directory or downloading it.
 #' @param name Name of the dataset to load
+#' @param download.dir The path to the download directory, can be also set through \code{options()}
 #' @examples
 #'\dontrun{
 #' library(mldr.datasets)

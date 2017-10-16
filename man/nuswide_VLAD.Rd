@@ -8,14 +8,17 @@
 Chua, Tat-Seng and Tang, Jinhui and Hong, Richang and Li, Haojie and Luo, Zhiping and Zheng, Yantao, "NUS-WIDE: a real-world web image database from National University of Singapore", in Proc. of the ACM international conference on image and video retrieval, pp. 48, 2009
 }
 \usage{
-nuswide_VLAD()
+nuswide_VLAD(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the image domain.
 }
 \examples{
 \dontrun{
-nuswide_VLAD()  # Check and load the dataset
+nuswide_VLAD <- nuswide_VLAD()  # Check and load the dataset
 toBibtex(nuswide_VLAD)
 nuswide_VLAD$measures
 }

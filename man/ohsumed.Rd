@@ -8,14 +8,17 @@
 Joachims, Thorsten, "Text Categorization with Suport Vector Machines: Learning with Many Relevant Features", in Proc. 10th European Conference on Machine Learning, pp. 137-142, 1998
 }
 \usage{
-ohsumed()
+ohsumed(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-ohsumed()  # Check and load the dataset
+ohsumed <- ohsumed()  # Check and load the dataset
 toBibtex(ohsumed)
 ohsumed$measures
 }

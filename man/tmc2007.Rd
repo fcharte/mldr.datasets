@@ -8,14 +8,17 @@
 Srivastava, A. N. and Zane-Ulman, B., "Discovering recurring anomalies in text reports regarding complex space systems", Aerospace Conference, pp. 3853-3862, 2005
 }
 \usage{
-tmc2007()
+tmc2007(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-tmc2007()  # Check and load the dataset
+tmc2007 <- tmc2007()  # Check and load the dataset
 toBibtex(tmc2007)
 tmc2007$measures
 }

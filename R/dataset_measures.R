@@ -7,9 +7,10 @@
 #' elements. It is useful to decide whether to export in a dense or sparse format.
 #' @param mld An \code{"mldr"} object
 #' @examples
-#' sparsity.level(emotions)
+#' library(mldr.datasets)
+#' sparsity(emotions)
 #' @export
-sparsity.level <- function(mld) {
+sparsity <- function(mld) {
   sum(mld$dataset == 0) / prod(dim(mld$dataset))
 }
 
@@ -18,8 +19,9 @@ sparsity.level <- function(mld) {
 #' of elements.
 #' @param mld An \code{"mldr"} object
 #' @examples
-#' density.level(emotions)
+#' library(mldr.datasets)
+#' density(emotions)
 #' @export
-density.level <- function(mld) {
-  1 - sparsity.level(mld)
+density <- function(mld) {
+  1 - sparsity(mld)
 }

@@ -8,14 +8,17 @@
 Klimt, B. and Yang, Y., "The Enron Corpus: A New Dataset for Email Classification Research", in Proc. ECML04, Pisa, Italy, pp. 217-226, 2004
 }
 \usage{
-enron()
+enron(...)
+}
+\arguments{
+\item{...}{Additional options for the loading function (e.g. \code{download.dir})}
 }
 \description{
 Multilabel dataset from the text domain.
 }
 \examples{
 \dontrun{
-enron()  # Check and load the dataset
+enron <- enron()  # Check and load the dataset
 toBibtex(enron)
 enron$measures
 }
