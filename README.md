@@ -2,8 +2,8 @@
 ====
 
 [![Travis](https://img.shields.io/travis/fcharte/mldr.datasets/master.svg)](https://travis-ci.org/fcharte/mldr.datasets/)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/mldr.datasets)](http://cran.r-project.org/package=mldr.datasets)
-[![Downloads](http://cranlogs.r-pkg.org/badges/mldr.datasets)](http://cran.rstudio.com/web/packages/mldr.datasets/index.html)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/mldr.datasets)](https://cran.r-project.org/package=mldr.datasets)
+[![Downloads](http://cranlogs.r-pkg.org/badges/mldr.datasets)](https://cran.r-project.org/package=mldr.datasets)
 
 RUMDR - R Ultimate Multilabel Dataset Repository
 
