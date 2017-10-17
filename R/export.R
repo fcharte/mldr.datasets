@@ -130,11 +130,18 @@ export.mulan.header <- function(mld) {
 
 export.meka.header <- function(mld) {
   paste0("@relation '",
+         # Dataset name
          if (!is.null(mld$name) && nchar(mld$name) > 0)
            mld$name
          else
            "unnamed_mldr",
+         # MEKA option for number of labels
          ": -C ",
+         # With a minus sign if they're at the end
+         if (mld$labels$index[1] == 1)
+           ""
+         else
+           "-",
          mld$measures$num.labels,
          "'")
 }
@@ -219,8 +226,6 @@ export.arff.chunks <-
              export.dense.arff.data) {
     num_instances <- dim(data)[1]
     chunks <- floor((num_instances - 1) / chunk_size)
-
-    cat("Chunk size:", chunk_size, ", number of chunks:", chunks + 1)
 
   for (ch in 0:chunks) {
     start <- 1 + ch*chunk_size
