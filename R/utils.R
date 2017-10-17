@@ -93,6 +93,7 @@ check_n_load.mldr <- function(mldr.name) {
     fpath <- paste(find.package('mldr.datasets'), '/extdata/', mldr.name, '.rda', sep = '')
 
     if (!file.exists(fpath)) {
+      availableMlds <- read.csv("https://fcharte.github.io/mldr.datasets/availableMlds.csv", stringsAsFactors = FALSE)
       url <- availableMlds[availableMlds$Name == mldr.name, "URL"]
 
       if (length(url) > 0)
