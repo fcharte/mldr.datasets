@@ -19,9 +19,6 @@ get.mldr <- function(name,
                        file.path(normalizePath("~"), ".mldr", "datasets")
                      else
                        getOption("mldr.download.dir")) {
-  if (exists(name, .GlobalEnv, mode = "list"))
-    return(get(name))
-
   filename <- file.path(download.dir, paste0(name, ".rds"))
 
   cat("Looking for dataset", name, "in the download directory\n")
