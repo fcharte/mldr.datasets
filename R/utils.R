@@ -33,7 +33,7 @@ get.mldr <- function(name,
     }
   } else {
     cat("Download directory not found. Creating", download.dir, "\n")
-    dir.create(download.dir)
+    dir.create(download.dir, recursive = T)
   }
 
   cat("Looking for dataset", name, "online...\n")
