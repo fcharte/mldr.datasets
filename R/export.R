@@ -197,11 +197,13 @@ export.dense.arff.data <- function(data) {
 }
 
 export.sparse.arff.data <- function(data) {
-  ischar <- !sapply(data, is.numeric)
+  # skip type check since some datasets have factors read as character
+  # TODO improve read.arff to read binary factors as 0-1
+  #ischar <- sapply(data, is.character)
   nonzero <- data != 0
 
   sapply(1:nrow(data), function(i) {
-    select <- ischar | nonzero[i, ]
+    select <- nonzero[i, ]
     paste0(
       "{",
       paste(
@@ -253,13 +255,14 @@ export.xml <- function(mld) {
 }
 
 export.libsvm <- function(mld, ...) {
-  ischar <- !sapply(mld$dataset, is.numeric)
+  # skip type check since some datasets have factors read as character
+  # ischar <- !sapply(mld$dataset, is.numeric)
   nonzero <- mld$dataset != 0
 
   sapply(1:nrow(mld$dataset), function(i) {
       inputs <- mld$dataset[i, mld$attributesIndexes]
       outputs <- mld$dataset[i, mld$labels$index]
-      select <- ischar | nonzero[i, ]
+      select <- nonzero[i, ]
       paste(
         # libSVM counts labels starting from zero
         # and attributes starting from one
