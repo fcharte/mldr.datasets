@@ -93,7 +93,7 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
       # Open and write SVM file
       name <- paste0(basename, ".svm")
       svmConnection <- file(name, open = "w")
-      writeLines(export.libsvm(mld, ...), svmConnection)
+      export.libsvm(mld, svmConnection, ...)
       close(svmConnection)
       inform(name)
     }
@@ -254,22 +254,38 @@ export.xml <- function(mld) {
   paste(xmlheader, labelstag, labeltags, labelsend, sep = "\n")
 }
 
-export.libsvm <- function(mld, ...) {
-  # skip type check since some datasets have factors read as character
-  # ischar <- !sapply(mld$dataset, is.numeric)
-  nonzero <- mld$dataset != 0
+export.libsvm <- function(mld, con,
+                          chunk_size = floor(1e6 / mld$measures$num.attributes)) {
+  num_instances <- mld$measures$num.instances
+  chunks <- floor((num_instances - 1) / chunk_size)
+  which.input <- mld$attributesIndexes
+  which.output <- mld$labels$index
 
-  sapply(1:nrow(mld$dataset), function(i) {
-      inputs <- mld$dataset[i, mld$attributesIndexes]
-      outputs <- mld$dataset[i, mld$labels$index]
-      select <- nonzero[i, ]
-      paste(
-        # libSVM counts labels starting from zero
-        # and attributes starting from one
-        paste(which(outputs == 1) - 1, collapse = ","),
-        paste(which(select), mld$dataset[i, select], sep = ":", collapse = " "),
-        sep = " "
-      )
-    }
-  )
+  for (ch in 0:chunks) {
+    start <- 1 + ch*chunk_size
+    end <- 1 + (ch + 1) * chunk_size
+    end <- if (end < num_instances) end else num_instances
+
+    writeLines(export.libsvm.data(
+      inputs = mld$dataset[start:end, which.input],
+      outputs = mld$dataset[start:end, which.output]
+    ), con)
+  }
+}
+
+export.libsvm.data <- function(inputs, outputs) {
+  # skip type check since some datasets have factors read as character
+  # ischar <- !sapply(inputs, is.numeric)
+  nonzero <- inputs != 0
+
+  sapply(1:nrow(inputs), function(i) {
+    select <- which(nonzero[i, ])
+    paste(
+      # libSVM counts labels starting from zero
+      # and attributes starting from one
+      paste(which(outputs[i, ] == 1) - 1, collapse = ","),
+      paste(select, inputs[i, select], sep = ":", collapse = " "),
+      sep = " "
+    )
+  })
 }
