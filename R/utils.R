@@ -48,7 +48,7 @@ get.mldr <- function(name,
     retValue <- NULL
 
     tryCatch(
-      retValue <- download.file(url, destfile = filename),
+      retValue <- download.file(url, destfile = filename, mode = "wb"),
       error = function(...) {
         cat("Attempt to download dataset", name, "failed\n")
       }
@@ -100,7 +100,7 @@ check_n_load.mldr <- function(mldr.name) {
       url <- availableMlds[availableMlds$Name == mldr.name, "URL"]
 
       if (length(url) > 0)
-        download.file(url, fpath)
+        download.file(url, fpath, mode = "wb")
     }
 
     if (file.exists(fpath))
