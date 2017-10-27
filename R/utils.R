@@ -1,7 +1,7 @@
 RDS_CSV <- "https://fcharte.github.io/mldr.datasets/datasets_rds.csv"
 
 #' @title Get a multilabel dataset by name
-#' @description \code{get.mldr} obtains a multilabel dataset, either by finding it in the download directory or downloading it.
+#' @description \code{get.mldr} obtains a multilabel dataset, either by finding it inside the package data, in the download directory or by downloading it.
 #' @param name Name of the dataset to load
 #' @param download.dir The path to the download directory, can be also set through \code{options()}
 #' @examples
@@ -19,6 +19,12 @@ get.mldr <- function(name,
                        file.path(normalizePath("~"), ".mldr", "datasets")
                      else
                        getOption("mldr.download.dir")) {
+  # Look for the dataset inside the package
+  inside <- get0(name, envir = as.environment("package:mldr.datasets"), mode = "list")
+  if (!is.null(inside)) {
+    return(inside)
+  }
+
   filename <- file.path(download.dir, paste0(name, ".rds"))
 
   cat("Looking for dataset", name, "in the download directory\n")

@@ -14,7 +14,7 @@ get.mldr(name, download.dir = if (is.null(getOption("mldr.download.dir")))
 \item{download.dir}{The path to the download directory, can be also set through \code{options()}}
 }
 \description{
-\code{get.mldr} obtains a multilabel dataset, either by finding it in the download directory or downloading it.
+\code{get.mldr} obtains a multilabel dataset, either by finding it inside the package data, in the download directory or by downloading it.
 }
 \examples{
 \dontrun{
