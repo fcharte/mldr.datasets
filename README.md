@@ -22,9 +22,7 @@ Alternatively, you can install it via `install_github` from the
 devtools::install_github("fcharte/mldr.datasets")
 ```
 
-You can also clone the repository by using entering `git clone https://github.com/fcharte/mldr.datasets.git` at your command line (assuming git is installed in your system) or with your favourite git GUI. This way all the datasets will be inmediately available in your system. However, take into account that > 600MB will be needed to store the full repository.
-
-Very large datasets, those > 100MB, are stored into the [GitHub Large File Storage](https://git-lfs.github.com/). So, before cloning the repository you will need to install this git extension, initializing it by entering `git lfs init` at the git command line. Without GitHub LFS the aforementioned datasets will appear in your local copy of the repository as files containing a link, instead of real data. This step is not needed in order to install the package though standard methods and access the datasets as explained below.
+You can also clone the repository by using entering `git clone https://github.com/fcharte/mldr.datasets.git` at your command line (assuming git is installed in your system) or with your favourite git GUI. 
 
 ## Usage and examples
 
@@ -49,13 +47,13 @@ externally available datasets use the following commands:
 
 ```R
 library(mldr.datasets)
-mldrs()
+available.mldrs()
 ```
 
 The external datasets are not inmediately available. To load any of them enter its name followed by empty parenthesis, as shown below:
 
 ```R
-bibtex()  # This will load the bibtex dataset, downloading it if is not locally available
+bibtex <- bibtex()  # This will load the bibtex dataset, downloading it if is not locally available
 bibtex$labels
 ```
 The `toBibtex` S3 method returns bibliographic information about the dataset, if it is available. This can be printed with `cat` or copied to the clipboard to include it in your article.
@@ -80,4 +78,4 @@ This software is distributed under the following terms:
     You should have received a copy of the GNU Lesser General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-The datasets distributed within this software and inside this repository are propierty of their own authors. You can find authorship and citation information inside the [`additional-data`](https://github.com/fcharte/mldr.datasets/tree/master/additional-data) folder.
+The datasets distributed within this software are propierty of their own authors. You can find authorship and citation information inside the [`datasets.R`](https://github.com/fcharte/mldr.datasets/tree/master/R/datasets.R) file or using the `toBibtex` method.
