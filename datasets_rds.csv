@@ -20,6 +20,7 @@
 "eurlexev_tra","List  with 10 folds of the train data from the EUR-Lex EUROVOC descriptors dataset",17413,5000,3993,"https://cometa.ml/public/full/eurlexev_tra.rds"
 "eurlexsm_test","List  with 10 folds of the test data from the EUR-Lex subject matters dataset",1935,5000,201,"https://cometa.ml/public/full/eurlexsm_test.rds"
 "eurlexsm_tra","List  with 10 folds of the test data from the EUR-Lex subject matters dataset",17413,5000,201,"https://cometa.ml/public/full/eurlexsm_tra.rds"
+"foodtruck","Food Truck Recommendation Using Multi-label Classification",407,33,12,"https://cometa.ml/public/full/foodtruck.rds"
 "imdb","Dataset generated from the IMDB film database",120919,1001,28,"https://cometa.ml/public/full/imdb.rds"
 "mediamill","Dataset with features extracted from video sequences and semantic concepts assigned as labels",43907,120,101,"https://cometa.ml/public/full/mediamill.rds"
 "nuswide_BoW","Dataset obtained from the NUS-WIDE database with BoW representation",269648,501,81,"https://cometa.ml/public/full/nuswide_BoW.rds"
