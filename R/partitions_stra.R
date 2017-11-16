@@ -23,6 +23,7 @@
 #'}
 #' @export
 stratified.kfolds <- function(mld, k = 5, seed = 10, get.indices = FALSE) {
+  stratified.partitions(mld, is.cv = TRUE, r = to.internal.kfolds(k), seed, get.indices)
 }
 
 #' Hold-out partitioning of an mldr object
