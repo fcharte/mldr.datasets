@@ -27,11 +27,23 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
     stop("Invalid format found. Allowed formats: ", paste(available.formats, collapse = ", "))
   }
   if (!"mldr" %in% class(mld)) {
+    # Write all partitions from a partition list
     if ("mldr.folds" %in% class(mld))
-      invisible(lapply(1:length(mld), function(i) {
-        write.mldr(mld[[i]]$train, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-tra') )
-        write.mldr(mld[[i]]$test, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-test') )
-      }))
+      if (length(mld) >= 1 && class(mld[[1]]) == "mldr") {
+        suffix <- if (length(mld) == 2)
+          c("tra", "test")
+        else
+          paste0(as.character(1:length(mld)), "x", length(mld))
+
+        invisible(lapply(1:length(mld), function(i) {
+          write.mldr(mld[[i]], format, sparse, basename = paste0(basename, "-", suffix[i]))
+        }))
+      } else {
+        invisible(lapply(1:length(mld), function(i) {
+          write.mldr(mld[[i]]$train, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-tra') )
+          write.mldr(mld[[i]]$test, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-test') )
+        }))
+      }
     else
       stop("Object must be of class mldr or mldr.folds")
   } else {

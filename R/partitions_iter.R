@@ -25,9 +25,69 @@
 #'}
 #' @export
 iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices = FALSE) {
-  nrows <- internal.kfolds.preamble(mld, k, seed, get.indices)
+  iterative.stratification.partitions(mld, is.cv = TRUE, r = to.internal.kfolds(k), seed, get.indices)
+}
 
-  r = rep(1. / k, k)
+#' Hold-out partitioning of an mldr object
+#' @description Iterative stratification
+#'
+#' Implemented from the algorithm explained in:
+#'   Konstantinos Sechidis, Grigorios Tsoumakas, and Ioannis Vlahavas. 2011.
+#'   On the stratification of multi-label data. In Proceedings of the 2011
+#'   European conference on Machine learning and knowledge discovery in
+#'   databases - Volume Part III (ECML PKDD'11), Dimitrios Gunopulos,
+#'   Thomas Hofmann, Donato Malerba, and Michalis Vazirgiannis (Eds.), Vol.
+#'   Part III. Springer-Verlag, Berlin, Heidelberg, 145-158.
+#' @param mld The \code{mldr} object to be partitioned
+#' @param p The percentage of instances to be selected for the training partition
+#' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
+#' different samples, for instance to use a 2x5 fcv strategy
+#' @param get.indices A logical value indicating whether to return lists of indices or lists of \code{"mldr"} objects
+#' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
+#' of two mldr objects, called \code{train} and \code{test}
+#' @examples
+#'\dontrun{
+#' library(mldr.datasets)
+#' library(mldr)
+#' parts.emotions <- iterative.stratification.holdout(emotions, p = 70)
+#' summary(parts.emotions$train)
+#' summary(parts.emotions$test)
+#'}
+#' @export
+iterative.stratification.holdout <- function(mld, p = 60, seed = 10, get.indices = FALSE) {
+  iterative.stratification.partitions(mld, is.cv = FALSE, r = to.internal.holdout(p), seed, get.indices)
+}
+
+#' Generic partitioning of an mldr object
+#' @description Iterative stratification
+#'
+#' Implemented from the algorithm explained in:
+#'   Konstantinos Sechidis, Grigorios Tsoumakas, and Ioannis Vlahavas. 2011.
+#'   On the stratification of multi-label data. In Proceedings of the 2011
+#'   European conference on Machine learning and knowledge discovery in
+#'   databases - Volume Part III (ECML PKDD'11), Dimitrios Gunopulos,
+#'   Thomas Hofmann, Donato Malerba, and Michalis Vazirgiannis (Eds.), Vol.
+#'   Part III. Springer-Verlag, Berlin, Heidelberg, 145-158.
+#' @param mld The \code{mldr} object to be partitioned
+#' @param r A vector of percentages of instances to be selected for each partition
+#' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
+#' different samples, for instance to use a 2x5 fcv strategy
+#' @param get.indices A logical value indicating whether to return lists of indices or lists of \code{"mldr"} objects
+#' @return An \code{mldr.folds} object. This is a list containing k elements, one for each fold. Each element is made up
+#' of two mldr objects, called \code{train} and \code{test}
+#' @examples
+#'\dontrun{
+#' library(mldr.datasets)
+#' library(mldr)
+#' parts.emotions <- iterative.stratification.partitions(emotions, r = c(35, 25, 40))
+#' summary(parts.emotions[[2]])
+#'}
+#' @export
+iterative.stratification.partitions <- function(mld, is.cv = FALSE, r, seed = 10, get.indices = FALSE) {
+  nrows <- internal.partitions.preamble(mld, is.cv, r, seed, get.indices)
+
+  k = length(r)
+  r = r / 100
   desired_instances <- mld$measures$num.instances * r
 
   # matrix: each row is a subset, each column corresponds to a label
@@ -87,5 +147,5 @@ iterative.stratification.kfolds <- function(mld, k = 5, seed = 10, get.indices =
     }
   }
 
-  (if (get.indices) indices.from.kfolds else mldr.from.kfolds)(mld, subsets)
+  (if (get.indices) indices.from.kfolds else mldr.from.kfolds)(mld, subsets, is.cv)
 }
