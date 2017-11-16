@@ -63,6 +63,7 @@ stratified.holdout <- function(mld, p = 60, seed = 10, get.indices = FALSE) {
 #'   performance. In International Conference on Hybrid Artificial Intelligence
 #'   Systems (pp. 500-511). Springer, Cham.
 #' @param mld The \code{mldr} object to be partitioned
+#' @param is.cv Option to enable treatment of partitions as cross-validation test folds
 #' @param r A vector of percentages of instances to be selected for each partition
 #' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
 #' different samples, for instance to use a 2x5 fcv strategy

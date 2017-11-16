@@ -69,6 +69,7 @@ iterative.stratification.holdout <- function(mld, p = 60, seed = 10, get.indices
 #'   Thomas Hofmann, Donato Malerba, and Michalis Vazirgiannis (Eds.), Vol.
 #'   Part III. Springer-Verlag, Berlin, Heidelberg, 145-158.
 #' @param mld The \code{mldr} object to be partitioned
+#' @param is.cv Option to enable treatment of partitions as cross-validation test folds
 #' @param r A vector of percentages of instances to be selected for each partition
 #' @param seed The seed to initialize the random number generator. By default is 10. Change it if you want to obtain partitions containing
 #' different samples, for instance to use a 2x5 fcv strategy
