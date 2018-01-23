@@ -238,16 +238,25 @@ export.arff.chunks <-
              export.sparse.arff.data
            else
              export.dense.arff.data) {
-    num_instances <- dim(data)[1]
-    chunks <- floor((num_instances - 1) / chunk_size)
+  num_instances <- dim(data)[1]
+  chunks <- floor((num_instances - 1) / chunk_size)
 
-  for (ch in 0:chunks) {
-    start <- 1 + ch*chunk_size
-    end <- 1 + (ch + 1) * chunk_size
-    end <- if (end < num_instances) end else num_instances
+  finished <- FALSE
+  ch <- 0
+    
+  while (!finished) {
+    start <- 1 + ch * chunk_size
+    end <- (ch + 1) * chunk_size
+    end <- if (end < num_instances) {
+               end
+           } else {
+               finished <- TRUE
+               num_instances
+           }
     chunk <- data[start:end, ]
 
     writeLines(fun(chunk), con)
+    ch <- ch + 1
   }
 }
 
@@ -269,19 +278,27 @@ export.xml <- function(mld) {
 export.libsvm <- function(mld, con,
                           chunk_size = floor(1e6 / mld$measures$num.attributes)) {
   num_instances <- mld$measures$num.instances
-  chunks <- floor((num_instances - 1) / chunk_size)
+
   which.input <- mld$attributesIndexes
   which.output <- mld$labels$index
 
-  for (ch in 0:chunks) {
-    start <- 1 + ch*chunk_size
-    end <- 1 + (ch + 1) * chunk_size
-    end <- if (end < num_instances) end else num_instances
+  ch <- 0
+  finished <- FALSE
+  while (!finished) {
+    start <- 1 + ch * chunk_size
+    end <- (ch + 1) * chunk_size
+    end <- if (end < num_instances) {
+               end
+           } else {
+               finished <- TRUE
+               num_instances
+           }
 
     writeLines(export.libsvm.data(
       inputs = mld$dataset[start:end, which.input],
       outputs = mld$dataset[start:end, which.output]
     ), con)
+    ch <- ch + 1
   }
 }
 
