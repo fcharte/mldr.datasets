@@ -1,10 +1,11 @@
 Package: mldr.datasets
 Title: R Ultimate Multilabel Dataset Repository
-Version: 0.4.1.9000
-Date: 2017-11-17
-Authors@R: c( person("David", "Charte", email = "fdavidcl@ugr.es", role =
-    "cre"), person("Francisco", "Charte", email = "francisco@fcharte.com", role
-    = "aut"))
+Version: 0.4.2
+Date: 2019-01-16
+Authors@R: c(
+    person("David", "Charte", email = "fdavidcl@ugr.es", role = "cre", comment = c(ORCID = "0000-0002-4830-9512")),
+    person("Francisco", "Charte", email = "francisco@fcharte.com", role = "aut", comment = c(ORCID = "0000-0002-3083-8942")), 
+    person("Antonio J.", "Rivera", email = "arivera@ujaen.es", role = "aut"))
 Description: Large collection of multilabel datasets along with the functions
     needed to export them to several formats, to make partitions, and to obtain
     bibliographic information.
@@ -15,6 +16,7 @@ Imports:
     utils
 License: LGPL (>= 3) | file LICENSE
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Suggests:
     mldr
+Encoding: UTF-8

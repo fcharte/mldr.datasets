@@ -4,8 +4,8 @@
 \alias{get.mldr}
 \title{Get a multilabel dataset by name}
 \usage{
-get.mldr(name, download.dir = if (is.null(getOption("mldr.download.dir")))
-  file.path(normalizePath("~"), ".mldr", "datasets") else
+get.mldr(name, download.dir = if
+  (is.null(getOption("mldr.download.dir"))) tempdir() else
   getOption("mldr.download.dir"))
 }
 \arguments{

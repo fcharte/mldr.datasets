@@ -6,7 +6,8 @@
 \usage{
 write.mldr(mld, format = c("MULAN", "MEKA"), sparse = FALSE,
   basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
-  regmatches(mld$name, regexpr("(\\\\w)+", mld$name)), "unnamed_mldr"), ...)
+  regmatches(mld$name, regexpr("(\\\\w)+", mld$name)), "unnamed_mldr"),
+  noconfirm = FALSE, ...)
 }
 \arguments{
 \item{mld}{The \code{mldr/mldr.folds} object to be exported}
@@ -17,6 +18,8 @@ write.mldr(mld, format = c("MULAN", "MEKA"), sparse = FALSE,
 \item{sparse}{Boolean value indicating if sparse representation has to be used for ARFF-based file formats}
 
 \item{basename}{Base name for the files. \code{'unnamed_mldr'} is used by default}
+
+\item{noconfirm}{Use TRUE to skip confirmation of file writing}
 
 \item{...}{Additional options for the exporting functions (e.g. \code{chunk_size}, the number of instances to write at a time)}
 }

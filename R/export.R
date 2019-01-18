@@ -8,6 +8,7 @@
 #' \code{'KEEL'}, \code{'CSV'} and \code{'LIBSVM'}
 #' @param sparse Boolean value indicating if sparse representation has to be used for ARFF-based file formats
 #' @param basename Base name for the files. \code{'unnamed_mldr'} is used by default
+#' @param noconfirm Use TRUE to skip confirmation of file writing
 #' @param ... Additional options for the exporting functions (e.g. \code{chunk_size}, the number of instances to write at a time)
 #' @examples
 #'\dontrun{
@@ -18,7 +19,7 @@
 #' @export
 write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basename = ifelse(!is.null(mld$name) && nchar(mld$name) > 0,
                                                                                            regmatches(mld$name, regexpr("(\\w)+", mld$name)),
-                                                                                           "unnamed_mldr"), ...) {
+                                                                                           "unnamed_mldr"), noconfirm = FALSE, ...) {
   format <- toupper(format)
   available.formats <- c("MULAN", "MEKA", "KEEL", "CSV", "LIBSVM")
 
@@ -47,67 +48,84 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
     else
       stop("Object must be of class mldr or mldr.folds")
   } else {
-
-    inform <- function(name) cat(paste0("Wrote file ", name, "\n"))
+    confirm <- function(name) {
+      if (!noconfirm) {
+        confirmation <- readline(paste0("Write file ", name, "? (y/N) > "))
+        if (tolower(confirmation) == "y") {
+          return(TRUE)
+        } else {
+          return(FALSE)
+        }
+      } else {
+        return(TRUE)
+      }
+    }
 
     if ("MULAN" %in% format) {
       # Open and write ARFF file
       if (!"MEKA" %in% format) {
         name <- paste0(basename, ".arff")
-        arffConnection <- file(name, open = "w")
-        export.mulan(mld, sparse, arffConnection, ...)
-        close(arffConnection)
-        inform(name)
+        if (confirm(name)) {
+          arffConnection <- file(name, open = "w")
+          export.mulan(mld, sparse, arffConnection, ...)
+          close(arffConnection)
+        }
       }
 
       # Open and write XML file
       name <- paste0(basename, ".xml")
-      xmlConnection <- file(name, open = "w")
-      writeLines(export.xml(mld), xmlConnection)
-      close(xmlConnection)
-      inform(name)
+      if (confirm(name)) {
+        xmlConnection <- file(name, open = "w")
+        writeLines(export.xml(mld), xmlConnection)
+        close(xmlConnection)
+      }
     }
 
     if ("MEKA" %in% format) {
       # Open and write ARFF file
       name <- paste0(basename, ".arff")
-      arffConnection <- file(name, open = "w")
-      export.meka(mld, sparse, arffConnection, ...)
-      close(arffConnection)
-      inform(name)
+      if (confirm(name)) {
+        arffConnection <- file(name, open = "w")
+        export.meka(mld, sparse, arffConnection, ...)
+        close(arffConnection)
+      }
     }
 
     if ("KEEL" %in% format) {
       # Open and write DAT file
       name <- paste0(basename, ".dat")
-      datConnection <- file(name, open = "w")
-      export.keel(mld, sparse, datConnection, ...)
-      close(datConnection)
-      inform(name)
+      if (confirm(name)) {
+        datConnection <- file(name, open = "w")
+        export.keel(mld, sparse, datConnection, ...)
+        close(datConnection)
+      }
     }
 
     if ("CSV" %in% format) {
       # Open and write CSV file
       name <- paste0(basename, ".csv")
-      csvConnection <- file(name, open = "w")
-      export.csv(mld, sparse, csvConnection, ...)
-      close(csvConnection)
-      inform(name)
+      if (confirm(name)) {
+        csvConnection <- file(name, open = "w")
+        export.csv(mld, sparse, csvConnection, ...)
+        close(csvConnection)
+      }
 
       name <- paste0(basename, "_labels.csv")
-      labelConnection <- file(name, open = "w")
-      writeLines(export.csv.labels(mld), labelConnection)
-      close(labelConnection)
-      inform(name)
+      if (confirm(name)) {
+        labelConnection <- file(name, open = "w")
+        writeLines(export.csv.labels(mld), labelConnection)
+        close(labelConnection)
+      }
     }
 
     if ("LIBSVM" %in% format) {
       # Open and write SVM file
       name <- paste0(basename, ".svm")
-      svmConnection <- file(name, open = "w")
-      export.libsvm(mld, svmConnection, ...)
-      close(svmConnection)
-      inform(name)
+      if (confirm(name)) {
+        svmConnection <- file(name, open = "w")
+        export.libsvm(mld, svmConnection, ...)
+        close(svmConnection)
+      }
     }
   }
 }
@@ -243,7 +261,7 @@ export.arff.chunks <-
 
   finished <- FALSE
   ch <- 0
-    
+
   while (!finished) {
     start <- 1 + ch * chunk_size
     end <- (ch + 1) * chunk_size

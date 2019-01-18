@@ -4,7 +4,8 @@
 \alias{random.partitions}
 \title{Generic partitioning of an mldr object}
 \usage{
-random.partitions(mld, is.cv = FALSE, r, seed = 10, get.indices = FALSE)
+random.partitions(mld, is.cv = FALSE, r, seed = 10,
+  get.indices = FALSE)
 }
 \arguments{
 \item{mld}{The \code{mldr} object to be partitioned}

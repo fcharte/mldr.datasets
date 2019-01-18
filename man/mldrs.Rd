@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{mldrs}
 \alias{mldrs}
-\title{(Deprecated) Obtain and show a list of additional datasets available to download}
+\title{(Defunct) Obtain and show a list of additional datasets available to download}
 \usage{
 mldrs()
 }
