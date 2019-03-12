@@ -27,30 +27,30 @@ get.mldr <- function(name,
 
   filename <- file.path(download.dir, paste0(name, ".rds"))
 
-  message("Looking for dataset", name, "in the download directory\n")
+  message("Looking for dataset ", name, " in the download directory\n")
 
   if (dir.exists(download.dir)) {
     if (file.exists(filename)) {
-      message("Now reading dataset", name, "\n")
+      message("Now reading dataset ", name, "\n")
       return(readRDS(filename))
     }
   } else {
-    message("Download directory not found. Creating", download.dir, "\n")
+    message("Download directory not found. Creating ", download.dir, "\n")
     dir.create(download.dir, recursive = T)
   }
 
-  message("Looking for dataset", name, "online...\n")
+  message("Looking for dataset ", name, " online...\n")
   available <- read.csv(RDS_CSV, stringsAsFactors = FALSE)
   url <- available[available$Name == name, "URL"]
 
   if (length(url) > 0) {
-    message("Downloading dataset", name, "\n")
+    message("Downloading dataset ", name, "\n")
     retValue <- NULL
 
     tryCatch(
       retValue <- download.file(url, destfile = filename, mode = "wb"),
       error = function(...) {
-        message("Attempt to download dataset", name, "failed\n")
+        message("Attempt to download dataset ", name, " failed\n")
       }
     )
 
