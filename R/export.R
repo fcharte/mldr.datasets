@@ -37,12 +37,12 @@ write.mldr <- function(mld, format = c("MULAN", "MEKA"), sparse = FALSE, basenam
           paste0(as.character(1:length(mld)), "x", length(mld))
 
         invisible(lapply(1:length(mld), function(i) {
-          write.mldr(mld[[i]], format, sparse, basename = paste0(basename, "-", suffix[i]))
+          write.mldr(mld[[i]], format, sparse, basename = paste0(basename, "-", suffix[i]), noconfirm, ...)
         }))
       } else {
         invisible(lapply(1:length(mld), function(i) {
-          write.mldr(mld[[i]]$train, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-tra') )
-          write.mldr(mld[[i]]$test, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-test') )
+          write.mldr(mld[[i]]$train, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-tra'), noconfirm, ... )
+          write.mldr(mld[[i]]$test, format, sparse, basename = paste0(basename, "-", i, 'x', length(mld), '-test'), noconfirm, ... )
         }))
       }
     else
