@@ -29,6 +29,7 @@
 "rcv1sub4","Dataset from the Reuters corpus (subset 4)",6000,47229,101,"https://cometa.ujaen.es/public/full/rcv1sub4.rds"
 "rcv1sub5","Dataset from the Reuters corpus (subset 5)",6000,47235,101,"https://cometa.ujaen.es/public/full/rcv1sub5.rds"
 "reutersk500","Dataset from the Reuters Corpus with the 500 most relevant features selected",6000,500,103,"https://cometa.ujaen.es/public/full/reutersk500.rds"
+"scene","Learning multi-label scene classification",2407,300,6,"https://cometa.ujaen.es/public/full/scene.rds"
 "stackex_chemistry","Dataset from the Stack Exchange's chemistry forum",6961,540,175,"https://cometa.ujaen.es/public/full/stackex_chemistry.rds"
 "stackex_coffee","Dataset from Stack Exchange's coffee forum",225,1886,123,"https://cometa.ujaen.es/public/full/stackex_coffee.rds"
 "stackex_cooking","Dataset from the Stack Exchange's cooking forum",10491,577,400,"https://cometa.ujaen.es/public/full/stackex_cooking.rds"
